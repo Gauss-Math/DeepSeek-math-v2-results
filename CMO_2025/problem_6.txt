@@ -1,0 +1,74 @@
+题目 6
+============================================================
+
+问题:
+设 $n$ 为正奇数，并满足：对任意素数 $p \mid n$，都有 $(p - 1, n) = 1$. 求所有 $(a, b, c) \in \mathbb{Z}_n^3$，满足 $(a, b, c, n) = 1$，且存在 $1, 2, \dots, n$ 的一个排列 $(x_1, x_2, \dots, x_n)$，使得对任意 $1 \le i \le n$，都有
+$$
+n \mid (a x_{i+2} + b x_{i+1} + c x_i), \tag{3}
+$$
+其中下标按模 $n$ 计数.
+
+============================================================
+
+解答:
+我们需解决一个组合数论问题。题目：
+
+设 $n$ 为正奇数，并满足：对任意素数 $p \mid n$，都有 $(p - 1, n) = 1$。求所有 $(a, b, c) \in \mathbb{Z}_n^3$，满足 $(a, b, c, n) = 1$，且存在 $1, 2, \dots, n$ 的一个排列 $(x_1, x_2, \dots, x_n)$，使得对任意 $1 \le i \le n$，都有
+
+$$
+n \mid (a x_{i+2} + b x_{i+1} + c x_i), \tag{3}
+$$
+
+其中下标按模 $n$ 计数。
+
+我们需要找出所有这样的三元组 (a,b,c) modulo n (即视为在 Z_n 中) 满足条件。
+
+首先理解条件：n 是奇数，且对于每个质因子 p 整除 n，有 (p-1, n)=1。这意味着对于每个素数 p|n，p-1 与 n 互质。由于 n 是奇数，p 是奇素数（除了可能 p=2？但 n 是奇数，所以 p 不能是 2，因为 p|n 且 n 是奇数，p 也是奇数，所以 p-1 是偶数，与 n 互质？n 是奇数，所以偶数与奇数互质当且仅当该偶数与 n 没有公因子，即偶数不能被任何奇数整除，所以只需 p-1 不含 n 的任何奇素数因子。由于 p-1 是偶数，它可能包含因子 2，但 n 是奇数，所以 2 不影响互质条件。所以条件实质上是：对于每个素数 p|n，p-1 不能被任何 q|n 的素数 q (包括 p 自身) 整除。也就是说，p-1 和 n 没有公共素数因子。
+
+举例：n=3: p=3, p-1=2, (2,3)=1 满足。n=5: p=5, p-1=4, (4,5)=1 满足。n=7: p=7, p-1=6, (6,7)=1 满足。n=9=3^2: p=3, p-1=2, (2,9)=1 满足。n=15=3*5: p=3, p-1=2, (2,15)=1; p=5, p-1=4, (4,15)=1 满足。n=21=3*7: p=3, p-1=2, (2,21)=1; p=7, p-1=6, (6,21)=3? (6,21)=3 >1, 不满足。所以 n=21 不满足条件。n=25: p=5, p-1=4, (4,25)=1 满足。n=27: p=3, p-1=2, (2,27)=1 满足。n=33=3*11: p=3, p-1=2, (2,33)=1; p=11, p-1=10, (10,33)=1? gcd(10,33)=1, 满足。n=35=5*7: p=5, p-1=4, (4,35)=1; p=7, p-1=6, (6,35)=1? gcd(6,35)=1, 满足。n=45=3^2*5: p=3, p-1=2, (2,45)=1; p=5, p-1=4, (4,45)=1, 满足。n=49: p=7, p-1=6, (6,49)=1, 满足。n=63=3^2*7: p=3, p-1=2, (2,63)=1; p=7, p-1=6, (6,63)=3? gcd(6,63)=3, 不满足。所以条件排除了一些 n。
+
+所以条件等价于：对于所有 p|n，p-1 与 n 互质。也就是 p-1 不被任何 q|n 整除。因为 n 的素数因子集合为 P，要求对于每个 p∈P，p-1 不含任何 q∈P 因子。这意味着对于任何两个不同的素数 p,q 整除 n，q 不能整除 p-1。并且 also p cannot divide p-1 trivially false. So essentially the condition is that n is odd and for any distinct primes p, q dividing n, q ∤ (p-1). This is reminiscent of Carmichael function or something.
+
+Now we need to find all (a,b,c) modulo n such that (a,b,c,n)=1 (i.e., gcd(a,b,c,n)=1) and there exists a permutation (x_1,...,x_n) of {1,2,...,n} such that for all i (mod n), n divides a x_{i+2} + b x_{i+1} + c x_i.
+
+We need to characterize all such triples.
+
+We need to think about linear recurrences with indices modulo n, using the permutation as a sequence that satisfies a linear relation modulo n. Since x_i are the numbers 1..n in some order, they form a complete set of residues modulo n? Actually 1..n are not residues mod n, they are numbers 1 to n inclusive. Mod n, the residues are 0,1,...,n-1. Since we have numbers 1..n, they are congruent to residues 1..n-1 and n ≡ 0 mod n. So indeed the set {1,2,...,n} is a complete set of residues modulo n, because it contains each residue exactly once (since n ≡ 0). So the permutation is a reordering of the complete set of residues mod n.
+
+Thus the condition is: there exists a permutation (x_i) of the residues modulo n (with 0 included as n) such that for each i, a x_{i+2} + b x_{i+1} + c x_i ≡ 0 (mod n).
+
+We can treat x_i as elements of Z_n. Since the set {x_1,...,x_n} = Z_n as a set. So we need a cyclic ordering of the elements of Z_n (i.e., a Hamiltonian cycle in some directed sense) such that each consecutive triple satisfies a linear relation.
+
+We need to find which triples (a,b,c) admit such a "linear permutation".
+
+Observation: The condition (a,b,c,n)=1 ensures that not all a,b,c are divisible by any prime dividing n; i.e., they are not all zero mod p for any p|n. This is necessary? Possibly.
+
+We need to find all (a,b,c) with that property for which such a permutation exists.
+
+We can try to characterize using properties of circulant matrices or linear recurrences. The relation can be expressed as a linear recurrence of order 2 modulo n: a x_{i+2} + b x_{i+1} + c x_i ≡ 0. For a given sequence of length n with indices cyclic (i mod n). So it's a homogeneous linear recurrence with constant coefficients modulo n, and we require that the sequence (x_i) is a permutation of Z_n and satisfies the recurrence for all i (cyclic). This is reminiscent of constructing a "complete mapping" or "orthomorphism" of Z_n? Actually we have a recurrence linking three consecutive terms. Perhaps we can view it as a linear transformation mapping (x_i, x_{i+1}) to (x_{i+1}, x_{i+2}) with some condition.
+
+Define vector v_i = (x_i, x_{i+1}) in Z_n^2. Then recurrence gives a relation: a x_{i+2} = -b x_{i+1} - c x_i => x_{i+2} = -a^{-1} (b x_{i+1} + c x_i) if a is invertible mod n. But a may not be invertible; similarly b, c may not be. However, we have the condition that gcd(a,b,c,n)=1, which does not guarantee any single coefficient is invertible mod n. So we need to handle general case.
+
+Alternatively, we can think of the recurrence as a linear functional: For each i, L(x_i, x_{i+1}, x_{i+2}) = a x_{i+2} + b x_{i+1} + c x_i ≡ 0.
+
+We need to find a cyclic ordering of all residues such that each consecutive triple lies in the kernel of L.
+
+We can attempt to construct such a permutation for certain triples, and prove impossibility for others.
+
+First, note that if (a,b,c) is such that a+b+c ≡ 0 mod n, then the constant sequence x_i ≡ t (some constant) would satisfy recurrence? Actually if x_i = t constant, then a t + b t + c t = (a+b+c) t ≡ 0 mod n for all t if and only if (a+b+c) t ≡ 0 for all t? That would require a+b+c ≡ 0 mod n and also t arbitrary? But we need the sequence to be a permutation of residues, so cannot be constant. So that's not directly relevant.
+
+Another approach: Since the set of residues is Z_n, we can consider sum over i of something. Summing the recurrence over i=1..n, we get:
+
+∑_{i=1}^n (a x_{i+2} + b x_{i+1} + c x_i) ≡ 0 (mod n). Because each term is 0 mod n, sum is 0 mod n. But we can rearrange sums: ∑ a x_{i+2} = a ∑ x_{i+2} = a ∑ x_i (since cyclic shift). Similarly b ∑ x_{i+1} = b ∑ x_i, c ∑ x_i = c ∑ x_i. So total sum = (a + b + c) ∑_{i=1}^n x_i ≡ 0 (mod n).
+
+Now ∑_{i=1}^n x_i is sum of all residues mod n: 0+1+2+...+n-1 ≡ n(n-1)/2 mod n. Since n is odd, n ≡ 1 mod 2, n(n-1)/2 is integer. Compute mod n: n(n-1)/2 ≡ 0 mod n because factor n. Actually n * (n-1)/2: Since n divides n*(n-1)/2? n * (n-1)/2 = n * ((n-1)/2). Since (n-1)/2 is integer (n odd). So it's n times integer, thus divisible by n. So ∑ x_i ≡ 0 mod n. Therefore (a+b+c)*0 ≡ 0 mod n always holds, no condition.
+
+Thus sum condition yields nothing.
+
+Another possible invariant: Multiply recurrence by something and sum over i with weights? Not obvious.
+
+We can try to think in terms of graph theory: Define directed graph on vertices Z_n where we draw an edge from (x_i, x_{i+1}) to (x_{i+1}, x_{i+2})? Actually the recurrence determines x_{i+2} given (x_i, x_{i+1}) if a is invertible modulo n. If a is not invertible, the recurrence may not uniquely determine x_{i+2}, but must hold.
+
+Alternatively, think of the permutation as a Hamiltonian cycle in a directed graph whose vertices are residues and edges are allowed if there is some way to satisfy recurrence? Not straightforward.
+
+Maybe we can reduce to the case where n is prime power? Because Chinese remainder theorem: Since condition is about existence of permutation (x_i) such that recurrence holds mod n. If we can find such a permutation mod n, then for each prime power dividing n, the reduction mod p^k yields a permutation of residues mod p^k? Wait, the set {1,...,n} modulo p^k is not a complete set of residues mod p^k because numbers 1..n contain many residues mod p^k. However, if we consider the residues modulo n, we have a permutation of Z_n. By CRT, Z_n ≅ ∏_{p

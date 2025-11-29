@@ -1,0 +1,1852 @@
+题目 2
+============================================================
+
+问题:
+设凸四边形 $ABCD$ 内接于圆心为 $O$、半径为 $1$ 的圆，且满足 $\angle ABC < \angle BCD < 90^\circ$. 设 $P$ 为直线 $BA$ 与 $CD$ 的交点，$Q$ 为对角线 $AC$ 与 $BD$ 的交点. 已知线段 $BC$ 上存在一点 $K$，使得 $P, A, K, D$ 四点共圆，且 $KB \cdot KC = \frac{1}{2}OP^2$. 过点 $Q$ 作 $BC$ 的垂线，与直线 $OP$ 交于点 $T$.
+(1) 求 $OP$ 的所有可能值；
+(2) 求 $TB + TC$ 的所有可能值.
+
+============================================================
+
+解答:
+我们被要求解决一个几何问题，关于凸四边形ABCD内接于半径为1的圆O，满足∠ABC < ∠BCD < 90°。P是直线BA和CD的交点，Q是对角线AC和BD的交点。已知线段BC上存在一点K，使得P, A, K, D四点共圆，且KB * KC = 1/2 OP^2。过点Q作BC的垂线，与直线OP交于点T。
+
+我们需要求(1) OP的所有可能值；(2) TB + TC的所有可能值。
+
+这是一个复杂的几何问题，需要仔细分析。我们需要找到满足条件的四边形（或者可能的配置），然后计算OP的长度和TB+TC的值。可能只有有限个可能值。我们需要直接输出解答过程。
+
+首先，我们需要理解几何结构。设圆为单位圆（半径为1），圆心O。四边形ABCD内接于圆，凸四边形，顶点顺序为A, B, C, D沿圆周。已知∠ABC < ∠BCD < 90°。注意，∠ABC和∠BCD都是内角，在四边形内部。由于四边形内接于圆，内角等于其对角所对弧的一半的补角? 实际上，圆内接四边形，对角互补，即∠ABC + ∠ADC = 180°, ∠BAD + ∠BCD = 180°。但是这里给出∠ABC < ∠BCD < 90°，所以它们都是锐角，且∠ABC < ∠BCD < 90°。由于∠ABC和∠BCD不是对角，而是相邻角，它们的关系可能约束形状。
+
+P是BA和CD的交点。BA和CD是四边形的两条边，它们延长相交于P。由于四边形凸，BA和CD可能不相交，但延长后交于四边形外部（因为凸四边形，相邻边BA和CD不是相邻的边，它们隔着一个顶点，即A-B-C-D顺序，边BA和CD不相邻，它们之间有边BC和AD? 实际上，四边形顺序为A-B-C-D，那么边为AB, BC, CD, DA。BA是AB的延长线反向？通常直线BA就是直线AB，所以P是直线AB和直线CD的交点。由于AB和CD是相对的边? 不是，AB和CD是相对的边（对边）? 在四边形中，AB和CD是对边。是的，四边形ABCD，AB和CD是对边，BC和AD是对边。所以P是对边AB和CD的延长线的交点。这是典型的“外接四边形”的交点。类似地，Q是AC和BD的交点，即对角线的交点。
+
+K是线段BC上一点，使得P, A, K, D四点共圆。且满足KB * KC = (1/2) OP^2。
+
+过Q作BC的垂线，与直线OP交于点T。求OP的可能值和TB+TC的可能值。
+
+我们需要系统地分析。
+
+由于圆O为单位圆，我们可以考虑坐标几何或复数方法。使用坐标，可以设圆心O为原点，半径为1。设点A, B, C, D在单位圆上。我们可以用角度参数：设A, B, C, D对应的中心角为α, β, γ, δ（弧度），即点坐标(cosθ, sinθ)。不失一般性，我们可以选择方便的坐标旋转。由于只有相对角度重要，我们可以固定一些点。
+
+因为我们需要处理直线AB和CD的交点P，以及对角线交点Q，还有垂线等，坐标计算可能复杂但可行。我们可以使用向量和解析几何，或者使用复数方法。但是因为圆半径为1，坐标可能简化。
+
+我们可以设B和C是相邻顶点，BC是边，K在BC上。所以我们可以选择坐标使得BC对称于x轴? 也许我们可以将BC放置在水平线上? 但BC是圆上的弦，不一定水平。我们可以通过旋转使得BC的垂直平分线经过原点? 实际上，圆半径为1，BC弦的中点M到圆心的距离是cos(θ)，其中θ是半圆心角。但是也许我们可以将BC放置在对称位置以简化计算。但我们需要表达P, A, K, D四点共圆条件，这涉及角度关系，可能转换为某种相似或幂等。
+
+我们可以尝试用几何变换和相似性来推导关系。也许我们可以找到K的性质：因为P, A, K, D共圆，那么∠PAK = ∠PDK，等等。但K在BC上，所以与BC有关。另外，KB*KC = (1/2)OP^2，这个乘积是K对圆的幂? 对圆O? 但是K在BC上，KB*KC是K关于以B和C为端点的线段乘积，类似于在直线BC上，如果有一个圆以BC为弦，那么KB*KC是K到某个圆的幂? 但实际上，如果有一个圆以BC为直径，那么对于任意点K，KB*KC等于K到圆幂? 但这里圆O半径为1，K在弦BC上，那么K到圆O的幂是OK^2 - 1。而KB*KC =? 在圆上，对于弦BC，点K在直线BC上，那么KB*KC = (距离) 与K到圆幂的关系：设M是BC中点，则KB*KC = KM^2 - (BC/2)^2? 实际上，对于线段BC，如果K在线段BC上，那么KB*KC = (BK)*(CK)。如果K在BC线段内部，则乘积为正。可以用坐标表示。
+
+我们也许可以引入坐标系：设圆心O为原点，半径为1。设B和C的坐标为向量b, c，满足|b|=|c|=1。那么直线BC的参数方程为b + t(c - b)。点K在BC上，参数t满足K = b + λ(c - b)，其中0 ≤ λ ≤ 1对应线段BC。则KB = |K - b| = λ|c - b|, KC = |K - c| = (1-λ)|c - b|。所以KB*KC = λ(1-λ) |c - b|^2。
+
+我们需要OP的长度。P是直线AB和CD的交点。我们可以用坐标表示直线交点。
+
+设A, B, C, D为单位圆上的点，向量a, b, c, d。直线AB: param: a + u(b - a)。直线CD: c + v(d - c)。求交点P满足 a + u(b - a) = c + v(d - c)。解出u, v，得到P的坐标。OP的长度可以表示为|P|。
+
+Q是对角线交点：AC和BD的交点。可以用向量法求解，或者用坐标。Q = (a×c?) 实际上，对于平面向量，两条直线交点可以用参数表示：a + s(c - a) = b + t(d - b)。求解s, t。
+
+过Q作BC的垂线，与OP交于T。那么T是直线OP与过Q且垂直于BC的直线的交点。我们需要TB+TC，即T到B和C的距离之和。
+
+我们需要找到满足条件的a, b, c, d（在单位圆上），使得存在λ∈(0,1)满足：
+
+(1) P, A, K, D共圆。
+(2) KB*KC = (1/2) OP^2。
+
+其中K = b + λ(c - b)。
+
+我们需要求出OP的可能值（似乎与λ和角度有关，也许是一个常数？）然后求TB+TC的可能值。
+
+由于问题可能设计为有唯一的解或几个可能值，也许答案是简单值，如OP=√2或2? TB+TC=2? 但我们需要推导。
+
+让我们尝试用解析几何方法。
+
+设单位圆：x^2+y^2=1。设B和C的坐标。由于BC是弦，我们可以旋转坐标系使得B和C对称于x轴? 例如，设B = (cos θ, sin θ), C = (cos θ, -sin θ)? 这样BC是垂直的? 不对，那样B和C关于x轴对称，它们的y坐标相反，则BC是垂直于x轴的线段? 坐标: B = (cos θ, sin θ), C = (cos θ, -sin θ) => 两点x坐标相同，y坐标相反，所以BC是垂直的线段，且其中点在x轴上。但这样BC的弦的中点在(cos θ, 0)，到原点的距离为|cos θ|，可能小于1。这可行。
+
+但是我们需要考虑四边形ABCD是凸的，且顶点顺序A, B, C, D沿圆周。如果我们设置B和C关于x轴对称，那么它们位于圆的左右两侧? 如果θ在(0,π)之间，cos θ可能正也可能负。我们可以取θ为锐角，使得B和C都在右半平面? 但B和C关于x轴对称，则它们对称于x轴，它们之间的圆弧跨过x轴。我们可以选择顺序为A, B, C, D沿着圆周逆时针。如果B和C关于x轴对称，那么从B到C的圆弧要么经过下方或上方。我们可以设定B在第二象限? 但是我们可以通过旋转自由选择。也许更简单的是将BC置于水平位置，对称于y轴? 例如，设B = (cos φ, sin φ), C = (cos φ, -sin φ) 是垂直的。但水平对称可能更好? 设B = (cos φ, sin φ), C = (-cos φ, sin φ) 则是关于y轴对称，BC水平。但那样它们的x坐标相反，y相同。这样BC是水平的线段。哪种更方便? 我们可能需要OP线，也许P在x轴上? 不确定。
+
+我们可以考虑更一般的参数：设B = (cos β, sin β), C = (cos γ, sin γ)。因为我们要处理BC的垂线等，或许用角度表示更方便。我们可以用复数：设点对应复数 a = e^{iα}, b = e^{iβ}, c = e^{iγ}, d = e^{iδ}。则单位圆上。
+
+我们需要求OP长度，即|p|，其中p是直线AB和CD的交点。我们可以用复数求解交点公式。在复平面上，两点z1,z2确定直线，其方程可以用共线条件表示为 (z - z1)/(z2 - z1) ∈ ℝ。交点可以通过解方程组得到。但直接解析求解可能繁琐，但可以用公式：两条直线AB和CD的交点p可以用行列式方法：对于点z，存在实数s,t使得 z = a + s(b - a) = c + t(d - c)。求解得到p的表达式。我们可以用复数运算解出p的显式公式：p = (a(b̅?)?) 实际上有公式：在单位圆上，对于两弦AB和CD，它们的交点p可以用 (a b (c - d) - c d (a - b)) / ( (a - b)(c - d) 的某种形式? 或许有公式：给定单位圆上的点a,b,c,d，直线AB和CD的交点p = (ab(c - d) - cd(a - b)) / ( (a - b) \overline? 不对。
+
+我们也可以用齐次坐标：在复平面上，直线通过两点z1,z2的方程可以写成 (z - z1)/(z2 - z1) = 共轭? 不太方便。
+
+也许我们可以使用向量坐标解析法。设坐标：a = (cos α, sin α), b = (cos β, sin β), c = (cos γ, sin γ), d = (cos δ, sin δ)。我们要求直线AB和CD的交点P。我们可以用参数方程：P = a + u(b - a) = c + v(d - c)。解出u, v。这需要解二维线性方程组。我们可以写出两个方程：
+
+a_x + u(b_x - a_x) = c_x + v(d_x - c_x)
+a_y + u(b_y - a_y) = c_y + v(d_y - c_y)
+
+我们可以解出u, v。用向量叉积方法：对于二维向量，我们可以用行列式求解。设AB = b - a, CD = d - c。那么交点满足 a + u AB = c + v CD。移项： u AB - v CD = c - a。写成矩阵形式 [AB, -CD] [u; v] = c - a。解之。
+
+我们可以用2x2行列式：det(AB, CD) = (AB)_x (CD)_y - (AB)_y (CD)_x。如果行列式非零，则AB和CD不平行（它们交于一点）。解：
+
+u = det(c - a, -CD) / det(AB, -CD) = det(c - a, CD) / det(AB, CD)  (因为 det(AB, -CD) = -det(AB, CD)，det(c - a, -CD) = -det(c - a, CD)，所以 u = (-det(c - a, CD))/(-det(AB, CD)) = det(c - a, CD)/det(AB, CD)。类似地，v = det(AB, c - a)/det(AB, CD)。
+
+所以 P = a + u AB = a + (det(c - a, CD)/det(AB, CD)) (b - a)。
+
+现在我们关心OP的长度平方： |P|^2 = P·P。这将是复杂的表达式，但也许可以利用圆的性质简化。
+
+由于a,b,c,d都在单位圆上，它们的坐标满足一些关系。此外，四边形内接于圆，顺序为A,B,C,D。所以α,β,γ,δ按顺序递增（逆时针）。我们可以假设它们满足 α < β < γ < δ < α+2π。为了方便，我们可以选择坐标旋转，使得β = -θ, γ = θ 对称? 例如，设β = -θ, γ = θ，这样B和C关于x轴对称，且BC是垂直的（x坐标相同? 实际上 cos(-θ) = cosθ, sin(-θ) = - sinθ，所以B = (cosθ, - sinθ), C = (cosθ, sinθ) 是垂直对称于x轴? 不对，x坐标都是cosθ，y坐标相反，所以BC垂直（平行于y轴）。如果我们想要BC水平，可以设β = π - φ, γ = φ? 但那样x坐标相反? 例如，B = (cosφ, sinφ), C = (-cosφ, sinφ) 则y坐标相同，BC水平。但哪种更便于处理垂线？Q作BC的垂线，即垂直于BC的线。如果BC水平，垂线就是竖直的，可能会简化。但BC是弦，我们可以选择坐标系使得BC水平。设B和C关于y轴对称，即B = (cosθ, sinθ), C = (-cosθ, sinθ)。这样BC的水平坐标为对称，y相同，所以BC是水平的线段。那么BC平行于x轴。这样BC的垂线是竖直的（平行于y轴）。这也许方便处理T点。
+
+但是我们需要A和D的位置，它们也在圆上，且满足顺序A, B, C, D。假设我们取B和C对称于y轴，那么它们的角度分别为π - θ 和 θ? 因为点(cosθ, sinθ)对应于角度θ（从x轴正方向逆时针），点(-cosθ, sinθ)对应于角度π - θ（如果sinθ>0）。实际上，(-cosθ, sinθ) = (cos(π-θ), sin(π-θ))，所以角度为π-θ。所以我们可以设β = π - θ, γ = θ，其中0<θ<π/2? 由于∠BCD < 90°，我们需要这个角。但∠BCD是四边形内角，顶点C，由边BC和CD构成。在圆内接四边形中，∠BCD = 半弧BAD? 实际上，∠BCD是内角，其度数为弧BMD? 我们需要考虑。但也许我们可以直接用角度参数。
+
+不过也许更简单：我们可以选择坐标系使得BC是水平弦，且其垂直平分线是y轴。即B和C关于y轴对称，且它们的y坐标相等。那么BC中点在y轴上。我们也可以将BC放在y=0? 但圆半径为1，如果BC水平且y坐标相同，那么弦BC的y坐标是某个常数。我们可以将BC放在y = k (常数)，但圆方程 x^2 + y^2 = 1，那么B和C是圆与直线 y = k 的交点，所以x = ±√(1 - k^2)。因此B = (-√(1 - k^2), k), C = (√(1 - k^2), k)。这样B和C关于y轴对称。这是方便的。此时BC是水平的，y = k，x坐标对称。我们可以设k = cos? 实际上，如果我们设B = (-sin φ, cos φ)? 不，用参数：令B = ( -d, k ), C = ( d, k )，其中 d = √(1 - k^2) > 0。那么B和C的极角分别为π - arccos(k)? 但无所谓。
+
+我们可以设B = (-a, h), C = (a, h)，其中 a>0, h 满足 a^2 + h^2 = 1。这样BC长度为2a，中点M = (0, h)。BC水平，垂直于y轴? 实际上BC平行于x轴，所以BC的垂线是竖直的，即x=常数。
+
+这样处理Q作BC的垂线，垂线是过Q且垂直于BC，即竖直直线（x = x_Q）。这条垂线与直线OP的交点为T。我们需要TB+TC，即T到B和C的距离之和。由于B和C对称于y轴，TB+TC可能等于2倍的某种表达式。
+
+我们还需要考虑A和D的位置。它们也在单位圆上，且四边形凸，顺序A, B, C, D。由于B和C对称于y轴，我们可以假设A在左半平面的上方或下方? 顺序A, B, C, D沿圆周逆时针。如果我们按逆时针方向，从A到B到C到D再回到A。我们可以假设B和C是相邻的。所以A应该在弧BC的左边? 即从B逆时针到C经过一段弧，但B和C对称于y轴，且B在左（-a, h），C在右（a, h）。如果h>0（弦在上半圆），那么B和C都在上半圆。逆时针方向从A到B到C到D，那么A可能在B之前（逆时针方向），D在C之后。我们可以选择参数表示A和D的极角。设B的极角为π - φ，C的极角为φ，其中φ = arccos(-a)? 等一下，坐标：B = (-a, h)，其中a>0, h>0。那么极角θ_B满足 cosθ_B = -a, sinθ_B = h，所以θ_B = π - arccos(a)? 因为cos(π - α) = -cos α，sin(π - α) = sin α。取α = arccos(a)，则cosα = a, sinα = √(1 - a^2) = h。所以θ_B = π - α。C = (a, h)，极角θ_C = α，其中α ∈ (0, π/2) 因为a>0, h>0。所以B和C对称于y轴，角度分别为π-α和α。
+
+因此，我们可以设β = π - α, γ = α，其中α ∈ (0, π/2)。因为BC在圆的上半部分，h = sin α? 实际上，a = cos α? 因为 a = √(1 - h^2) 和 h = sin α? 如果α是极角，则点(cosα, sinα) = (a, h)。所以 a = cosα, h = sinα。那么B = (-cosα, sinα) = (cos(π-α), sin(π-α))，一致。所以这个参数很好。
+
+因此，我们可以用α表示BC：B = ( -cosα, sinα ), C = ( cosα, sinα )。BC在y = sinα水平线上，长度2cosα。
+
+现在我们需要确定A和D的位置。因为四边形凸，顺序A, B, C, D。我们可以设A的极角为θ_A，D的极角为θ_D。顺序逆时针：θ_A < θ_B = π - α < θ_C = α? 但是注意角度在[0,2π)上，α是小于π/2的，π-α > α? 因为π-α > π/2 > α。所以按通常的递增顺序，α < π-α。但是逆时针顺序要求经过0到2π。我们需要定义顺序。假设我们从A开始逆时针转到B，再到C，再到D，然后回到A。如果B的角度为π-α，C的角度为α（但α < π-α），那么从B到C逆时针需要经过角度 (α + 2π - (π-α)) = α + 2π - π + α = π + 2α? 那很大。实际上，如果我们考虑标准范围0到2π，那么α是小的正角（如30°），π-α是大的（150°）。从B(150°)逆时针转到C(30°)需要经过从150°到360°再到30°，即210°。而从C(30°)逆时针转到D再到A再回到B? 这样可能不符合凸四边形顺序。也许我们应该定义B和C的位置使得它们相邻且顺序为A→B→C→D逆时针。通常，我们可以在圆上按逆时针顺序标记点。如果我们取B = ( -cosα, sinα ) 对应角度π-α，C = (cosα, sinα)对应角度α。如果α在(0,π/2)，那么α < π-α。所以按逆时针从小角度到大角度，顺序是α (C), 然后其他点, 然后π-α (B), 然后继续到2π。所以如果我们要让顺序为A, B, C, D逆时针，我们需要B的角度小于C的角度? 逆时针顺序：A→B→C→D，所以B在C之前（逆时针方向）。因此我们需要θ_B < θ_C（在0到2π范围内）。但这里θ_B = π-α > α = θ_C。所以这不符合。我们可以交换B和C的角色：设B = (cosα, sinα) (角度α)，C = (-cosα, sinα) (角度π-α)。但那样B和C仍然对称于y轴，但B在右侧，C在左侧。然而我们需要B和C相邻，顺序A, B, C, D逆时针。如果B角度α较小，C角度π-α较大，那么从B到C逆时针是经过角度π-α-α = π-2α，小于π，这可行。然后C到D再到A再回到B。这样B在C之前。所以我们可以设B = (cosα, sinα) (角度α)，C = (-cosα, sinα) (角度π-α)。但这样B和C的坐标就不再是B左C右，而是B右C左。但对称性依然成立。我们可以选择B为右点，C为左点。这对几何没有本质影响。重要的是BC水平，y = sinα。我们可以取B = (cosα, sinα), C = (-cosα, sinα)。这样B在右边，C在左边。BC水平，长度2cosα。中点M = (0, sinα)。这样B的极角α较小，C的极角π-α较大。这符合顺序A, B, C, D逆时针，如果我们让A在B之前（角度小于α），D在C之后（角度大于π-α）。或者我们可以让A在B和C之间? 但四边形顶点顺序是A, B, C, D，所以A和B相邻，B和C相邻，C和D相邻，D和A相邻。因此A应该在弧上B的前一个相邻点（逆时针方向），即角度略小于α；C的后一个相邻点是D，角度略大于π-α。这样四边形凸，且A和D都在上半圆或下半圆? 因为B和C在上半圆，A和D可能在上半圆或下半圆。但我们需要四边形凸，且∠ABC < ∠BCD < 90°。∠ABC是顶点B处的内角，由边AB和BC形成。∠BCD是顶点C处的内角，由边BC和CD形成。由于B和C在上半圆，AB和BC在B处形成角；CD在C处。我们需要这些角都小于90°，且∠ABC < ∠BCD。
+
+我们需要确定A和D的位置使得这些条件成立。也许A在下半圆，D也在下半圆，这样四边形可能是交叉? 但凸四边形内接于圆，如果所有顶点都在同一半圆内，四边形不可能是凸的? 实际上，凸四边形内接于圆，其顶点都在圆上，可以都在上半圆，但那样四边形可能是自交的? 考虑四个点都在上半圆，按顺序A, B, C, D逆时针，它们都在上半圆，那么弧从A到B到C到D都在上半圆，然后D到A跨越下半圆，这样四边形可能不是凸的? 内接凸四边形的四个点必须分布在圆上，不能都在同一个半圆内，否则四边形不是凸的（会有一个内角大于180°? 实际上，如果四个点都在一个半圆内，四边形是退化的，至少有一个角≥180°? 我不确定。但通常，圆内接凸四边形的四个顶点必须分布在圆的整个圆周上，不能都落在小于180°的弧上。但可以三个点在一个半圆内，第四个点在另一半圆。但对于凸四边形，任意三个点都在一个半圆内? 我们可能需要仔细分析。
+
+但是我们有条件∠ABC < ∠BCD < 90°，都是锐角。在圆内接四边形中，对角互补，所以∠ABC + ∠ADC = 180°，∠BAD + ∠BCD = 180°。如果∠ABC和∠BCD都是锐角，那么它们的对角∠ADC和∠BAD都是钝角（>90°）。这没问题。所以四边形有两个锐角（相邻的B和C），两个钝角（A和D）。这是可能的。
+
+因此，A和D应该位于下半圆，使得∠ABC和∠BCD锐角。例如，考虑一个筝形或梯形? 但我们需要具体。
+
+我们可以尝试用参数表示A和D。设A的极角为θ_A，D的极角为θ_D。顺序逆时针：θ_A < θ_B = α < θ_C = π - α < θ_D < 2π? 或者也可能θ_A > θ_D? 因为顺序是A, B, C, D，逆时针，所以角度应满足θ_A < θ_B < θ_C < θ_D < θ_A + 2π。但如果我们选择θ_B = α (小)，θ_C = π - α (大)，那么θ_A应该在(-2π, α)区间内，但为了使逆时针顺序，θ_A应该小于α，并且θ_D应该大于π-α。由于角度通常取在[0,2π)，θ_A可能在0到α之间，θ_D在π-α到2π之间。这样A和D分别位于右半圆的上半部分? 实际上，θ_A在0到α，对应点在第一象限偏右，靠近x轴正方向；θ_D在π-α到2π，对应点在第四象限或下半平面。但B和C在上半圆，A也在上半圆（θ_A在0到α，也在上半圆），D在π-α到2π，可能在下半圆。这样四边形有两个相邻顶点B和C在上半圆，A也在上半圆（靠近右侧），D在下半圆。这是可能的凸四边形吗？我们画一下：A在右上方靠近x轴正方向，B在右上方但稍高? B = (cosα, sinα)也是右上方，C = (-cosα, sinα)左上方，D在下半圆。这样顺序A(右上方) → B(右上方) → C(左上方) → D(下半圆) → A。这看起来可能是凸的，因为D在下半圆，连接CD和DA，AB和BC都在上半部。内角∠ABC是B处由AB和BC形成的角，AB从A到B，BC从B到C。由于A也在右上方，AB可能比较陡? ∠ABC可能较小。∠BCD在C处由BC和CD形成，BC从左到右? 实际上BC从B(右)到C(左)是向左的线段，CD从C到D向下走，所以∠BCD可能是锐角。可能满足条件。
+
+另一种可能是A在左下方，D在右下方等。但我们可以自由选择参数，只要满足条件。但为了简化，我们可以固定B和C如上，然后设A的极角为θ_A = -β（或者0<θ_A<α），D的极角为θ_D = π + δ（>π-α）。我们可以引入参数：设A = (cos φ, sin φ)，其中φ ∈ (0, α) 或 φ ∈ (-π, 0)? 但为了保持逆时针顺序，A的角度应该小于α。我们可以取φ = -ψ (负角)，但角度通常取[0,2π)，负角等价于2π-ψ。但是顺序要求A在B之前，即从A逆时针转到B经过小角度。如果A角度为负，我们可以加2π使其在(π,2π)范围，那样A角度大于π-α，那就不是A在B之前了。所以我们应取A的角度在(0, α)之间。因为α是小的正角，所以A在第一象限靠近x轴正方向。这可行。
+
+设A = (cos a, sin a) with 0 < a < α。D的角度为d，满足 π - α < d < 2π。为了对称性，也许我们可以取d = π + a? 或者d = π + ε? 但需要满足条件∠ABC < ∠BCD < 90°。我们可以尝试找到满足P, A, K, D共圆和KB*KC = OP^2/2的约束，也许会导致特殊关系，如A和D对称于某轴，或者A和D与B、C有某种调和关系。也许答案是唯一的，与具体位置无关，只依赖于α等。
+
+我们可以尝试用解析几何推导OP和TB+TC的表达式，然后利用共圆条件和KB*KC条件解出参数。这可能会得到一个方程，从而确定可能的OP值。
+
+由于问题要求求OP的所有可能值和TB+TC的所有可能值，这意味着可能有限个数值（可能是两个），与具体的四边形无关，只要满足条件，OP和TB+TC就是定值或有限的几个值。
+
+因此，我们可以尝试推导出OP的表达式，然后利用条件得出OP必须满足的方程，解出OP。类似地，TB+TC也可以用OP或其他参数表示，从而得出可能值。
+
+我们需要谨慎处理。由于问题复杂，但也许有更简洁的几何方法，利用圆幂、相似、圆的性质等。
+
+我们分析条件：
+
+1. P是AB和CD的交点。由于四边形ABCD内接于圆，P是两条对边延长线的交点。这样的点具有性质：PA·PB = PC·PD（根据圆幂定理，因为P到圆的幂相等：PA·PB = PC·PD）。因为P在圆外（假设），从P引两条割线PAB和PCD，分别交圆于A,B和C,D。由于A,B,C,D都在圆上，我们有PA·PB = PC·PD。这是重要的关系。
+
+2. Q是AC和BD的交点。这是内接四边形的对角线的交点。Q具有性质：QA·QC = QB·QD（因为Q到圆的幂相等：QA·QC = QB·QD）。但Q可能在圆内（对于凸四边形，对角线交点在内），所以这是相交弦定理：QA·QC = QB·QD。
+
+3. K是BC上一点，满足P, A, K, D四点共圆。这意味着点K在过P, A, D的圆上。由于K在BC上，所以K是BC与该圆的交点（除了可能的B或C? 但K在BC线段上，且P, A, D不共线，圆与BC相交于K，也可能交于另一点，但这里K是线段BC上的点）。因此，K是圆(PAD)与BC的交点。
+
+4. KB·KC = 1/2 OP^2。这是K到B和C的乘积等于OP平方的一半。
+
+5. 过Q作BC的垂线，与OP交于T。我们需要TB+TC。
+
+我们需要找到OP的可能值，即OP的长度。由于圆半径为1，OP可能大于1（P在圆外）。我们也许可以从这些条件中解出OP。
+
+首先，利用圆幂定理：PA·PB = PC·PD。设PA = x, PB = y, PC = u, PD = v。那么xy = uv。但这不是直接给出OP。
+
+另外，P, A, K, D共圆，所以K在圆(PAD)上。那么K满足圆幂关系：PK·PA? 实际上，对于圆(PAD)，K在圆上，所以PK·? 没有直接关系。但是我们可以考虑K关于四边形的一些性质：K是BC与圆(PAD)的交点。我们可以用圆幂定理连接P和K? 因为P也在圆(PAD)上，K也在，所以PK是圆的弦。但是我们可以利用P, A, K, D共圆得出角度关系：∠PAK = ∠PDK，∠PK A = ∠PDA，等等。但也许用圆幂定理将K与P和B、C联系起来？因为K在BC上，且P, A, K, D共圆，也许我们可以得到PK·? 但K不在以P为顶点的割线上。
+
+我们可以考虑用相似三角形：因为P, A, K, D共圆，所以∠PAK = ∠PDK。但∠PAK是角PAK，即角PA与AK之间；∠PDK是角PDK。由于A, B, C, D共圆，也许可以导出某些三角形相似。
+
+另一种思路：使用反演或射影几何。也许选择以P为反演中心，半径为√(PA·PB) = √(PC·PD)，反演将圆O映射为自身? 因为P的幂等于PA·PB，如果反演半径平方等于这个幂，则圆O经过反演后变为自身? 实际上，如果反演半径平方等于P到圆O的幂，则圆O（不经过P）将映射为自身? 对于不过反演中心的圆，反演后仍是一个圆，一般不自身。但如果圆O与反演圆正交，则反演后不变。但这里P的幂等于PA·PB，这是P到圆O的幂，但圆O的方程? 如果以P为反演中心，半径为√(PA·PB)，那么圆O的反演像是过P的圆? 我不确定。
+
+也许我们可以使用“P点对圆O的极线”性质。P的极线是直线BC? 对于圆外一点P，其极线是通过圆内接四边形中，P的对边AB和CD的交点，极线是BC? 实际上，对于圆外一点P，如果P关于圆的极线是通过P的切线的切点，但这里P是AB和CD的交点，那么B和C是P关于圆的极线上的点? 我们需要回忆：对于圆外一点P，作两条割线PAB和PCD，则交点为A,B和C,D。那么四边形ABCD的对边交点（即AB和CD的交点为P，AD和BC的交点为某点Q'）满足某些调和性质。但是极线的定义：对于点P，其极线是使得对于圆上任意一点X，PX与极线的交点Y满足(P,Y;X, X')调和。但已知P是AB和CD的交点，那么B和C是P关于圆的极线上的点? 实际上，如果P是圆外一点，则过P的两条割线PAB和PCD，那么四边形ABCD的对边交点（AB∩CD = P，AD∩BC = Q）中，Q在P的极线上。也就是说，对于圆外一点P，其极线是连接AD和BC的交点。这里Q是对角线交点，不是AD和BC的交点。AD和BC的交点可能是另一个点，记作R。但题目中Q是AC和BD的交点，不是AD和BC的交点。所以极线可能是AD和BC的交点，不是我们需要的。
+
+但我们有K在BC上，且K满足KB·KC = 1/2 OP^2。这个乘积与OP有关。也许我们可以用P到圆O的幂表示OP^2 - 1? 因为OP^2 - 1 = PA·PB = PC·PD。所以PA·PB = PC·PD = OP^2 - 1 (因为圆半径为1，圆心O到P的距离为OP，P的幂 = OP^2 - 1^2 = OP^2 - 1). 注意：对于圆外一点P，其到圆的幂 = OP^2 - R^2 = OP^2 - 1。而割线定理：PA·PB = PC·PD = 幂。因此，PA·PB = PC·PD = OP^2 - 1。
+
+同样，对于Q（在圆内），Q的幂 = OQ^2 - 1（可能是负数）。但相交弦定理：QA·QC = QB·QD = 1 - OQ^2? 实际上是绝对值：对于圆内点Q，QA·QC = R^2 - OQ^2 = 1 - OQ^2。因为对于圆内点，乘积为正，等于 (R^2 - OQ^2)。所以 QA·QC = QB·QD = 1 - OQ^2。
+
+现在我们有K在BC上，且KB·KC = 1/2 OP^2。注意KB·KC是点K到B和C的乘积，不是K对圆O的幂（除非K在圆上，但K在线段BC上，BC是弦，K在弦上，K对圆O的幂是OK^2 - 1）。但是KB·KC与K的位置有关。我们可以将KB·KC表示为K到B和C的有向距离乘积的绝对值。由于K在BC上，我们可以用坐标表示。但是也许可以用圆幂定理的推广：对于圆内接四边形，如果K在BC上，且满足某些共圆条件，可能得到KB·KC与PA·PB的关系。
+
+注意到P, A, K, D共圆。这个圆与圆O可能有一些关系。由于A和D都在圆O上，圆(PAD)与圆O相交于A和D。那么这两个圆的根轴就是直线AD。但K在圆(PAD)上，且K在BC上。所以BC是圆(PAD)与圆O的另一个交点? 圆O与圆(PAD)相交于A和D。所以BC不是它们的交线。但K是BC与圆(PAD)的交点，因此K是圆(PAD)与直线BC的交点。所以K是直线BC与圆(PAD)的交点之一。另一个交点可能是某个点，也许不是B或C（除非B或C也在圆(PAD)上，但一般不在）。所以K是直线BC与圆(PAD)的交点。
+
+因此，我们可以考虑圆(PAD)和圆O的根轴AD。点K在直线BC上，且K到圆(PAD)的幂（相对于圆(PAD)）为零（因为K在圆上）。而K到圆O的幂是OK^2 - 1。同时，由于K在BC上，我们可以用B和C表示KB·KC? 但KB·KC是K到B和C的距离乘积，不是幂。但也许我们可以用B和C是圆O上的点，所以K对圆O的幂也可以用KB·KC加上一些项? 实际上，对于圆O，如果K在弦BC的延长线上，那么KB·KC等于K到圆O的幂的绝对值? 对于圆上两点B和C，如果K在直线BC上，则K对圆O的幂等于KB·KC，如果K在BC线段上（在弦内部），那么KB·KC = - (K到圆幂)? 我们需要符号。通常，对于圆外点K，如果K在直线BC上且B和C是圆与直线的交点，那么KB·KC = K的幂（有向距离乘积，符号取决于K在圆外还是圆内）。如果K在圆外，那么KB和KC同向（K在B和C外部），乘积为正且等于幂。如果K在圆内，则B和C在K的两侧，KB和KC符号相反，有向乘积为负，绝对值等于圆内点K的幂的绝对值（即1 - OK^2）。但是这里K在线段BC上，即在圆内部（因为弦BC内部在圆内）。所以K在圆内。对于圆内点K，如果直线BC经过K，与圆交于B和C，则有向乘积KB·KC = - (1 - OK^2) (取决于符号约定)。但通常，在几何中，对于圆内点，KB·KC = (1 - OK^2) 的绝对值，但符号为负。如果我们取有向长度，KB·KC = - (1 - OK^2)。但是题目中KB·KC是线段长度的乘积，应该取正数，即长度乘积。所以 KB·KC = |KB·KC| = 1 - OK^2（因为K在圆内，OK^2 < 1）。但需要验证：对于圆内点K，过K的任意弦BC，有KB·KC = (1 - OK^2) 当取长度时? 实际上，相交弦定理：如果两条弦AB和CD相交于点K，则KA·KB = KC·KD。对于K在圆内，乘积为正，因为长度都是正数。这里我们只有一条弦BC，K是弦上一点，那么KB·KC =? 如果K是弦BC内部一点，那么KB和KC是线段长度，乘积为正。但是相交弦定理需要两条弦，这里只有一条弦。我们可以考虑过K的另一条弦AD，那么KA·KD = KB·KC。但这里我们不知道A和D是否与K共线? 不一定。但是我们可以用圆幂：对于圆内点K，其幂为R^2 - OK^2 = 1 - OK^2，但幂定义为过K的任意弦的两个交点到K的距离乘积，即如果过K作任意直线与圆交于两点X,Y，则KX·KY = 1 - OK^2（正值）。这是因为对于圆内点，乘积为常数（正数），等于R^2 - OK^2。所以对于直线BC，由于B和C是圆与直线BC的交点，且K在BC上，我们有KB·KC = 1 - OK^2。注意：这要求K在圆内，且B和C是直线BC与圆的交点。确实，如果K在圆内，那么直线BC与圆交于两点B和C，且K在它们之间。那么乘积KB·KC = 1 - OK^2。这是正确的，因为相交弦定理：对于任意弦BC，其中K是弦上一点，我们有KB·KC = (R^2 - OK^2)。证明：作OK，然后利用直角三角形等。所以我们可以使用这个关系。
+
+因此，我们有KB·KC = 1 - OK^2。但是题目中给出KB·KC = 1/2 OP^2。所以
+
+1 - OK^2 = (1/2) OP^2.   (1)
+
+现在，OK是K到圆心O的距离。我们需要找到OK^2与OP^2的关系，也许可以通过K在圆(PAD)上与P、A、D共圆来关联。
+
+由于K在圆(PAD)上，我们有PK·? 但也许我们可以用圆幂定理将OK^2与OP^2、OA、OD等联系起来。因为点O到圆(PAD)的幂等于OP^2 - R_P^2? 不直接。
+
+我们可以考虑三角形或坐标。
+
+另一种思路：使用复数或向量，建立方程求解。
+
+我们设b和c为复数，满足|b|=|c|=1，且b和c共轭? 如果取B = (cosα, sinα) = e^{iα}, C = (-cosα, sinα) = e^{i(π-α)}。这两个复数不是共轭，因为共轭是e^{-iα} = (cosα, -sinα)。所以不是。但我们可以选择B = e^{iβ}, C = e^{iγ}。为了简化，我们可以将坐标旋转使得BC对称于实轴? 例如，让B和C关于实轴对称：B = e^{iθ}, C = e^{-iθ}。这样BC是垂直的? 实际上，e^{iθ}和e^{-iθ}关于实轴对称，它们的坐标是(cosθ, sinθ)和(cosθ, -sinθ)。这样BC是垂直的（x相同，y相反），不是水平的。但我们可以旋转90度使其水平。但我们也可以接受垂直。不过水平可能更简单，因为BC垂线是水平? 如果BC垂直，BC垂线是水平，与OP的交点T的坐标可能容易。但是我们需要过Q作BC的垂线，即水平线，与OP交于T。水平线可能容易处理。
+
+但垂直和水平其实一样，只是坐标轴选择。我们可以选择坐标系使得BC垂直于x轴或平行于x轴，依据方便。我们先前设想BC水平，B和C对称于y轴。这样BC的垂线是竖直直线（x=常数）。竖直直线与OP的交点T的x坐标等于Q的x坐标。这也许更方便，因为Q的x坐标可能容易表示。但我们需要计算TB+TC，即T到B和C的距离之和。由于B和C对称于y轴，坐标分别为(-a, h)和(a, h)。如果T的坐标为(x_T, y_T)，则TB = sqrt((x_T + a)^2 + (y_T - h)^2)，TC = sqrt((x_T - a)^2 + (y_T - h)^2)。求和可能复杂。
+
+但如果BC垂直，即B和C对称于x轴：B = (cosθ, sinθ), C = (cosθ, -sinθ)。那么BC垂直，其垂线是水平线（y=常数）。水平线与OP的交点T的y坐标等于Q的y坐标。这样TB和TC的表达式可能对称，求和也许简化。因为B和C有相同的x坐标cosθ，不同的y坐标±sinθ。T的坐标为(x_T, y_T)，其中y_T = y_Q。TB = sqrt((x_T - cosθ)^2 + (y_T - sinθ)^2), TC = sqrt((x_T - cosθ)^2 + (y_T + sinθ)^2)。求和可能类似。
+
+也许使用复数表示更方便：设b = e^{iβ}, c = e^{-iβ}（关于实轴对称）。这样B和C关于x轴对称，BC垂直。然后我们可以方便地表示K在BC上：BC是线段连接e^{iβ}和e^{-iβ}，参数K = e^{iβ} + t(e^{-iβ} - e^{iβ}) = e^{iβ}(1 - t) + e^{-iβ} t。由于对称，K的实部为cosβ，虚部为(1-2t) sinβ。所以K的x坐标固定为cosβ，y坐标在-sinβ到sinβ之间。因此BC是竖直线段x = cosβ，y从 -sinβ 到 sinβ。这很方便：BC垂直，x坐标常数。那么过Q作BC的垂线，即水平线 y = y_Q。与OP的交点T的y坐标就是y_Q，x坐标由OP直线方程确定。TB+TC = sqrt((x_T - cosβ)^2 + (y_T - sinβ)^2) + sqrt((x_T - cosβ)^2 + (y_T + sinβ)^2)。这个形式类似于到两个对称点的距离之和，当T的y坐标在中间时，也许可以用椭圆性质等。但也许我们可以利用几何关系简化：如果T在直线OP上，且Q是OP与水平线y=y_Q的交点，也许T就是Q? 不，T是OP与过Q垂直于BC的直线的交点。因为过Q作BC的垂线，即水平线，交OP于T。所以T是OP与水平线y=y_Q的交点。因此T的y坐标等于y_Q，x坐标由OP直线方程给出。所以T和Q有相同的y坐标，但x坐标不同，除非OP也是水平的（不可能除非P在水平线上）。所以T是水平线与OP的交点。
+
+因此我们需要计算y_Q。Q是AC和BD的交点。我们可以用坐标表示A和D。我们需要选择A和D的位置。由于B和C对称于x轴，我们可以设A和D也对称于x轴吗？也许为了满足条件，A和D可能关于x轴对称，这样四边形对称。但题目没有明确对称，但可能解要求对称性。因为条件∠ABC < ∠BCD < 90°，且存在K满足那些条件，也许迫使四边形是等形的，比如是等腰梯形或对称的。我们可以尝试假设A和D关于x轴对称。这简化计算。但是我们需要验证是否可能。如果A和D关于x轴对称，那么四边形ABCD关于x轴对称。B和C已经关于x轴对称，所以整个四边形对称。那么A在上半平面，D在下半平面? 但B和C关于x轴对称，如果A和D也关于x轴对称，那么A和D分别在上下半平面。但是顺序A, B, C, D逆时针。如果B在上半平面（β>0），C在下半平面（-β），那么顺序可能是A（上半平面），B（上半平面），C（下半平面），D（下半平面）。这可以是凸四边形。但我们需要B和C关于x轴对称，即B = (cosβ, sinβ), C = (cosβ, -sinβ)。那么B在上，C在下。如果A也在上半平面，D在下半平面，并且A和D关于x轴对称。那么四边形对称。这可能符合条件。
+
+但是注意∠ABC < ∠BCD < 90°。∠ABC是顶点B处的角，由AB和BC组成。由于对称，∠ABC和∠BAD? 也许可以计算。
+
+但我们不能随意假设对称性，除非我们证明它是必要的。但也许我们可以推导出A和D关于BC的垂直平分线对称，即关于x轴对称，因为条件P, A, K, D共圆且K在BC上，加上其他条件可能导致对称。但我们可以先尝试对称情况，看是否能得到满足条件的解，并计算OP和TB+TC。如果得到有限个可能值，也许这些就是答案。但是问题可能允许非对称的情况，但可能答案仍然相同，因为几何量可能不依赖于具体形状，只要条件满足。所以我们可以假设对称性简化，然后验证条件是否可满足，并计算值。然后也许需要证明这些值是唯一的，无论对称与否。但作为解答，我们可以采用解析方法，用参数表示A, B, C, D，然后利用条件推导出方程，解出可能的OP值。这可能很复杂，但我们可以尝试系统地推导。
+
+首先，选择坐标系：设圆心O为原点，半径为1。设B = (c, s), C = (c, -s)，其中c = cosθ, s = sinθ, θ∈(0,π/2)。这样BC垂直，x坐标相同为c，y坐标±s。
+
+设A = (cosα, sinα)，其中α是某个角度。由于四边形凸且顺序为A, B, C, D逆时针，我们需要确定A和D的角度范围。B的角度为θ，C的角度为 -θ（或2π-θ）。但通常我们取角度在(-π,π]范围内。取B = (c, s)对应角度θ，C = (c, -s)对应角度 -θ（或2π-θ）。为了保持逆时针顺序，我们可以定义角度从-π到π，逆时针方向角度增加。那么顺序A, B, C, D逆时针意味着角度满足：α_A < θ < -θ? 但是 -θ < θ 因为θ>0，所以 -θ < θ。所以如果我们按角度递增，顺序可能是 A (角度α), B (θ), D? 不，C的角度是 -θ，比θ小。所以如果按标准角度（从x轴正方向逆时针），-θ实际上是顺时针方向，其等价于 2π - θ，这是一个接近2π的大角度。所以为了得到逆时针顺序，我们通常采用0到2π的范围。那么我们可以取B的角度为θ (0<θ<π/2)，C的角度为 2π - θ（接近2π）。这样θ < 2π - θ。所以顺序A, B, C, D逆时针要求 A的角度<θ< 2π - θ < D的角度（或者 D角度可能小于 A角度? 因为要循环）。但更简单的：我们可以保持对称性，取B和C关于x轴对称，角度为θ和-θ，但顺序逆时针：从A到B到C到D。如果我们从A出发逆时针转动，经过B，然后继续逆时针转动，会经过角度大于θ的点，直到2π，然后到负角度，再到C? 这很混乱。实际上，如果使用角度范围(-π,π]，那么B在θ>0，C在-θ<0。逆时针方向从B到C需要经过角度从θ增加到π，然后跳转到-π（或继续到2π）再到-θ? 这不好处理。所以最好采用角度范围[0,2π)。那么我们可以设置B = (cosθ, sinθ) 对应角度θ∈(0,π/2)，C = (cos(2π-θ), sin(2π-θ)) = (cosθ, -sinθ) 对应角度2π-θ∈(3π/2,2π)。这样B角度小，C角度大。逆时针顺序A, B, C, D意味着角度满足 0 ≤ α_A < θ < 2π-θ < α_D < 2π。即A在B之前（角度小于θ），B到C是逆时针从θ到2π-θ（经过大半圆），然后C到D是逆时针从2π-θ到α_D（可能一小段），然后D回到A跨越0角度。这样A的角度α_A可能接近0，D的角度α_D接近2π。这相当于A和D都在第一象限靠近x轴? A角度小，D角度接近2π（即负小角度）。这样A和D可能关于x轴对称? 不一定。
+
+如果我们希望对称性，我们可以取A角度为π+θ? 但那样A在第三象限。但顺序要求A在B之前，所以A角度小于θ，所以A不可能在π+θ。所以对称性A和D关于x轴对称可能不成立，因为A在上半平面小角度，D在接近2π（即负小角度）也在下半平面但接近x轴正方向。实际上，2π-θ是接近2π，对应角度接近360°，即接近x轴正方向从下方。所以D的坐标是(cosθ, -sinθ)? 但C已经是(cosθ, -sinθ)。所以D不能与C重合。所以D不能是(cosθ, -sinθ)。所以对称性A和D关于x轴对称似乎不可能同时保持B和C对称。但我们也许可以取A和D关于y轴对称? 或者我们可以选择另一种对称：B和C关于y轴对称，A和D关于y轴对称。这也许更自然：B = (a, h), C = (-a, h) 水平对称。然后我们可以取A和D关于y轴对称，即A = (-b, k), D = (b, k) 或类似。这样整个四边形对称于y轴。顺序A, B, C, D逆时针：假设A在左半平面，B在右半平面? 让我们尝试构造：设B = (a, h) (右点), C = (-a, h) (左点)。这样B和C关于y轴对称，且都在上半平面。顺序A, B, C, D逆时针：我们需要A在B之前，B到C逆时针方向，C到D，D到A。如果我们从A开始，逆时针转到B，再到C，再到D，最后回到A。如果B和C都在上半平面，且B在右，C在左，那么从B到C逆时针方向是向上经过上顶点? 实际上，从B（右上方）逆时针转到C（左上方）需要经过角度从小的正角（B的角）增加到π（左端）然后减小? 我不清楚。我们需要用角度表示：设B = (a, h)，其极角为β = arctan(h/a) (在第一象限)。C = (-a, h)，其极角为π - β (第二象限)。所以β < π - β。逆时针方向从B(β)到C(π - β)是增加角度，经过β到π - β。所以B到C是逆时针的一段弧。所以顺序可以是A (角度小于β) -> B (β) -> C (π - β) -> D (角度大于π - β) -> 回到A (经过2π)。这样A可能在0到β之间，D可能在π - β到2π之间。这看起来合理。这样A和D可以关于y轴对称吗？如果A角度为γ (0<γ<β)，则A坐标(cosγ, sinγ)在第一象限。D角度为2π - γ (接近2π)，坐标(cosγ, -sinγ)。这样A和D关于x轴对称，不是y轴。但如果A角度为π+γ? 那大于π - β? 不行。所以对称于y轴不太可能。
+
+但是我们可以选择A和D关于y轴对称，即A = (-b, k), D = (b, k)。这样A和D有相同的y坐标，x坐标相反。这类似于B和C的对称，但是B和C有相同的y坐标h。如果A和D也有相同的y坐标k，那么四边形ABCD的四个点分成两对水平对称点。这可能形成一个等腰梯形（AB和CD可能是平行的?）。但我们需要验证顺序：假设A = (-b, k), B = (a, h), C = (-a, h), D = (b, k)。这样A在左，B在右，C在左，D在右。顺序A→B→C→D逆时针：从A(-b,k)到B(a,h)逆时针方向? 这不太直观。也许更好的做法是选择B和C关于x轴对称，A和D关于x轴对称，这样整个四边形对称于x轴。但顺序问题可能更简单：B = (c, s), C = (c, -s)。设A = (cosα, sinα)在上半平面，D = (cosα, -sinα)在下半平面。这样A和D关于x轴对称。那么A和D的x坐标相同，y坐标相反。现在我们需要顺序A, B, C, D逆时针。角度：A的角度α (0<α<π)，B的角度θ，C的角度 -θ (或2π-θ)，D的角度 -α (或2π-α)。如果我们取角度范围(-π,π)，那么B=θ>0, C=-θ<0, A=α>0 (假设α>0), D=-α<0。顺序A(α) -> B(θ) -> C(-θ) -> D(-α) -> 回到A(α) 逆时针方向：从α到θ (if α<θ) then to -θ? 但是 -θ < θ, 从θ到 -θ 逆时针方向需要经过π到 -π? 这不好。如果我们使用0到2π范围：A=α (0<α<π), B=θ (0<θ<π/2), C=2π-θ (>π), D=2π-α (>π)。那么顺序需要满足 A < B < C < D? 但α可能大于θ? 如果α>θ，那么A在B之后。如果α<θ，那么A在B之前。我们需要A在B之前，所以α<θ。但α是A的角度，θ是B的角度。但是A和D关于x轴对称，D的角度=2π-α。C的角度=2π-θ。那么顺序A(α) < B(θ) < C(2π-θ) < D(2π-α) 要求 α < θ < 2π-θ < 2π-α。由于θ<π/2，2π-θ>3π/2，所以θ < 2π-θ 显然成立。但我们需要2π-θ < 2π-α => -θ < -α => α < θ。所以α<θ也是需要的。所以α<θ。这样顺序是A(α) -> B(θ) -> C(2π-θ) -> D(2π-α) -> back to A (by crossing 2π to 0). 这可行：A在第一象限小角度α，B在第一象限角度θ稍大，然后继续逆时针，经过上半个圆到π，再到下半圆，到C(2π-θ)在第四象限，然后到D(2π-α)在第四象限更接近2π，然后继续逆时针转过2π回到A。所以四边形是凸的。这种配置中，A和D关于x轴对称，B和C也关于x轴对称。所以整个四边形对称于x轴。这看起来很整齐。而且A和D的x坐标相同? A=(cosα, sinα), D=(cosα, -sinα)，所以x坐标相同，y相反。B和C的x坐标相同(c)，y相反(s, -s)。所以四边形是“对称梯形”形状，但AB和CD可能不平行。
+
+这种对称性可能简化很多计算。我们是否可以证明这样的对称性是必然的？也许条件∠ABC < ∠BCD < 90° 和存在K满足P, A, K, D共圆，且KB·KC = 1/2 OP^2，会迫使四边形关于x轴对称。但我们可以先假设对称情况，找到可能的OP和TB+TC，然后检查是否满足所有条件。如果解存在，那么这些就是可能值。问题问“求OP的所有可能值”，可能答案就是这些值，并且对称情况是唯一可能的。但我们需要确保没有其他不对称的解产生不同的值。但也许我们可以证明唯一性。然而作为解题，我们可以采用解析方法，不预先假设对称性，而是用参数表示A, B, C, D，然后推导条件，最终求解出OP的可能值。这可能很复杂，但我们可以尝试系统化。
+
+但是，也许我们可以找到更巧妙的方法，利用已知条件推导出OP^2和OK^2的关系，然后利用K在圆(PAD)上，结合P, A, K, D共圆，得到一些关系式，从而解出OP。
+
+让我们尝试从几何关系入手。
+
+设圆O为单位圆。设P是AB和CD的交点。则PA·PB = PC·PD = OP^2 - 1。 (2)
+
+设K在BC上，且K在圆(PAD)上。由于P, A, D也在该圆上，该圆记为ω。圆ω与圆O相交于A和D。因此，直线AD是两个圆的根轴。K是BC与ω的交点。
+
+现在，考虑K关于圆O的幂：因为K在圆内，我们有KB·KC = 1 - OK^2。 (3)
+
+但题目给出 KB·KC = 1/2 OP^2。 (4)
+
+所以 1 - OK^2 = 1/2 OP^2 => OK^2 = 1 - OP^2/2. (5)
+
+由于K在圆内，OK^2 < 1，所以 OP^2/2 < 1 => OP^2 < 2 => OP < √2.
+
+但OP可能大于1（P在圆外），所以1<OP<√2? 也可能OP<1? 如果P在圆内，则P的幂为负，但P是AB和CD的交点，AB和CD是弦的延长线，P可能在圆外，也可能在圆内? 对于凸四边形，对边AB和CD延长线相交于四边形外部，所以P应该在圆外。因为四边形凸，对边延长线交点在四边形外部，通常位于圆外。但我们需要确认：对于内接凸四边形，对边AB和CD的延长线相交于圆外。实际上，对于圆内接凸四边形，两对对边延长线的交点都在圆外（这是圆外切四边形的性质? 但这里是内接四边形，交点在圆外? 考虑一个矩形内接于圆，对边平行，延长线不相交。但对于一般凸内接四边形，AB和CD是对边，它们不平行，延长线相交，交点在圆外。因为A,B,C,D都在圆上，AB和CD是两条弦，它们的延长线交点P位于圆外，这是因为P的幂为正，所以OP>R=1。所以OP>1。因此1<OP<√2。所以OP在(1, √2)之间。
+
+现在，我们需要找到OP的可能值，也许是一个确定的值，比如OP=√(something) like √(4/3)? 但我们待定。
+
+接下来，考虑K也在圆(PAD)上。圆(PAD)的圆心未知，半径未知。但是我们可以用P, A, D的坐标计算PK^2等。也许我们可以利用圆幂关系：对于圆ω(PAD)，点B和C的幂是什么？因为K是BC与ω的交点，另一个交点可能是某个点，但B和C可能不在ω上。但是我们可以考虑B和C关于ω的幂。因为K在ω上，且K在BC上，那么对于点B，B到ω的幂可以用B到K和B到另一个交点（如果BC与ω交于K和另一个点）来表示。但BC与ω可能只交于K（相切）或两个交点。由于K是线段BC上一点，且P, A, K, D共圆，那么圆ω与直线BC相交于K，可能还有另一个交点，记为L，可能在BC延长线上。但是题目没有说K是唯一交点，只是说存在一点K在BC上使得四点共圆。这意味着直线BC与圆(PAD)至少有一个交点在BC线段上。可能有第二个交点在BC线段外。我们可以考虑这个第二个交点，也许就是B或C? 但B和C不一定在圆(PAD)上。所以一般地，BC与圆(PAD)交于两点，其中一个为K，另一个记为K'。K'可能在BC的延长线上，可能在外部。但是我们可以利用圆幂：对于圆ω，点B和C的幂等于B到ω的幂 = B到K的距离乘以B到K'的距离。但K'未知。
+
+但是也许我们可以利用相似关系：因为A, B, C, D共圆，且P, A, K, D共圆，可以得到某些角度相等，从而三角形相似。例如，∠PAK = ∠PDK。由于∠PAK是角PAK，即PA与AK的夹角。∠PDK是PD与DK的夹角。因为A, B, C, D共圆，我们可以将某些角转化为弧的关系。
+
+另一种思路：使用“Miquel点”等。对于完全四边形AB, BC, CD, DA，点P是AB和CD的交点，Q是AC和BD的交点，还有一个交点R是AD和BC的交点。这三个点P, Q, R满足某些性质，比如它们共线（牛顿线？）实际上，对于完全四边形，三个对角点P=AB∩CD, Q=AC∩BD, R=AD∩BC，它们共线（高斯线? 那是对于圆内接四边形，这三个点共线于牛顿线? 我记不清了。对于圆内接四边形，对边交点P和Q和R共线（帕斯卡定理的特例?）。但这里Q是对角线交点，P是对边AB和CD的交点，R是AD和BC的交点。这三个点共线，这条线称为“牛顿线”或“高斯线”。是的，对于圆内接四边形，两个对边交点和对角线交点共线。这是一个已知定理：对于圆内接四边形，两条对边延长线的交点（P），另一对对边延长线的交点（R），以及对角线的交点（Q），这三个点共线（牛顿线）。在我们的问题中，R是AD和BC的交点。但我们没有直接用到R，但也许有用。
+
+现在，K在BC上，且P, A, K, D共圆。注意到A, D, P, K共圆，且A, D, B, C都在圆O上。这可能是某种“Miquel点”的配置：对于四边形ABCP? 实际上，考虑完全四边形由直线AB, BC, CD, DA构成，其Miquel点是P, A, K, D共圆? 我不确定。
+
+但我们可以注意到，K是BC与圆(PAD)的交点。而R是AD和BC的交点。所以R也在BC上，且R也在AD上。如果圆(PAD)也经过R，那么R, A, D, P共圆，但R在AD上，所以圆(PAD)经过A, D, P，如果它也经过R，那么R也在圆(PAD)上，但R是AD和BC的交点，AD是圆(PAD)的弦，所以R在AD上，也在圆(PAD)上，因此R就是A或D? 除非R与A或D重合，否则不可能，因为AD是弦，弦上的点除了端点不在圆上。所以R不在圆(PAD)上。所以K不同于R。
+
+所以K是BC与圆(PAD)的第二个交点（除了R? 不对，BC与AD交于R，但圆(PAD)与BC的交点除了K可能还有一个交点，但AD与BC交于R，AD是圆(PAD)的弦，所以R是AD与BC的交点，但R不在圆(PAD)上（除非A, D, R共线，但R在AD上，AD是直线，但圆(PAD)包含A和D，所以线段AD是弦，直线AD与圆(PAD)交于A和D，所以R在直线AD上但在A和D之间（因为R是AD和BC的交点，对于凸四边形，AD和BC是对边，它们的交点在四边形外部，可能在圆外，但R在直线AD上且可能在A和D之外）。R不一定在圆(PAD)上，因为圆(PAD)只经过A和D，直线AD与圆(PAD)交于A和D两点，除非R与A或D重合，否则R不在圆上。所以BC与圆(PAD)的交点K不同于R，且BC与圆(PAD)有两个交点：K和某个其他点，可能是R? 不，R是AD和BC的交点，不在圆(PAD)上，所以不是。所以BC与圆(PAD)有两个交点，其中一个为K，另一个记为K'，在BC延长线上，可能在圆外。但也许我们可以利用幂的关系：对于圆ω(PAD)，点B和C的幂可以用BK·BK'和CK·CK'表示。但这似乎引入未知K'。
+
+另一种思路：利用坐标直接计算。尽管看起来很复杂，但也许可以借助符号计算软件，但我们在纸笔解答中需要推导。我们可以尝试用参数表示A, B, C, D，然后表达P, K, Q, T等，然后利用条件得到方程，求解可能的OP值。
+
+由于圆半径为1，我们可以用角度参数：设B角度为β，C角度为γ，A角度为α，D角度为δ。顺序A, B, C, D逆时针，所以 α < β < γ < δ < α+2π。为了方便，我们可以选择坐标系使得B和C对称于x轴，即β = θ, γ = -θ (或2π-θ)。但为了使用0到2π范围，我们可以取β = θ, γ = 2π - θ。这样对称性便于处理。然后我们可以设α和δ为某个参数。但也许我们可以进一步简化：因为条件涉及K在BC上，且KB·KC = 1/2 OP^2，结合(3)得到OK^2 = 1 - OP^2/2。而OK^2可以用K的坐标表示，K是BC上的点。如果我们选择BC垂直，即x坐标固定为c，那么K的x坐标是c，y坐标为某个值 y_K 在 -s 和 s 之间。那么OK^2 = c^2 + y_K^2。因为c^2 + s^2 = 1。所以OK^2 = 1 - s^2 + y_K^2 = 1 - s^2 + y_K^2。但 s^2 = 1 - c^2。所以 OK^2 = c^2 + y_K^2。
+
+而KB·KC = (s - y_K)*(s + y_K)? 因为B = (c, s), C = (c, -s)，所以KB = |y_K - s|? 如果y_K在 -s 和 s 之间，那么B在y=s，C在y=-s，K在y=y_K。那么KB = |s - y_K|, KC = |y_K - (-s)| = |y_K + s|。由于y_K介于-s和s，s - y_K ≥ 0, y_K + s ≥ 0。所以KB·KC = (s - y_K)(s + y_K) = s^2 - y_K^2。
+
+因此，KB·KC = s^2 - y_K^2。 (6)
+
+这与(3)一致吗？我们计算1 - OK^2 = 1 - (c^2 + y_K^2) = (1 - c^2) - y_K^2 = s^2 - y_K^2。所以确实(3)给出KB·KC = s^2 - y_K^2，与(6)相同。好！所以这个坐标系下，条件(4)变为：
+
+s^2 - y_K^2 = 1/2 OP^2.   (7)
+
+同时，OK^2 = c^2 + y_K^2 = 1 - s^2 + y_K^2。
+
+但我们还有(5): OK^2 = 1 - OP^2/2。代入得：
+
+c^2 + y_K^2 = 1 - OP^2/2.   (8)
+
+而c^2 + s^2 = 1。
+
+我们可以用(7)和(8)消去y_K^2。从(7): y_K^2 = s^2 - OP^2/2。代入(8): c^2 + s^2 - OP^2/2 = 1 - OP^2/2 => c^2 + s^2 = 1。这恒成立！所以(7)和(8)并不提供额外约束，它们等价于(5)和(3)，是自动满足的，因为(7)和(8)是由(5)和c^2+s^2=1推导出的恒等式。实际上，我们直接从(3)和(4)得到(5)，而(5)与(6)一起自动满足c^2+s^2=1。所以条件(4)等价于(5)加上c^2+s^2=1（总是成立）。所以(4)只是给出了OK^2与OP^2的关系，没有约束其他参数。所以K的位置y_K^2 = s^2 - OP^2/2 必须为正，即 s^2 > OP^2/2。由于s^2 = 1 - c^2。但c和s取决于θ。所以这个关系将θ和OP联系起来：y_K^2 = s^2 - OP^2/2 ≥ 0 => s^2 ≥ OP^2/2。另外，K在线段BC上要求 y_K ∈ [-s, s]，即 y_K^2 ≤ s^2，这自动满足因为 y_K^2 = s^2 - OP^2/2 ≤ s^2（因为 OP^2/2 ≥ 0）。所以只要OP^2 ≤ 2 s^2。由于s^2 ≤ 1，OP^2 ≤ 2 s^2 ≤ 2。但OP>1，所以需要1<OP^2<2 s^2? 实际上需要OP^2 ≤ 2 s^2，而s^2可能小于1。所以这将约束θ。
+
+但是，我们尚未使用P, A, K, D共圆的条件。这个条件将提供A、D、B、C之间的关系，从而确定θ和α,δ等，并最终确定OP。
+
+所以我们需要用共圆条件来建立方程。
+
+在垂直BC坐标系下，B = (c, s), C = (c, -s)。设A = (cosα, sinα), D = (cosδ, sinδ)。由于四边形凸且顺序A, B, C, D逆时针，我们可以选择α和δ满足 α < β = θ < γ = 2π - θ < δ < 2π? 实际上，如果我们使用0到2π范围，B的角度θ∈(0,π/2)，C的角度2π-θ∈(3π/2,2π)。那么顺序A (角度α) < θ < 2π-θ < δ < 2π。另外，A和D可能在圆上任意位置，但为了满足对称性? 也许我们可以利用P, A, K, D共圆推导出A和D关于x轴对称? 我们不妨尝试证明这一点。
+
+在垂直BC坐标系下，BC是直线x = c。P是直线AB和CD的交点。我们可以计算P的坐标。然后K是BC上一点，坐标为(c, y_K)。我们需要P, A, K, D共圆。即四点共圆条件等价于某些交比或行列式为零。我们可以用坐标写出圆方程通过三点A, D, P，然后要求K满足该方程。
+
+设圆通过A, D, P。由于A, D, P不共线（除非特殊情况），我们可以写出其方程。K满足该方程给出一个关系。
+
+另一种方法：四点共圆等价于∠PAK = ∠PDK（或∠APK = ∠ADK等）。由于K在BC上，我们可以尝试用角度关系。
+
+由于B和C对称于x轴，也许我们可以猜测A和D也对称于x轴，这样整个图形对称。如果是这样，那么直线AB和CD的交点P将位于x轴上（因为对称性）。让我们验证：如果A = (cosα, sinα), D = (cosα, -sinα) (关于x轴对称)，B = (c, s), C = (c, -s)。那么AB是连接A(cosα, sinα)和B(c, s)。CD是连接C(c, -s)和D(cosα, -sinα)。由于对称性，这两条直线应该关于x轴对称，因此它们的交点应该在x轴上。因为对称图形关于x轴对称，AB的对称线是A'B'? 但A的对称点关于x轴是(cosα, -sinα) = D，B的对称点是(c, -s) = C。所以AB关于x轴的对称线是DC。因此AB和DC关于x轴对称，它们的交点必然在对称轴x轴上。所以P在x轴上。这简化很多。此外，K在BC上，BC是竖直直线x=c。由于P在x轴上，坐标为(p,0)。那么OP = |p|，因为O是原点。所以OP就是P的x坐标绝对值。
+
+另外，Q是对角线AC和BD的交点。如果图形关于x轴对称，那么AC和BD也是对称的，交点Q也应该在x轴上。因为AC关于x轴的对称线是? A(cosα, sinα)关于x轴对称是D(cosα, -sinα)，C(c, -s)关于x轴对称是B(c, s)。所以AC的对称线是DB。因此AC和BD关于x轴对称，它们的交点应在x轴上。所以Q也在x轴上。这样Q的y坐标为0。过Q作BC的垂线，BC是竖直的，其垂线是水平的，即y = y_Q = 0。所以过Q的水平线就是x轴。那么这条水平线与直线OP的交点T：OP是直线OP，但P在x轴上，O是原点，所以直线OP就是x轴本身（因为O(0,0)和P(p,0)都在x轴上）。所以OP就是x轴。因此，过Q的水平线（x轴）与OP（x轴）的交点就是整个x轴，实际上它们重合，所以交点T可以是任意点? 但问题是：过点Q作BC的垂线，与直线OP交于点T。如果垂线是x轴，OP也是x轴，它们重合，交点是整条直线，没有唯一交点。但题目显然假设T是交点，应该是唯一的点，所以可能Q不在x轴上? 但根据对称性，如果图形关于x轴对称，Q在x轴上，垂线是水平线（x轴），OP也是x轴，它们重合，交线不是点，除非我们指定T为Q? 但过Q作BC的垂线，这条垂线就是过Q且垂直于BC的直线。如果BC垂直，垂线水平，确实可能经过O? O是原点，可能在x轴上。但OP是直线连接O和P，也是x轴。所以垂线与OP重合，因此它们有无穷多交点，但通常说“与直线OP交于点T”，意味着它们相交于一点，如果两直线重合，则交点不是唯一的，但我们可以认为它们交于整条直线，不符合题意。因此，对称性假设可能导致退化情况，这不太可能，因为问题应该定义良好的唯一T。所以我们的对称性假设也许不成立，或者需要调整坐标系选择使得BC不是垂直的，而是其他方向，使得垂线不与OP重合。
+
+让我们重新考虑：如果我们选择BC垂直，即B = (c, s), C = (c, -s)，则BC是直线x=c。过Q作BC的垂线，即水平线 y = y_Q。直线OP：O(0,0)到P(p_x, p_y)。如果P不在x轴上，OP不是水平线。那么水平线y = y_Q与OP相交于唯一一点T。所以只要P不在x轴上，就不会重合。所以对称性假设中P在x轴，那么OP是x轴，水平线y=y_Q如果y_Q=0则重合；但如果y_Q≠0，则水平线与x轴平行，它们相交于无穷远? 不，水平线y = y_Q与x轴（y=0）平行，除非y_Q=0，否则不相交。所以如果P在x轴上，OP是x轴，那么过Q的水平线如果y_Q≠0，则与OP平行，没有交点（除非y_Q=0）。所以为了有唯一交点T，要么P不在x轴上，要么y_Q=0且OP不是水平线? 实际上，如果P不在x轴上，OP不是水平线，水平线y=y_Q与之相交于一点，只要y_Q是某个值。所以对称性假设可能导致Q也在x轴上（因为对称），那么y_Q=0，水平线就是x轴，与OP（x轴）重合，交线无穷多，不唯一。因此，对称性假设导致T不唯一，这不符合题意。所以对称性假设不可取，除非我们选择坐标系使得BC不是垂直，而是其他方向，使得垂线不是水平线，从而即使P在对称轴上，OP也不是水平线。但如果我们选择BC水平，则BC垂线是竖直，不会与OP重合（除非OP竖直）。所以我们可能需要选择BC水平，B和C关于y轴对称，这样对称性可能是关于y轴。如果四边形关于y轴对称，那么P可能在y轴上，OP是某条线，过Q的垂线（竖直）与OP相交于一点。这可能是合理的。
+
+让我们尝试BC水平的情况：B = (a, h), C = (-a, h)。这里a>0, h>0。BC是水平线 y = h，长度2a。BC的垂线是竖直直线 x = x_Q。直线OP是连接原点O(0,0)和P。我们需要找到T = OP ∩ (vertical line through Q)。这应该唯一，只要OP不是竖直的。
+
+如果四边形关于y轴对称，那么B和C对称于y轴，A和D也对称于y轴。那么A = (b, k), D = (-b, k) 或 A = (-b, k), D = (b, k)。需要确定顺序。假设我们取A = (-b, k), B = (a, h), C = (-a, h), D = (b, k)。这样A在左，B在右，C在左，D在右。顺序A(-b,k) -> B(a,h) -> C(-a,h) -> D(b,k) -> back to A。这似乎不对，因为从B(a,h)到C(-a,h)是向左的，但逆时针方向从B到C应该经过上方? 也许更好的顺序是A = (-b, k), B = (-a, h), C = (a, h), D = (b, k)。这样A左，B左，C右，D右。顺序A(-b,k) -> B(-a,h) -> C(a,h) -> D(b,k) -> back to A。这样B和C对称于y轴，A和D对称于y轴。这看起来像一个对称的凸四边形，类似于等腰梯形，其中AB和CD是斜边，BC是上底，AD是下底? 但是AD是下底? A和D分别在左右两侧，y坐标k可能小于h（下底）或大于h（上底）。由于∠ABC < ∠BCD < 90°，我们需要确定哪边是底。我们可以假设k < h，这样AD在下边，BC在上边。那么四边形是凸的，形状类似倒梯形。顺序A(-b,k) (左下), B(-a,h) (左上), C(a,h) (右上), D(b,k) (右下)。这是顺时针还是逆时针? 我们按照坐标：A(-b,k)在左下，B(-a,h)在左上，C(a,h)在右上，D(b,k)在右下。如果我们连接A→B→C→D→A，这是顺时针还是逆时针? 从A(-b,k)到B(-a,h)是向上向右，到C(a,h)是向右，到D(b,k)是向下向右，回到A是向左。这个顺序似乎是顺时针? 我们可以计算叉积。但我们可以调整顺序，重要的是四边形凸，顶点按顺序排列。我们可以选择逆时针顺序为A = (-b,k), B = (-a,h), C = (a,h), D = (b,k)。这个顺序可能是顺时针? 让我们画一下：点A(-b,k)在左下方，B(-a,h)左上方，C(a,h)右上方，D(b,k)右下方。连接A->B->C->D->A形成一个四边形，看起来是逆时针? 从A到B向上，这是逆时针旋转? 我们需要判断方向。通常，如果点的顺序是逆时针，多边形的有向面积为正。我们可以计算有向面积: sum (x_i*y_{i+1} - x_{i+1}*y_i)/2。对于A(-b,k), B(-a,h), C(a,h), D(b,k), A. 计算:
+
+A->B: (-b)*h - (-a)*k = -b h + a k
+B->C: (-a)*h - a*h = -a h - a h?  Wait B->C: x_B*y_C - x_C*y_B = (-a)*h - a*h = -a h - a h? Actually a*h? x_C = a, y_B = h, so (-a)*h - a*h = -a h - a h = -2 a h.
+C->D: a*k - b*h = a k - b h
+D->A: b*k - (-b)*k? Wait D->A: x_D*y_A - x_A*y_D = b*k - (-b)*k = b k + b k = 2 b k.
+
+Sum: (-b h + a k) + (-2 a h) + (a k - b h) + (2 b k) = combine: (-b h - b h) = -2 b h. a k + a k = 2 a k. -2 a h + 2 b k. So total = 2 a k - 2 a h + 2 b k - 2 b h = 2[a(k - h) + b(k - h)] = 2 (a+b)(k - h). Since k < h (assuming AD below BC), then k - h is negative, so total area negative, indicating orientation is clockwise. So to have positive (counterclockwise) orientation, we might need to reverse order, i.e., A = (-b,k), B = (b,k), C = (a,h), D = (-a,h) or something. But the problem states the order A, B, C, D is convex and inscribed in the circle. We can choose any labeling that satisfies the conditions; we can rename points accordingly. So we can choose a labeling that yields symmetry and proper orientation.
+
+But maybe we don't need symmetry at all. We can proceed with a general approach.
+
+Given the complexity, I'll attempt a systematic analytic approach using complex numbers and coordinates with some simplifications.
+
+Let’s set up coordinates with O=(0,0), radius 1. Let’s denote points by complex numbers: a, b, c, d with |a|=|b|=|c|=|d|=1.
+
+We have B and C as adjacent vertices, and K lies on segment BC. It's convenient to choose B and C as complex conjugates (so BC is symmetric about the real axis). That is, let b = e^{iθ}, c = e^{-iθ}, with 0<θ<π/2. Then BC is the chord connecting e^{iθ} and e^{-iθ}, which is vertical line segment at x=cosθ. Indeed, the real parts are equal (cosθ), imaginary parts are sinθ and -sinθ. So BC is vertical. This is the vertical case we earlier considered.
+
+Now we have K on BC, so K = (cosθ) + i y, where y ∈ [-sinθ, sinθ]. Write y = t sinθ, where t ∈ [-1,1]. Then K = cosθ + i t sinθ. In complex form, K = e^{iθ} * something? Actually, we can write K = (1/2)(b + c) + i * (something)? But better: param: K = (1 - λ) b + λ c, with λ ∈ [0,1]. Since b = e^{iθ}, c = e^{-iθ}, then K = (1-λ) e^{iθ} + λ e^{-iθ} = e^{iθ} - λ(e^{iθ} - e^{-iθ})? Actually, (1-λ)e^{iθ} + λ e^{-iθ} = e^{iθ} - λ(e^{iθ} - e^{-iθ}) = e^{iθ} - 2i λ sinθ. Wait, e^{iθ} - e^{-iθ} = 2i sinθ. So K = e^{iθ} - λ * 2i sinθ. That's a complex number with real part cosθ (since e^{iθ} has real cosθ, subtracting an imaginary term changes only imaginary part). Indeed, K = cosθ + i(sinθ - 2λ sinθ) = cosθ + i sinθ (1 - 2λ). So y = sinθ (1 - 2λ). So t = 1 - 2λ ∈ [-1,1]. So K = cosθ + i t sinθ.
+
+Thus, we have K expressed in terms of θ and t.
+
+Now, we have P = intersection of lines AB and CD. We need to compute P in terms of a, b, c, d. With b and c as above, a and d are unknown points on unit circle, with order A, B, C, D (counterclockwise). Since b = e^{iθ}, c = e^{-iθ} (which in standard range is angle -θ, but for counterclockwise order we need to consider angles in increasing order from 0 to 2π. e^{-iθ} corresponds to angle 2π - θ, which is > θ. So indeed, if we take b = e^{iθ}, c = e^{i(2π-θ)}? That's not e^{-iθ} unless we consider angle negative. To avoid confusion, we can simply set b = e^{iθ}, c = e^{-iθ} and treat angles in the complex plane with usual representation: e^{-iθ} has argument -θ (mod 2π), which is equivalent to 2π - θ. So the order of arguments may be: a has some argument α (maybe between -π and π), b has θ, c has -θ (which is > θ if considered as negative? Actually, -θ < θ if θ>0. So -θ < θ. But we need the order A, B, C, D along the circle counterclockwise. Counterclockwise direction corresponds to increasing argument (mod 2π). So we need to assign arguments such that α < θ < γ < δ, where γ is argument of c, δ argument of d. If we take c = e^{-iθ}, its principal argument is -θ (negative), which is less than θ. That would place c before b in increasing argument, contradicting B then C. However, we can add 2π to the argument of c to make it > θ: i.e., take argument of c as 2π - θ, which is > θ. That is consistent with the point e^{-iθ} = cosθ - i sinθ. Its argument can be taken as -θ (mod 2π), which is equivalent to 2π - θ. So we can define γ = 2π - θ. Then b's argument is θ, c's argument is 2π - θ. That's fine. In complex numbers, we can still write c = e^{-iθ} = e^{i(2π-θ)}. So it's okay; we just treat c as e^{-iθ} but its argument is 2π - θ when considered in [0,2π). So the order can be α < θ < 2π - θ < δ (mod 2π). So that's okay.
+
+Thus, we can keep b = e^{iθ}, c = e^{-iθ}. Then B = (cosθ, sinθ), C = (cosθ, -sinθ). Good.
+
+Now we need to parametrize A and D. Let’s denote a = e^{iα}, d = e^{iδ}, with α, δ ∈ [0,2π). The order condition: α < θ < 2π - θ < δ (if we want A before B, then C before D). But also note that δ might be less than α + 2π, obviously. Also we need convex quadrilateral, which should be satisfied if these inequalities hold and points are distinct.
+
+Now we need to compute P, the intersection of AB and CD.
+
+Line AB: passes through a and b. Param: a + u (b - a), u ∈ ℝ.
+Line CD: passes through c and d: c + v (d - c), v ∈ ℝ.
+
+We need to solve for intersection point p.
+
+We can use formula using complex numbers and the fact that points are on unit circle. There is known formula for intersection of chords (or lines) in terms of cross ratios. But perhaps easier: we can compute p as the solution of the linear equations in ℝ^2, but using complex numbers with real and imaginary parts.
+
+Let’s denote coordinates as vectors in ℝ^2. Represent points as vectors. We'll compute p using vector cross product method earlier. Since we have explicit coordinates for a, b, c, d, we can compute p explicitly in terms of α, θ, δ.
+
+But maybe we can avoid heavy algebra by using properties of the complete quadrilateral and the Miquel point. However, given the complexity, maybe the problem expects a clever observation that leads to simple numeric answers. Possibly OP = √2, and TB+TC = 2? But we need to verify.
+
+Let's attempt to derive P in terms of a, b, c, d.
+
+Let’s use vector approach. Let’s denote a = (cosα, sinα), b = (cosθ, sinθ), c = (cosθ, -sinθ), d = (cosδ, sinδ). (Note: d's y coordinate may be positive or negative; we don't know. But we can keep as sinδ.)
+
+We can compute AB = b - a, CD = d - c. Then p = a + u (b - a), where u = det(c - a, d - c) / det(b - a, d - c). (As derived earlier: u = det(c - a, CD) / det(AB, CD).)
+
+Let’s compute determinants. For vectors u=(u1,u2), v=(v1,v2), det(u,v) = u1 v2 - u2 v1.
+
+We can attempt to compute these determinants symbolically. However, expressions will involve cos and sin of α, θ, δ. Might be messy but maybe simplifiable using trig identities.
+
+Alternatively, we can use complex numbers and the concept of intersection of lines given by two points: For complex numbers z1, z2, the line through them can be expressed as { z : (z - z1)/(z2 - z1) is real }. Intersection of lines AB and CD can be found by solving for z such that (z - a)/(b - a) ∈ ℝ and (z - c)/(d - c) ∈ ℝ. Equivalently, (z - a)/(b - a) = conjugate? Not helpful.
+
+There is a formula: The intersection point p of lines AB and CD (assuming they are not parallel) is given by
+
+p = (a b (c - d) - c d (a - b)) / (a b (c - d) - c d (a - b)?) Wait, I recall formula for intersection of chords in a circle: For points a,b,c,d on unit circle, the intersection of lines AB and CD is
+
+p = \frac{ a b (c + d) - c d (a + b) }{ a b - c d }? Something like that. Let's derive.
+
+Let’s use the fact that points a,b,c,d lie on unit circle: \overline{a} = 1/a, etc. For a line through a and b, its equation can be written as (z - a) / (b - a) = \overline{ (z - a) / (b - a) } (since the ratio is real). That leads to (z - a)(\overline{b} - \overline{a}) = (\overline{z} - \overline{a})(b - a). Using \overline{z} = 1/z if z lies on unit circle? Not for arbitrary z. Not helpful.
+
+Better: There is known formula for intersection of chords in a circle using complex numbers: If a,b,c,d are points on the unit circle, then the intersection p of lines AB and CD is given by
+
+p = \frac{ a b (c + d) - c d (a + b) }{ a b - c d }.
+
+I think that's correct for the intersection of chords extended. Let's verify by checking if p lies on line AB: That is, (p - a)/(b - a) is real. Using properties of complex numbers on unit circle, one can show that expression yields a point with the property that its imaginary part after appropriate transformation is zero. I'm not entirely sure, but I've seen similar formulas: For points on unit circle, the intersection of lines AB and CD is
+
+p = \frac{ a b (c - d) - c d (a - b) }{ a b - c d }? Actually, there are two variants: one for chords inside the circle (intersection of chords AC and BD) yields something like (a c (b + d) - b d (a + c))/(a c - b d). But I'm mixing.
+
+Let's derive from vector approach but using complex numbers as vectors in ℝ^2. Represent points as complex numbers. Then we need to solve a + u(b - a) = c + v(d - c). This is two real equations. We can treat as complex equation: a + u(b - a) = c + v(d - c). Unknowns u, v real. We can try to eliminate u, v by taking imaginary parts after multiplying by something. However, maybe we can solve for p directly by using the fact that a, b, c, d are on unit circle and that p is the unique point such that the cross ratio (a,b; p, ∞?) Not.
+
+Alternatively, use coordinates: Let’s use the vertical BC case: B = (c, s), C = (c, -s). Then we can compute P explicitly as intersection of AB and CD. That may be simpler because we know the x-coordinate of B and C is c. So AB is line through A(x_A, y_A) and B(c, s). CD is line through C(c, -s) and D(x_D, y_D). We can compute the intersection point P by solving linear equations.
+
+Let A = (x_A, y_A) = (cosα, sinα). D = (x_D, y_D) = (cosδ, sinδ).
+
+Line AB: param t: (x_A + t (c - x_A), y_A + t (s - y_A)). At t=1 gives B.
+
+Line CD: param u: (c + u (x_D - c), -s + u (y_D + s)). At u=1 gives D.
+
+We need to find t, u such that coordinates equal.
+
+Set x-coordinate: x_A + t (c - x_A) = c + u (x_D - c). (1)
+Set y-coordinate: y_A + t (s - y_A) = -s + u (y_D + s). (2)
+
+We can solve for t and u. Then P coordinates are given.
+
+We can attempt to eliminate t, u to find P directly. Solve for t from (1): t = (c + u (x_D - c) - x_A) / (c - x_A). Provided c ≠ x_A. Since A is on unit circle, x_A may equal c if A coincides with B or C? Not; A is distinct from B and C, and unless α=θ, then x_A = cosα may equal cosθ if α=θ or α= -θ (but α<θ and α>0 perhaps). Could x_A = c? Possibly if α = θ, but then A = B, not allowed. So c - x_A ≠ 0. Similarly, denominator nonzero.
+
+Similarly, from (2): t = (-s + u (y_D + s) - y_A) / (s - y_A). Provided s ≠ y_A. Since y_A = sinα; s = sinθ. Could sinα = sinθ? Possibly if α = θ or α = π - θ. α is less than θ, and α in (0,π/2) maybe, so sinα < sinθ, so s - y_A >0, nonzero.
+
+Thus, we can equate the two expressions for t to get an equation linking u. That yields:
+
+(c + u (x_D - c) - x_A) / (c - x_A) = (-s + u (y_D + s) - y_A) / (s - y_A).
+
+Cross-multiply:
+
+(c + u (x_D - c) - x_A) (s - y_A) = (-s + u (y_D + s) - y_A) (c - x_A).
+
+This is linear in u, can solve for u. Then substitute back to get P coordinates. However, this is messy but doable with trig.
+
+Maybe we can find a smarter way: Use the fact that P, A, K, D are concyclic. Since K is on BC, which is vertical line x = c. So K = (c, y_K). The circle through A, D, P must also pass through K. So we can use the condition that the power of K w.r.t. circle (APD) is zero. But we can also use that the cross ratio (A, D; P, K) is real? Not.
+
+Alternatively, we can use coordinate condition for four points to be concyclic: The determinant
+
+| x y x^2+y^2 1 |
+for each point must be zero for some circle equation. That is, points (x_i, y_i) lie on a circle iff
+
+| x_i   y_i   x_i^2+y_i^2   1 | (for i=1..4) has determinant zero.
+
+Thus, for points A, D, P, K, we have
+
+det
+[ x_A y_A x_A^2+y_A^2 1
+  x_D y_D x_D^2+y_D^2 1
+  x_P y_P x_P^2+y_P^2 1
+  x_K y_K x_K^2+y_K^2 1 ] = 0.
+
+Since A and D lie on unit circle, x_A^2+y_A^2 = 1, x_D^2+y_D^2 = 1. K has coordinates (c, y_K) with c^2 + y_K^2 = OK^2, not necessarily 1. P coordinates unknown.
+
+This determinant condition yields an equation relating coordinates of A, D, P, K. Perhaps we can simplify using known relationships.
+
+But maybe we can avoid explicit P coordinates by using power of P with respect to circle O and circle (APD). Since P is on AB and CD, and A, D are on both circles? Not.
+
+Let's think about the circle through P, A, D, and K. Since A and D are on both circles O and ω, the radical axis of circles O and ω is line AD. So AD is the radical axis. Therefore, for any point X on AD, its powers with respect to O and ω are equal. In particular, for point P (which is not on AD generally), not directly.
+
+But we can consider the power of B and C with respect to ω. Since K is on ω and BC, we can compute the power of B w.r.t. ω as B K * B L, where L is the second intersection of line BC with ω. But L is unknown.
+
+However, maybe we can use the fact that P, A, K, D are concyclic to relate the directed angles: ∠PAK = ∠PDK. Since K is on BC, we can express these angles in terms of known points.
+
+Let's compute angles using vectors. ∠PAK is angle between PA and KA. Similarly, ∠PDK is angle between PD and KD.
+
+Maybe we can relate to the original circle. Because A, B, C, D are on circle O, we know angles like ∠BAC = half of arc BC, etc.
+
+But K is on BC, so KA is a line from A to a point on BC. Hard.
+
+Maybe we can use the concept of spiral similarity: There is a spiral similarity centered at K that sends segment AD to segment AP? Not sure.
+
+Alternatively, note that P, A, K, D concyclic implies that the cross ratio (A, D; P, K) is real. But also, since A, D, B, C are concyclic, maybe we can use the complete quadrilateral properties: The Miquel point of quadrilateral formed by lines AB, BC, CD, DA is the point where the circumcircles of triangles formed by three of the lines concur. Actually, for a complete quadrilateral (four lines, no three concurrent), there are four triangles formed by taking three of the lines, and their circumcircles concur at the Miquel point. In our configuration, lines are AB, BC, CD, DA. The circumcircle of triangle ABC is circle O (since A,B,C on O). The circumcircle of triangle BCD is also circle O. The circumcircle of triangle CDA is also O? Actually, C, D, A are on O, so yes. So all four triangles are inscribed in O, so Miquel point is just O? Not exactly. The Miquel point is the common intersection of circles through three of the four lines. Since A, B, C, D all lie on O, O is the center, not on the circles. The Miquel point would be a point where circles (ABP?), I'm mixing.
+
+Let's step back. Perhaps we can find a synthetic solution: The conditions may imply that K is the midpoint of the arc AD or something, leading to OP being something like √(2 - 2cos something). But let's attempt systematic algebra.
+
+Given the complexity, maybe the problem is from a contest and expects a clever use of power of a point and some known lemmas. Let's try to find a synthetic approach.
+
+We have:
+
+- P is intersection of AB and CD. So by power of point P: PA·PB = PC·PD = OP^2 - 1. (Equation A)
+
+- K is on BC and lies on circle through P, A, D. So by power of point K w.r.t. circle (PAD), we have KA·KD = KP·? Actually, for point K on the circle, its power is zero, so nothing.
+
+But we can consider power of B and C w.r.t. circle (PAD). Since B, C are on line BC which meets the circle at K and another point (call L). Then for point B, its power w.r.t. ω is BK * BL. Similarly, for point C, its power is CK * CL.
+
+Now, B and C also lie on circle O. So perhaps we can relate these powers to distances to P and A, D, etc. For example, the power of B w.r.t. ω can also be expressed as (distance from B to P)*(distance from B to A) if B lies on line PA? Not. But B lies on line AB, which passes through A and P. So line AB intersects ω at A and P (since A and P are on ω). Indeed, ω passes through A and P, and line AB goes through A and B and P. Since P is on AB, and A is on AB, the line AB meets ω at A and P. Therefore, the power of B with respect to ω is BA * BP (with directed lengths). Because for a point B, if we draw a line through B intersecting ω at two points, the product of distances from B to those intersection points equals the power. Since line AB passes through B and meets ω at A and P, we have
+
+Power_ω(B) = BA * BP.   (9)
+
+Similarly, line CD passes through C and meets ω at D and P? Wait, does ω contain D and P, and line CD passes through C and D and P? Yes, CD passes through C and D, and P is the intersection of CD and AB, so P lies on CD as well. So line CD meets ω at D and P. Therefore, the power of C with respect to ω is
+
+Power_ω(C) = CD * CP? Actually, careful: The line through C that meets ω at two points is CD, which contains C, D, and P. But does CD contain P? Yes, P is the intersection of AB and CD, so P lies on CD. So the line CD meets ω at D and P. So the distances from C to the intersection points are CD (distance from C to D) and CP (distance from C to P). However, note that D is on ω, P is on ω. So indeed, Power_ω(C) = CD * CP (with sign depending on orientation). Since we are dealing with lengths (positive), we can write:
+
+Power_ω(C) = CD * CP.   (10)
+
+Great! This is a crucial observation. Because B lies on line AB, which contains A and P (both on ω). So the power of B w.r.t ω equals BA·BP. Similarly, C lies on line CD, which contains D and P, so its power equals CD·CP.
+
+Now, also line BC meets ω at K and some other point L (maybe not needed). But we can also compute the power of B and C w.r.t ω using that line BC meets ω at K and L: Power_ω(B) = BK * BL, Power_ω(C) = CK * CL.
+
+But we don't know L. However, we can relate BA·BP and CD·CP to other known quantities.
+
+We also have that B and C are on circle O. Their powers w.r.t ω can be expressed via the radical axis of ω and O. Since A and D are common points of ω and O, line AD is the radical axis. Therefore, for any point X, the difference of its powers to ω and O is constant along lines perpendicular to AD? Actually, radical axis is set of points where powers to the two circles are equal. So for any point X, Power_ω(X) - Power_O(X) is proportional to the signed distance to line AD? Not exactly, but we know that points on AD have equal powers. For points not on AD, the powers differ.
+
+But we can compute Power_O(B) = OB^2 - 1 = 0, because B is on circle O, so its power to O is 0. Similarly, Power_O(C) = 0. So B and C have zero power to O.
+
+Thus, Power_ω(B) = (Power_ω(B) - Power_O(B)) = something related to the position relative to AD. But we can compute Power_ω(B) directly as BA·BP. That's a positive quantity if B is outside ω? Not sure.
+
+Now, we also have K on BC and ω, so we know that K is one intersection of BC with ω. Then the other intersection L is such that BK * BL = Power_ω(B) = BA·BP, and CK * CL = Power_ω(C) = CD·CP.
+
+But we might not need L.
+
+Now, we also have the condition KB·KC = 1/2 OP^2.
+
+We can also compute BA·BP and CD·CP in terms of distances and maybe relate to OP.
+
+Since P is outside circle O, PA·PB = OP^2 - 1. But BA·BP is not directly PA·PB; it's the product of distances from B to A and B to P. Note that A, B, P are collinear, with P outside segment AB? For convex quadrilateral, P is intersection of extensions of AB and CD, so P lies outside the segment AB, beyond B or beyond A? Let's determine orientation: Quadrilateral ABCD is convex, vertices in order A, B, C, D. AB is a side, CD is opposite side. The extensions of AB and CD intersect outside the quadrilateral. Typically, if we draw a convex quadrilateral, say A at left, B top, C right, D bottom. Then AB goes from A (left) to B (top). Extend AB beyond B, and CD from C (right) to D (bottom). Their extensions may intersect somewhere near the top right? Hard to visualize. But we can figure out which side of segment AB P lies on. Since P is intersection of lines AB and CD, and AB and CD are opposite sides, P is external to the quadrilateral. Usually, P lies on the same side of AB as the exterior of quadrilateral, which could be beyond B or beyond A. We need to determine sign conventions for directed lengths. However, for power of point B w.r.t ω, we need the lengths BA and BP. BA is distance between B and A; BP is distance between B and P. Since B, A, P are collinear, BA = |B - A|, BP = |B - P|. If P is on the ray starting at A through B, then B lies between A and P? Or P lies between A and B? Let's think: A and B are adjacent vertices, so segment AB is a side of the quadrilateral. The line AB extended beyond B goes outside the quadrilateral. Since P is intersection of AB and CD, and CD is opposite side, it's plausible that P lies on the extension of AB beyond B, not between A and B. Because if P were between A and B, then P would be on the side AB, which is inside the quadrilateral? Actually, segment AB is part of the boundary; any point between A and B is on the boundary. Could P be on segment AB? That would mean CD also passes through that point, which would make CD intersect AB at an interior point of AB, but then quadrilateral would be self-intersecting? Possibly not. Typically, for convex quadrilateral, the extensions of opposite sides intersect outside the quadrilateral, so P lies outside the segment AB, on the line AB but beyond B or beyond A. Which side? Consider a convex quadrilateral with vertices labeled clockwise: A (0,0), B (1,0), C (1,1), D (0,1) (a square). Then AB is from (0,0) to (1,0). CD is from (1,1) to (0,1). These lines are horizontal: AB: y=0, CD: y=1, they are parallel, no intersection. So not helpful.
+
+Take a convex quadrilateral that is not a trapezoid: A(0,0), B(2,1), C(3,0), D(1,-1). Then AB line goes from (0,0) to (2,1). CD from (3,0) to (1,-1). Their intersection? Let's compute: param AB: (0,0)+t(2,1). CD: (3,0)+s(-2,-1). Actually CD vector is (-2,-1). So AB and CD are parallel (both direction (2,1) and (-2,-1) are collinear). So they are parallel, no intersection. So not generic.
+
+We need a convex quadrilateral where AB and CD intersect. This requires that AB and CD are not parallel. Usually, for a convex quadrilateral inscribed in a circle, opposite sides are not parallel unless it's an isosceles trapezoid. In an isosceles trapezoid inscribed in a circle, the bases are parallel. But then they don't intersect. So the condition that P exists (i.e., AB and CD intersect) implies that quadrilateral is not an isosceles trapezoid; AB and CD are not parallel. In such a case, the intersection P lies outside the circle, and the order of points on line AB is either A - B - P or P - A - B, depending on orientation. We need to determine which.
+
+Consider a typical cyclic convex quadrilateral: take points on circle: A at angle 30°, B at 80°, C at 200°, D at 280° (just an example). Then AB is chord between 30° and 80°, CD between 200° and 280°. Extend AB beyond B to larger angles; extend CD beyond D to larger angles? Hard.
+
+Maybe we can use directed lengths to avoid sign issues. But for power calculations using positive lengths, we need absolute distances. So BA = |B - A|, BP = |B - P|. That's fine regardless of order.
+
+Thus, BA·BP = Power_ω(B). Similarly, CD·CP = Power_ω(C).
+
+Now, we also have PA·PB = OP^2 - 1. But note PA·PB is product of distances from P to A and P to B. Since P is on line AB, PA and PB are distances along the line. Similarly, BA·BP is product of distances from B to A and B to P. There is a relation: PA·PB = (PA)*(PB). BA·BP = (BA)*(BP). Not directly equal.
+
+But maybe we can relate BA and PA using the fact that A, B, P are collinear. If P is beyond B, then PA = PB + BA? Not exactly; if points are collinear, we have PA = PB + BA if B lies between A and P? Actually, suppose order is A - B - P. Then AB = distance from A to B, BP = distance from B to P, and AP = AB + BP. So PA = AP = AB + BP. Then PA·PB = (AB + BP) * BP = AB·BP + BP^2.
+
+If order is P - A - B, then AP = distance between A and P, AB = distance between A and B, and PB = PA + AB? That would be P - A - B: then PA = distance P-A, AB = distance A-B, PB = PA + AB. Then PA·PB = PA * (PA + AB) = PA^2 + PA·AB.
+
+Which order is correct? We need to determine based on geometry. Since P is intersection of extensions of AB and CD, and quadrilateral is convex, I think P lies on the extensions of AB and CD such that both A and B are between P and the other vertex? Let's draw a convex quadrilateral with vertices labeled A, B, C, D in order. Typically, if you draw a convex quadrilateral, the extensions of opposite sides meet outside. For side AB and CD, one of the extensions goes beyond B and beyond C or D? Let's imagine a convex quadrilateral with A at bottom left, B at top left, C at top right, D at bottom right. Then AB is left side vertical, CD is right side vertical (if D at bottom right, C at top right). They are parallel, no intersection. So not that.
+
+Better: A at left, B at top, C at right, D at bottom. Then AB goes from left to top, CD from right to bottom. Extend AB beyond B upward left? Actually, AB line continues past B away from A; CD line continues past D away from C. Their intersection might be somewhere in the lower left? Not obvious.
+
+Let's take specific coordinates: Let’s set circle unit, choose angles: A=60° (π/3), B=100° (5π/9), C=220° (11π/9), D=300° (5π/3). This is convex? Let's list in order: 60°, 100°, 220°, 300°. That's increasing, okay. Plot: A at (0.5,0.866), B at (cos100°≈ -0.1736? Actually cos100° ≈ -0.173648, sin100°≈0.9848), C at (cos220°≈ -0.7660, sin220°≈ -0.6428), D at (cos300°≈0.5, sin300°≈ -0.8660). So quadrilateral looks like a typical convex shape. Now line AB: between (0.5,0.866) and (-0.1736,0.9848). That's a nearly horizontal line near y≈0.9. Extend beyond B further in direction from A to B. Vector from A to B: (-0.6736,0.1188). Extending beyond B: B + t*(-0.6736,0.1188) for t>0. This goes leftwards and slightly up. CD: from C(-0.7660,-0.6428) to D(0.5,-0.866). Vector from C to D: (1.266,-0.2232). Extend beyond D: D + s*(1.266,-0.2232) for s>0, goes rightwards and slightly down. Do these lines intersect? Possibly they intersect somewhere in the lower left? Hard.
+
+But we can compute intersection of lines AB and CD. Using param: A + u(B-A) = C + v(D-C). Solve. This is messy.
+
+Nevertheless, we might not need to know the order; we can treat distances as positive and use relations like AB = |A-B|, AP = |A-P|, BP = |B-P|. There is relation AP = |AB ± BP| depending on order. But we can perhaps avoid that by using directed segments with sign. However, the power of point formulas with signed lengths might be easier.
+
+Let's adopt directed lengths on line AB, with orientation from A to B. Let’s define coordinate along line AB such that A at 0, B at AB (positive). Then P may be at coordinate p (real). Then AP = |p|, BP = |p - AB|, but sign depends. But for power of point P with respect to circle O, we have PA·PB = (signed) AP * BP = OP^2 - 1. For point B, its power with respect to ω is BA·BP (signed). BA is vector from B to A? Actually, BA directed from B to A is opposite direction of AB. We need consistent orientation.
+
+Maybe it's simpler to stick with absolute lengths for now, because the condition KB·KC = 1/2 OP^2 uses positive lengths. However, the power of point B w.r.t ω expressed as BA·BP may need sign if we want to relate to other signed quantities, but we can just consider absolute values: |BA|·|BP| = Power_ω(B) in absolute value? Actually, the power of a point with respect to a circle is defined as the signed product of directed distances along any line through the point intersecting the circle. If we use absolute lengths, the power may be positive or negative depending on whether the point is outside or inside the circle. But we can still write Power_ω(B) = BA·BP with directed lengths (taking sign). However, if we take absolute lengths, we lose sign information but maybe we can deduce sign from geometry: B is likely outside ω? Not sure.
+
+But perhaps we can avoid sign issues by using squared distances and coordinates.
+
+Given the difficulty, I'm going to attempt a coordinate approach with the vertical BC configuration and try to compute P explicitly, then impose P, A, K, D concyclic, and also compute Q and T, and then derive OP and TB+TC.
+
+Let's set up:
+
+Let θ be angle such that b = (c, s) = (cosθ, sinθ), c = (c, -s) = (cosθ, -sinθ). So BC is vertical line x = c.
+
+Let A = (x_A, y_A) = (cosα, sinα). D = (x_D, y_D) = (cosδ, sinδ).
+
+We have order A, B, C, D counterclockwise. So α < θ < 2π - θ < δ (mod 2π). Since α is likely in (0,π/2) maybe? Actually, α could be in (0,θ). Since θ is in (0,π/2). So α ∈ (0,θ). That places A in the first quadrant, with x_A = cosα > cosθ = c? Wait cos is decreasing on [0,π], so if α < θ, then cosα > cosθ. So x_A > c. So A is to the right of the vertical line x=c. That's interesting: B and C have x=c, while A has x > c. Similarly, δ is in (2π - θ, 2π). That corresponds to an angle in the fourth quadrant near 2π. For such δ, cosδ = cos(2π - δ')? Actually, δ near 2π, say δ = 2π - ε with ε small positive. Then cosδ = cos(2π - ε) = cos ε, which is close to 1. So x_D = cosδ is positive and maybe > c? Since ε < θ? Not necessarily. But δ > 2π - θ, so ε < θ. Then cosε > cosθ = c. So x_D > c as well. So both A and D are to the right of the vertical line BC. That seems plausible: BC is a chord on the right side of the circle? Actually, with b = (c, s), c = (c, -s), the chord is on the right side of the circle if c > 0. Since cosθ > 0 for θ<π/2. So BC is on the right side, vertical. Then A and D are also on the right side, maybe above and below. Then quadrilateral would have all points on the right half of the circle, which might be impossible for convex quadrilateral? If all four points lie on the right half (x>0), the quadrilateral may not be convex covering the circle? Actually, they could still be convex but all points in right half-plane; the quadrilateral would be contained in right half-plane, and the circle extends leftwards, but that's okay. However, the order A, B, C, D along the circle: Starting from A (angle α small, near 0) to B (θ) to C (2π - θ) to D (δ near 2π). That's a valid order. All points are in the right half-plane? For C, angle 2π - θ is in the fourth quadrant, x=cosθ>0, y negative. So yes, all points have x>0. So the entire quadrilateral lies in the right half-plane, which is possible. Then BC is the rightmost vertical segment? Actually, x=c is constant, and A and D have x > c, so they are to the right of BC. So BC is a "leftmost" edge? Let's visualize: The circle centered at origin radius 1. Rightmost point is (1,0) at angle 0. Points with x near 1 are near angle 0 or 2π. B and C have x=c = cosθ, which is less than 1, so they are left of the rightmost point. A and D have x > c, so they are to the right of B and C, i.e., closer to the rightmost point. So quadrilateral looks like: A near rightmost point but above x-axis? Actually, A angle α small, so A is near (1,0) but slightly above x-axis. B is at angle θ, which is larger, so B is above A but to the left. C is below B at same x. D is near the rightmost point but below x-axis. So shape: A (right, slightly up), B (left-up), C (left-down), D (right, slightly down). This is convex and looks like a kite shape symmetric about the x-axis? Not symmetric because A and D are not symmetric about x-axis unless α = -δ mod 2π? Actually, A at angle α (small positive), D at angle δ near 2π (i.e., -ε). Those are symmetric about the x-axis if α = ε. Since δ = 2π - ε, then sinδ = -sinε. So if α = ε, then A = (cosα, sinα), D = (cosα, -sinα). So they are symmetric about x-axis. That would be a nice symmetric configuration. This would also make A and D have same x-coordinate (cosα) and y opposite. So A and D would be symmetric about x-axis. That's plausible. Also B and C are symmetric about x-axis (since they are (c,s) and (c,-s)). So the whole quadrilateral would be symmetric about the x-axis. That is a natural symmetric configuration. Indeed, if we set A and D symmetric about x-axis, then α and δ satisfy δ = 2π - α. Since α < θ, and δ = 2π - α > 2π - θ (since α < θ => -α > -θ => 2π - α > 2π - θ). So δ is indeed > 2π - θ, satisfying the order. So this is consistent: α ∈ (0,θ), δ = 2π - α.
+
+Thus, the symmetric about x-axis case is a natural candidate that satisfies the order and yields A and D symmetric. This also makes the quadrilateral symmetric about the x-axis. In such a symmetric configuration, P, the intersection of AB and CD, will lie on the x-axis. Let's verify: AB connects A (cosα, sinα) and B (c, s). CD connects D (cosα, -sinα) and C (c, -s). By symmetry, AB reflected across x-axis gives line through A' = (cosα, -sinα) = D and B' = (c, -s) = C. So CD is the reflection of AB. Therefore, the intersection of AB and its reflection across x-axis lies on the x-axis (since reflecting a line across x-axis yields a line symmetric; their intersection is on the axis of symmetry if they are not parallel). So P is on x-axis. Good.
+
+Now, with P on x-axis, OP is just the x-coordinate of P (since O at origin). P will have coordinates (p, 0) with p > 1? Possibly.
+
+Now, K is on BC, which is vertical line x=c. Since the configuration is symmetric about x-axis, and K is on BC, we might expect K to be on the x-axis as well? Not necessarily; K could be any point on BC; but if we also have P, A, K, D concyclic, perhaps K will also be symmetric? Since the circle through P (on x-axis), A (above), D (below) is symmetric about x-axis, so its intersection with the vertical line BC (which is also symmetric about x-axis) will be symmetric points: if the circle is symmetric about x-axis, then its intersection with a vertical line x=c will be symmetric about x-axis; i.e., if (c, y) is on the circle, then (c, -y) is also on the circle. Thus, the vertical line x=c will intersect the circle in two points symmetric about x-axis. Since BC is the vertical segment from (c, -s) to (c, s). The circle may intersect BC at two points symmetric about x-axis, one above, one below. K is a point on BC (segment) such that P, A, K, D are concyclic. Since A and D are symmetric, P is on x-axis, the circle is symmetric. So the two intersection points of this circle with BC are symmetric; one could be above x-axis, the other below. K could be either of them; but K is a point on BC (segment) that satisfies the condition. Since we only need existence, we can choose K as the upper intersection, say. That would be okay.
+
+Thus, in the symmetric configuration, K will have y-coordinate y_K, with y_K^2 determined by the circle. And due to symmetry, we may have y_K = some value, maybe positive. But note that the circle passes through A (above) and D (below), and P on x-axis. The intersection with vertical line x=c will give y-coordinate satisfying the circle equation. We'll compute that.
+
+Now, does the symmetric configuration automatically satisfy the condition ∠ABC < ∠BCD < 90°? We need to check that. With symmetry, ∠ABC and ∠BCD may be related. Let's compute these angles in terms of α and θ. We'll need to ensure ∠ABC < ∠BCD < 90°.
+
+Given the complexity, it's plausible that the problem's solution leads to a unique configuration (up to rotation) which is symmetric about the line through O perpendicular to BC? Actually, many geometry problems with such conditions often result in a symmetric configuration. So we can assume symmetry without loss of generality, because we can rotate/reflect the figure to make BC vertical and the quadrilateral symmetric about the x-axis. However, is it always true that if there exists K satisfying those conditions, then the quadrilateral must be symmetric? Possibly yes, due to the condition P, A, K, D concyclic and K on BC. But we may not need to prove necessity; we can find possible OP values by analyzing the symmetric case and then argue that any solution must be isometric to this one (by appropriate rotation/reflection). However, for a rigorous solution, we would need to prove that the only possible configurations satisfy those symmetry conditions. That may be nontrivial but perhaps can be argued using the fact that the circle (PAD) and line BC intersect at K, and using power of B and C w.r.t that circle yields relationships that force symmetry. But maybe we can avoid proving uniqueness and just find all possible OP values that satisfy the equations derived from general parameters, which may yield a finite set. That would be rigorous.
+
+So let's proceed with the symmetric assumption: A and D symmetric about x-axis, i.e., δ = 2π - α, with 0 < α < θ < π/2. Then A = (cosα, sinα), D = (cosα, -sinα). B = (c, s), C = (c, -s), with c = cosθ, s = sinθ.
+
+Now, we have a fully parametrized quadrilateral with two parameters: α and θ, satisfying 0 < α < θ < π/2. Additionally, we have ∠ABC < ∠BCD < 90°. We'll check later if this imposes constraints.
+
+Now, we compute P = intersection of AB and CD.
+
+Line AB: through A(x_A = cosα, y_A = sinα) and B(c, s).
+Line CD: through C(c, -s) and D(cosα, -sinα).
+
+Because of symmetry, P lies on x-axis, so we can find its x-coordinate p by solving intersection with y=0. Let's find equation of AB and find its intersection with x-axis.
+
+Parametric for AB: (x, y) = A + t (B - A), t ∈ ℝ.
+B - A = (c - cosα, s - sinα).
+
+We want y = 0. So y-coordinate: sinα + t (s - sinα) = 0 => t = - sinα / (s - sinα).
+
+Then x-coordinate: x = cosα + t (c - cosα) = cosα + (- sinα / (s - sinα)) * (c - cosα).
+
+Thus, p = cosα - sinα * (c - cosα) / (s - sinα).
+
+Similarly, we could use line CD; should give same p.
+
+Now, we need to compute OP = |p|. Since p > 0? Probably p > 1? Let's check typical values: α small, θ moderate. For α=10°, θ=30°. Then cosα≈0.9848, sinα≈0.1736, c=cos30°≈0.8660, s=0.5. Then s - sinα = 0.5-0.1736=0.3264, c - cosα = 0.8660-0.9848 = -0.1188. Then p = 0.9848 - 0.1736 * (-0.1188)/0.3264 = 0.9848 + 0.1736*0.1188/0.3264 ≈ 0.9848 + 0.0206/0.3264? Wait compute 0.1736*0.1188 = 0.0206; /0.3264 ≈ 0.0631. So p ≈ 1.0479. That's >1, plausible.
+
+Thus, p > 1.
+
+Now, we have K on BC, coordinates (c, y_K). Since the circle through P, A, D is symmetric about x-axis, its intersection with vertical line x=c will have y-coordinate satisfying the circle equation. We can compute y_K from the condition that K lies on circle through A, D, P. Since we have coordinates for A, D, P, we can derive equation of circle and then plug x=c to solve for y. That will give a relation linking y_K, α, θ, and p. But we also have the relation from KB·KC = s^2 - y_K^2 = 1/2 p^2 (since OP = p). This gives y_K^2 = s^2 - p^2/2.
+
+Thus, we can equate y_K^2 from the circle condition to s^2 - p^2/2. That yields an equation linking α, θ, and p. Additionally, p itself is expressed in terms of α and θ via the formula above. So we can substitute p(α,θ) into the equation and solve for possible relationships. This may lead to specific values of p independent of α and θ (or specific ratios). Possibly p is uniquely determined (maybe p = √(2) * something). Let's attempt to derive.
+
+First, derive p explicitly.
+
+Let’s denote:
+
+A = (a_x, a_y) = (cosα, sinα)
+B = (c, s)
+C = (c, -s)
+D = (a_x, -a_y)
+
+Define Δy_AB = s - sinα, Δx_AB = c - cosα.
+
+Then t0 = - sinα / Δy_AB.
+
+Thus, p = cosα + t0 * Δx_AB = cosα - sinα * Δx_AB / Δy_AB.
+
+So
+
+p = cosα - sinα * (c - cosα) / (s - sinα).   (Eq P)
+
+Simplify: p = [cosα (s - sinα) - sinα (c - cosα)] / (s - sinα) = [cosα s - cosα sinα - sinα c + sinα cosα] / (s - sinα) = [cosα s - sinα c] / (s - sinα).
+
+The - cosα sinα + sinα cosα cancel. Good! So
+
+p = (s cosα - c sinα) / (s - sinα).   (1)
+
+That's a nice simplification.
+
+Similarly, we could derive from CD, should get same.
+
+Now, note that s = sinθ, c = cosθ.
+
+Thus, p = (sinθ cosα - cosθ sinα) / (sinθ - sinα) = sin(θ - α) / (sinθ - sinα). Because numerator is sinθ cosα - cosθ sinα = sin(θ - α). Denominator is sinθ - sinα.
+
+So
+
+p = sin(θ - α) / (sinθ - sinα).   (2)
+
+That's a very nice expression.
+
+Now, we can also simplify denominator using identity: sinθ - sinα = 2 cos((θ+α)/2) sin((θ-α)/2). Numerator sin(θ-α) = 2 sin((θ-α)/2) cos((θ-α)/2). So
+
+p = [2 sin((θ-α)/2) cos((θ-α)/2)] / [2 cos((θ+α)/2) sin((θ-α)/2)] = cos((θ-α)/2) / cos((θ+α)/2), provided sin((θ-α)/2) ≠ 0 (which holds since θ>α). Cancel 2 and sin((θ-α)/2).
+
+Thus,
+
+p = \frac{ \cos\frac{θ-α}{2} }{ \cos\frac{θ+α}{2} }.   (3)
+
+Great! So OP = p = cos((θ-α)/2) / cos((θ+α)/2). Since both cos positive? (θ-α)/2 is positive and less than (θ+α)/2 which is less than θ < π/2, so both angles in (0,π/2) thus cos positive. So p > 0.
+
+Now, we also have the condition from K: y_K^2 = s^2 - p^2/2 = sin^2θ - p^2/2.
+
+But also y_K is the y-coordinate of the intersection of the circle through A, D, P with line x = c. Let's derive that.
+
+Circle through A, D, P. Since A and D are symmetric about x-axis, and P is on x-axis, the circle is symmetric about x-axis, so its center lies on x-axis. Let the circle have center at (h, 0) and radius R. Then equation: (x - h)^2 + y^2 = R^2.
+
+Points A (cosα, sinα) and D (cosα, -sinα) satisfy:
+
+(cosα - h)^2 + sin^2α = R^2.   (A)
+(cosα - h)^2 + sin^2α = R^2 (same, because y^2 same). So A and D give same equation, consistent.
+
+Point P (p, 0) satisfies: (p - h)^2 = R^2.   (P)
+
+Thus, from (P): R^2 = (p - h)^2.
+
+Plug into (A): (cosα - h)^2 + sin^2α = (p - h)^2.
+
+Expand: (cosα - h)^2 - (p - h)^2 + sin^2α = 0.
+
+Compute (cosα - h)^2 - (p - h)^2 = [(cosα - h) - (p - h)] * [(cosα - h) + (p - h)] = (cosα - p) * (cosα + p - 2h). Because (cosα - h) - (p - h) = cosα - p, and (cosα - h)+(p - h) = cosα + p - 2h.
+
+Thus, equation becomes:
+
+(cosα - p)(cosα + p - 2h) + sin^2α = 0.
+
+We can solve for h. But perhaps we don't need h; we need the circle's equation to find y when x = c.
+
+We have (x - h)^2 + y^2 = R^2 = (p - h)^2.
+
+Thus, for any x, y satisfying the circle: (x - h)^2 + y^2 = (p - h)^2 => y^2 = (p - h)^2 - (x - h)^2 = [ (p - h) - (x - h) ] * [ (p - h) + (x - h) ] = (p - x)(p + x - 2h).
+
+So
+
+y^2 = (p - x)(p + x - 2h).   (circle equation)
+
+Now, for x = c, we have y_K^2 = (p - c)(p + c - 2h).   (4)
+
+We can find h from the condition that point A lies on the circle: plugging x = cosα, y = sinα gives
+
+sin^2α = (p - cosα)(p + cosα - 2h).   (5)
+
+Thus, we can solve for (p + cosα - 2h) from (5):
+
+p + cosα - 2h = sin^2α / (p - cosα).   (6)
+
+Then plug into (4):
+
+y_K^2 = (p - c) * ( sin^2α / (p - cosα) ).   (7)
+
+So
+
+y_K^2 = (p - c) * sin^2α / (p - cosα).   (8)
+
+Now, we also have y_K^2 = s^2 - p^2/2 = sin^2θ - p^2/2.   (9)
+
+Thus, we obtain equation:
+
+(p - c) * sin^2α / (p - cosα) = sin^2θ - p^2/2.   (10)
+
+Recall c = cosθ.
+
+Now, we also have p expressed in terms of α and θ via (3): p = cos((θ-α)/2) / cos((θ+α)/2). We'll need to simplify (10) using trig.
+
+Let's express everything in terms of α and θ. Write sinα, cosα, sinθ, cosθ.
+
+First, compute p - cosα and p - cosθ.
+
+p - cosα = ? We'll compute using expression (2): p = sin(θ-α)/(sinθ - sinα). Then
+
+p - cosα = [sin(θ-α) - cosα (sinθ - sinα)] / (sinθ - sinα).
+
+Simplify numerator: sin(θ-α) - cosα sinθ + cosα sinα.
+
+But sin(θ-α) = sinθ cosα - cosθ sinα.
+
+So numerator = (sinθ cosα - cosθ sinα) - cosα sinθ + cosα sinα = sinθ cosα - cosθ sinα - sinθ cosα + cosα sinα = - cosθ sinα + cosα sinα = sinα (cosα - cosθ).
+
+Thus, p - cosα = sinα (cosα - cosθ) / (sinθ - sinα).   (11)
+
+Similarly, p - cosθ = ?
+
+p - cosθ = [sin(θ-α) - cosθ (sinθ - sinα)] / (sinθ - sinα). Compute numerator: sin(θ-α) - cosθ sinθ + cosθ sinα = (sinθ cosα - cosθ sinα) - cosθ sinθ + cosθ sinα = sinθ cosα - cosθ sinα - cosθ sinθ + cosθ sinα = sinθ cosα - cosθ sinθ = sinθ (cosα - cosθ).
+
+Thus, p - cosθ = sinθ (cosα - cosθ) / (sinθ - sinα).   (12)
+
+Notice that (p - cosα) and (p - cosθ) share factor (cosα - cosθ) which is negative? Since α<θ, cosα > cosθ, so cosα - cosθ > 0. Also denominator sinθ - sinα > 0. So p - cosα = sinα * positive / positive => positive. p - cosθ = sinθ * positive / positive => positive. So p > cosθ and p > cosα? Actually, p - cosθ positive => p > cosθ; p - cosα positive => p > cosα. That matches p > 1 maybe? But cosα < 1, cosθ < 1. So p > cosα and > cosθ; p could be >1 as we saw.
+
+Now, we have (p - c) = p - cosθ = sinθ (cosα - cosθ) / (sinθ - sinα).   (13)
+
+And (p - cosα) = sinα (cosα - cosθ) / (sinθ - sinα).   (14)
+
+Thus, (p - c)/(p - cosα) = [sinθ (cosα - cosθ) / (sinθ - sinα)] / [sinα (cosα - cosθ) / (sinθ - sinα)] = sinθ / sinα.   (15)
+
+Great! So (p - c)/(p - cosα) = sinθ / sinα.
+
+Therefore, equation (10) becomes:
+
+(p - c) * sin^2α / (p - cosα) = (p - c)/(p - cosα) * sin^2α = (sinθ / sinα) * sin^2α = sinθ sinα.
+
+Thus, left side simplifies to sinθ sinα.
+
+Wait, check: (p - c) * sin^2α / (p - cosα) = ((p - c)/(p - cosα)) * sin^2α = (sinθ / sinα) * sin^2α = sinθ sinα.
+
+Yes! So (10) reduces to:
+
+sinθ sinα = sin^2θ - p^2/2.   (16)
+
+Now, we have p expressed in terms of α and θ. So we can substitute p and solve.
+
+Recall p = sin(θ-α) / (sinθ - sinα). But maybe easier to use the simplified form p = cos((θ-α)/2) / cos((θ+α)/2). Let's keep p as variable but expressed via α,θ. We'll derive relation between sinθ sinα, sin^2θ, and p^2.
+
+Equation (16): sinθ sinα = sin^2θ - p^2/2 => p^2/2 = sin^2θ - sinθ sinα = sinθ (sinθ - sinα). So
+
+p^2 = 2 sinθ (sinθ - sinα).   (17)
+
+Now, we also have p from (2): p = sin(θ-α) / (sinθ - sinα). So
+
+p^2 = sin^2(θ-α) / (sinθ - sinα)^2.
+
+Set equal to 2 sinθ (sinθ - sinα). Thus:
+
+sin^2(θ-α) / (sinθ - sinα)^2 = 2 sinθ (sinθ - sinα).
+
+Multiply both sides by (sinθ - sinα)^2:
+
+sin^2(θ-α) = 2 sinθ (sinθ - sinα)^3.   (18)
+
+That seems messy. But perhaps we can simplify using trigonometric identities.
+
+Let’s denote u = sinθ, v = sinα. Also we have relation between θ and α. But we also have cosθ, cosα. However, there is also relation between sin(θ-α) and u, v: sin(θ-α) = sinθ cosα - cosθ sinα = u cosα - cosθ v.
+
+We can also express cosα = √(1 - v^2) (positive), cosθ = √(1 - u^2) (positive). This leads to radicals.
+
+Maybe better to use half-angle expressions. Let’s set A = (θ+α)/2, B = (θ-α)/2. Then θ = A + B, α = A - B. Both A and B are positive and less than π/2 (since θ<π/2, α<θ). Also A > B? Actually, α = A - B > 0 => A > B. Also A+B = θ < π/2 => A < π/2 - B, but that's okay.
+
+Now, we can express sinθ, sinα, sin(θ-α) = sin(2B) = 2 sinB cosB. Also sinθ - sinα = 2 cosA sinB.
+
+Let's compute:
+
+sinθ = sin(A+B) = sinA cosB + cosA sinB.
+sinα = sin(A-B) = sinA cosB - cosA sinB.
+
+So sinθ - sinα = (sinA cosB + cosA sinB) - (sinA cosB - cosA sinB) = 2 cosA sinB. Good.
+
+sinθ sinα = (sinA cosB + cosA sinB)(sinA cosB - cosA sinB) = (sinA cosB)^2 - (cosA sinB)^2 = sin^2A cos^2B - cos^2A sin^2B.
+
+Also sin^2θ = (sinθ)^2.
+
+But we have p = sin(θ-α)/(sinθ - sinα) = sin(2B) / (2 cosA sinB) = (2 sinB cosB) / (2 cosA sinB) = cosB / cosA. That's consistent with (3).
+
+Thus p = cosB / cosA.
+
+Now, p^2 = cos^2B / cos^2A.
+
+Equation (17): p^2 = 2 sinθ (sinθ - sinα) = 2 sinθ * (2 cosA sinB) = 4 sinθ cosA sinB.
+
+But perhaps we should express sinθ in terms of A,B: sinθ = sin(A+B) = sinA cosB + cosA sinB.
+
+Thus, p^2 = 4 (sinA cosB + cosA sinB) cosA sinB.
+
+Now, p^2 also equals cos^2B / cos^2A.
+
+Set them equal:
+
+cos^2B / cos^2A = 4 cosA sinB (sinA cosB + cosA sinB).   (19)
+
+Multiply both sides by cos^2A:
+
+cos^2B = 4 cos^3A sinB (sinA cosB + cosA sinB).   (20)
+
+We can divide both sides by cosB (assuming cosB>0, which holds since B<π/2). Then
+
+cosB = 4 cos^3A sinB (sinA + cosA tanB? Wait, (sinA cosB + cosA sinB) = cosB sinA + cosA sinB. So after dividing by cosB, we get:
+
+cosB = 4 cos^3A sinB ( sinA + cosA (sinB/cosB) )? That's messy.
+
+Let's keep as:
+
+cos^2B = 4 cos^3A sinB ( sinA cosB + cosA sinB ).
+
+We can try to express everything in terms of tan maybe. Let’s set t = tanB. Then sinB = t / √(1+t^2), cosB = 1 / √(1+t^2). But that reintroduces sqrt.
+
+Maybe we can find a simpler relation using the half-angle substitution and known identities.
+
+Alternatively, we can derive from (16) using the expressions in A,B.
+
+Compute sinθ sinα = (sinA cosB + cosA sinB)(sinA cosB - cosA sinB) = sin^2A cos^2B - cos^2A sin^2B.
+
+Also sin^2θ = (sinA cosB + cosA sinB)^2 = sin^2A cos^2B + cos^2A sin^2B + 2 sinA cosA sinB cosB.
+
+Now, equation (16): sinθ sinα = sin^2θ - p^2/2.
+
+Plug p^2 = cos^2B / cos^2A.
+
+So sin^2θ - p^2/2 = sin^2θ - (1/2)(cos^2B / cos^2A).
+
+Set equal to sinθ sinα.
+
+Thus,
+
+sin^2θ - sinθ sinα = p^2/2.
+
+But we already have p^2 = 2 sinθ (sinθ - sinα) from (17). That's equivalent.
+
+Let's verify: p^2/2 = sinθ (sinθ - sinα). So sin^2θ - sinθ sinα = sinθ (sinθ - sinα). Indeed, LHS = sinθ (sinθ - sinα). So (16) is equivalent to p^2/2 = sinθ (sinθ - sinα). So (17) holds.
+
+Now, using half-angle: sinθ - sinα = 2 cosA sinB. So RHS = sinθ * 2 cosA sinB.
+
+Thus, p^2 = 2 * RHS? Wait p^2 = 2 sinθ (sinθ - sinα) = 2 sinθ * 2 cosA sinB = 4 sinθ cosA sinB. That's what we had.
+
+Now, p^2 = cos^2B / cos^2A.
+
+Thus, cos^2B / cos^2A = 4 sinθ cosA sinB.
+
+=> cos^2B = 4 sinθ cos^3A sinB.
+
+Now, sinθ = sin(A+B) = sinA cosB + cosA sinB.
+
+Thus, cos^2B = 4 (sinA cosB + cosA sinB) cos^3A sinB.
+
+Divide both sides by cosB (positive):
+
+cosB = 4 (sinA cosB + cosA sinB) cos^3A sinB / cosB? Wait dividing by cosB gives:
+
+cosB = 4 (sinA cosB + cosA sinB) cos^3A sinB / cosB? Actually, left side becomes cosB, right side becomes 4 (sinA cosB + cosA sinB) cos^3A sinB / cosB? No, we had cos^2B = 4 (sinA cosB + cosA sinB) cos^3A sinB. If we divide both sides by cosB, we get:
+
+cosB = 4 (sinA cosB + cosA sinB) cos^3A sinB / cosB.
+
+That's messy. Better to keep as is.
+
+Let's attempt to simplify by expressing in terms of tanA and tanB perhaps. Let’s write:
+
+cos^2B = 4 cos^3A sinB (sinA cosB + cosA sinB).
+
+Divide both sides by cos^3A cosB? Not sure.
+
+Alternatively, set X = tanA, Y = tanB. Then sinA = X / √(1+X^2), cosA = 1/√(1+X^2). Similarly sinB = Y/√(1+Y^2), cosB = 1/√(1+Y^2). This might lead to rational equation.
+
+But maybe we can find a simpler approach: Since the configuration is symmetric, maybe there is a known relation: In such a symmetric cyclic quadrilateral, P is the exsimilicenter of the circumcircle and the circle through A, D, P? Not sure.
+
+Let's try to solve the equation (20) more directly.
+
+Recall: cos^2B = 4 cos^3A sinB ( sinA cosB + cosA sinB ).   (20)
+
+We can factor sinB maybe. Write RHS = 4 cos^3A sinB ( sinA cosB + cosA sinB ) = 4 cos^3A sinB cosB ( sinA + cosA tanB )? Actually, sinA cosB + cosA sinB = cosB sinA + cosA sinB.
+
+Let’s divide both sides by cosB (positive) to get:
+
+cosB = 4 cos^3A sinB ( sinA + cosA tanB? Wait dividing RHS by cosB yields 4 cos^3A sinB ( sinA + cosA (sinB/cosB) ) = 4 cos^3A sinB ( sinA + cosA tanB ). But left side is cosB.
+
+That still has cosB on LHS and tanB on RHS.
+
+Maybe we can express everything in terms of A and B using known identities to simplify.
+
+Let’s denote sA = sinA, cA = cosA, sB = sinB, cB = cosB.
+
+Equation: cB^2 = 4 cA^3 sB ( sA cB + cA sB ) = 4 cA^3 sB ( sA cB + cA sB ).
+
+We can expand: = 4 cA^3 sB sA cB + 4 cA^4 sB^2.
+
+Thus,
+
+cB^2 = 4 cA^3 sA sB cB + 4 cA^4 sB^2.
+
+Divide both sides by cA^2 (positive) maybe: (cB^2)/cA^2 = 4 cA sA sB cB + 4 cA^2 sB^2.
+
+But (cB^2)/cA^2 = (cB/cA)^2 = (1/p)^2? Since p = cB/cA, so cB/cA = p, then (cB/cA)^2 = p^2. But we already have p^2 expressed. Not helpful.
+
+Alternatively, note that p = cB/cA, so cB = p cA. Then we can substitute cB = p cA. Also sB = sqrt(1 - cB^2) = sqrt(1 - p^2 cA^2). But that reintroduces sqrt.
+
+Maybe we can find a direct relation between A and B that yields a simple numeric value for p. Let's attempt to solve (20) analytically.
+
+Let’s rewrite (20) as:
+
+cB^2 = 4 cA^3 sB ( sA cB + cA sB ).
+
+Divide both sides by cA^2 (to get ratio):
+
+(cB^2) / cA^2 = 4 cA sB ( sA cB + cA sB ).
+
+But left side is (cB/cA)^2 = p^2. So
+
+p^2 = 4 cA sB ( sA cB + cA sB ).   (21)
+
+Now, recall that p = cB / cA, so cB = p cA. Also sB = √(1 - cB^2) = √(1 - p^2 cA^2). But we can also express sA in terms of A: sA = √(1 - cA^2). However, maybe we can find p independent of A and B by eliminating them using other relations.
+
+But we have also relation from geometry: A and B are not independent; they satisfy that quadrilateral is convex and angles condition. However, maybe equation (20) simplifies to something like cos2A = something, leading to specific values.
+
+Let's attempt to manipulate (20) using trigonometric identities to isolate a relation between A and B.
+
+Start with (20): cB^2 = 4 cA^3 sB ( sA cB + cA sB ).
+
+Let's expand RHS: 4 cA^3 sB sA cB + 4 cA^4 sB^2.
+
+Now, note that sA^2 + cA^2 = 1, sB^2 + cB^2 = 1.
+
+We might try to express everything in terms of cA and cB, using sA = √(1 - cA^2), sB = √(1 - cB^2). This will involve square roots, but we can square to eliminate.
+
+Let's set u = cA, v = cB. Then sA = √(1 - u^2), sB = √(1 - v^2). Both positive because A,B in (0,π/2). Then equation:
+
+v^2 = 4 u^3 √(1 - v^2) ( √(1 - u^2) v + u √(1 - v^2) ).
+
+Let’s denote X = √(1 - v^2), Y = √(1 - u^2). Then:
+
+v^2 = 4 u^3 X ( Y v + u X ) = 4 u^3 X Y v + 4 u^4 X^2.
+
+Now, X^2 = 1 - v^2. So
+
+v^2 = 4 u^3 X Y v + 4 u^4 (1 - v^2).
+
+Bring terms:
+
+v^2 - 4 u^4 (1 - v^2) = 4 u^3 X Y v.
+
+Compute left: v^2 - 4 u^4 + 4 u^4 v^2 = v^2 (1 + 4 u^4) - 4 u^4.
+
+Thus,
+
+v^2 (1 + 4 u^4) - 4 u^4 = 4 u^3 X Y v.
+
+Now, X = √(1 - v^2), Y = √(1 - u^2). So RHS = 4 u^3 v √(1 - v^2) √(1 - u^2).
+
+We can square both sides to eliminate radicals. But maybe there is a simpler path.
+
+Recall that p = v/u. So v = p u. Then substitute v = p u.
+
+Also, X = √(1 - v^2) = √(1 - p^2 u^2). Y = √(1 - u^2).
+
+Then equation v^2 = 4 u^3 X ( Y v + u X ) becomes:
+
+(p u)^2 = 4 u^3 √(1 - p^2 u^2) ( √(1 - u^2) * p u + u √(1 - p^2 u^2) ).
+
+=> p^2 u^2 = 4 u^3 √(1 - p^2 u^2) ( p u √(1 - u^2) + u √(1 - p^2 u^2) ).
+
+Factor u on RHS: inside parentheses: u ( p √(1 - u^2) + √(1 - p^2 u^2) ). So RHS = 4 u^3 √(1 - p^2 u^2) * u * ( p √(1 - u^2) + √(1 - p^2 u^2) ) = 4 u^4 √(1 - p^2 u^2) ( p √(1 - u^2) + √(1 - p^2 u^2) ).
+
+Cancel u^2 from both sides? LHS = p^2 u^2. RHS = 4 u^4 √(...). So divide both sides by u^2 (u>0): p^2 = 4 u^2 √(1 - p^2 u^2) ( p √(1 - u^2) + √(1 - p^2 u^2) ).   (22)
+
+Now, u = cosA. Since A ∈ (0,π/2), u ∈ (0,1). This equation relates p and u. But perhaps we can find p independent of u by using that p also satisfies p^2 = 2 sinθ (sinθ - sinα) expressed in A,B. However, maybe we can find u from other constraints like angle conditions.
+
+But maybe we can find p by a different approach: Instead of solving the complicated equation, we might find that the only solution consistent with the angle condition ∠ABC < ∠BCD < 90° yields a specific numeric value for p. Let's compute ∠ABC and ∠BCD in terms of α and θ.
+
+Given coordinates, we can compute angles using vectors.
+
+But maybe we can derive that p is uniquely determined by the condition that K lies on the circle (PAD) and satisfies KB·KC = p^2/2. We derived equation (16): sinθ sinα = sin^2θ - p^2/2, and we also have p = sin(θ-α)/(sinθ - sinα). We can treat α and θ as variables, and p expressed in terms of them. We can eliminate α to find p as a function of θ, or vice versa.
+
+From (17): p^2 = 2 sinθ (sinθ - sinα). So sinα = sinθ - p^2/(2 sinθ).   (23)
+
+Since sinα must be positive and less than sinθ (because α<θ). So we need p^2/(2 sinθ) < sinθ => p^2 < 2 sin^2θ. Also sinα>0 => sinθ - p^2/(2 sinθ) > 0 => p^2 < 2 sin^2θ, same condition. So that's consistent.
+
+Now, also α and θ satisfy α < θ. The relationship between sinα and sinθ is not enough; we also have cosα = sqrt(1 - sin^2α). But maybe we can plug sinα into the expression for p in terms of α and θ and see if it yields an identity that determines p.
+
+Recall p = sin(θ-α)/(sinθ - sinα). We can express sin(θ-α) in terms of sinθ, cosθ, sinα, cosα: sin(θ-α) = sinθ cosα - cosθ sinα.
+
+Thus,
+
+p = (sinθ cosα - cosθ sinα) / (sinθ - sinα).
+
+Now substitute sinα from (23). Also cosα = √(1 - sin^2α). That's messy but maybe we can square to eliminate the square root.
+
+Let’s denote S = sinθ, C = cosθ. Then sinα = S - p^2/(2S). Let’s define T = p^2/(2S). Then sinα = S - T.
+
+We have cosα = √(1 - (S - T)^2). Since α is acute (α<θ<π/2), cosα positive.
+
+Then p = (S * √(1 - (S - T)^2) - C (S - T)) / (S - (S - T)) = (S √(1 - (S - T)^2) - C (S - T)) / T.
+
+Thus,
+
+p T = S √(1 - (S - T)^2) - C (S - T).
+
+Now, T = p^2/(2S). So p T = p * p^2/(2S) = p^3/(2S). So
+
+p^3/(2S) = S √(1 - (S - T)^2) - C (S - T).   (24)
+
+We can isolate the square root:
+
+S √(1 - (S - T)^2) = p^3/(2S) + C (S - T).
+
+Square both sides:
+
+S^2 (1 - (S - T)^2) = [p^3/(2S) + C (S - T)]^2.
+
+Now substitute T = p^2/(2S). Let's express everything in terms of S, C, p.
+
+First compute S - T = S - p^2/(2S) = (2S^2 - p^2) / (2S). Also T = p^2/(2S).
+
+Compute (S - T)^2 = ((2S^2 - p^2)/(2S))^2 = ( (2S^2 - p^2)^2 ) / (4 S^2).
+
+Thus, 1 - (S - T)^2 = 1 - ( (2S^2 - p^2)^2 ) / (4 S^2). Write 1 as (4 S^2)/(4 S^2). So
+
+1 - (S - T)^2 = (4 S^2 - (2S^2 - p^2)^2) / (4 S^2).
+
+Now, S^2 (1 - (S - T)^2) = S^2 * (4 S^2 - (2S^2 - p^2)^2) / (4 S^2) = (4 S^2 - (2S^2 - p^2)^2) / 4.
+
+Thus LHS = [4 S^2 - (2S^2 - p^2)^2] / 4.
+
+Now RHS: [p^3/(2S) + C (S - T)]^2 = [p^3/(2S) + C * ((2S^2 - p^2)/(2S)) ]^2 = [ (p^3 + C (2S^2 - p^2)) / (2S) ]^2 = (p^3 + C (2S^2 - p^2))^2 / (4 S^2).
+
+Thus equation becomes:
+
+[4 S^2 - (2S^2 - p^2)^2] / 4 = (p^3 + C (2S^2 - p^2))^2 / (4 S^2).
+
+Multiply both sides by 4:
+
+4 S^2 - (2S^2 - p^2)^2 = (p^3 + C (2S^2 - p^2))^2 / S^2.
+
+Multiply both sides by S^2:
+
+S^2 [4 S^2 - (2S^2 - p^2)^2] = (p^3 + C (2S^2 - p^2))^2.
+
+Now expand left: S^2 * 4 S^2 = 4 S^4. S^2 * (2S^2 - p^2)^2 = S^2 * ( (2S^2 - p^2)^2 ). So left = 4 S^4 - S^2 (2S^2 - p^2)^2.
+
+Right = (p^3 + C (2S^2 - p^2))^2.
+
+Recall C = cosθ = √(1 - S^2). So C appears. This is messy but maybe simplifies.
+
+We can attempt to write in terms of S^2 and p^2. Let’s denote X = S^2. Then S = √X, but we have S^4 = X^2, S^2 = X. Also C^2 = 1 - X. However, C appears linearly inside the square, so squaring will introduce C^2 = 1 - X.
+
+Let’s express everything rationally in X and p^2.
+
+Let’s set p^2 = q (so q = OP^2). Then p^3 = p * p^2 = p q = √q * q? Actually p = √q. That's messy because p appears as sqrt. But maybe we can avoid p^3 by squaring earlier? However, we already squared, so p appears as p^3, which is q√q. That's not polynomial in q alone. So this approach is messy.
+
+Maybe we can avoid the square root by not squaring? But we have sqrt in (24). However, perhaps we can find a simpler relation by using the half-angle representation again, and solving (20) more directly.
+
+Let's return to (20): cB^2 = 4 cA^3 sB ( sA cB + cA sB ). We can divide both sides by cA^2 cB? Not sure.
+
+Let's try to express everything in terms of t = tanB. Then sB = t / √(1+t^2), cB = 1 / √(1+t^2). Also cA and sA can be expressed in terms of A. But we have also relation between A and B from p? p = cB/cA => cA = cB/p = 1/(p √(1+t^2)). That gives cA in terms of p and t. Then sA = √(1 - cA^2). That's messy.
+
+Maybe there's a smarter geometric insight that yields p directly.
+
+Recall that we derived (16): sinθ sinα = sin^2θ - p^2/2. This came from K conditions and symmetry. Also we have p = cosB / cosA, with B = (θ-α)/2, A = (θ+α)/2.
+
+Now, we can also compute sinθ sinα in terms of A and B:
+
+sinθ sinα = (sin(A+B) sin(A-B)) = (1/2)(cos(2B) - cos(2A)). Because identity: sin u sin v = (1/2)(cos(u-v) - cos(u+v)). So
+
+sinθ sinα = (1/2)(cos(θ-α) - cos(θ+α)) = (1/2)(cos(2B) - cos(2A)).   (25)
+
+Similarly, sin^2θ = sin^2(A+B) = (1 - cos(2(A+B)))/2 = (1 - cos(2A+2B))/2 = (1 - cos(2θ))/2.
+
+But perhaps we can express sin^2θ - sinθ sinα in a nice way.
+
+Compute sin^2θ - sinθ sinα = sinθ (sinθ - sinα) = p^2/2.
+
+But also we have p^2 = cos^2B / cos^2A.
+
+Maybe we can find an equation linking A and B by substituting these into (16). Let's try.
+
+First, express sinθ sinα in terms of A,B: as above.
+
+Second, express sin^2θ in terms of A,B: sin^2θ = sin^2(A+B) = (1 - cos(2A+2B))/2.
+
+So (16) becomes:
+
+sinθ sinα = sin^2θ - p^2/2.
+
+Plug p^2 = cos^2B / cos^2A.
+
+Thus, sinθ sinα = sin^2θ - (1/2)(cos^2B / cos^2A).   (26)
+
+Now, maybe we can use the identity sinθ sinα = (1/2)(cos(2B) - cos(2A)). Also sin^2θ = (1 - cos(2θ))/2 = (1 - cos(2A+2B))/2.
+
+Thus, RHS = (1 - cos(2A+2B))/2 - (1/2)(cos^2B / cos^2A).
+
+Multiply by 2:
+
+2 sinθ sinα = 1 - cos(2A+2B) - (cos^2B / cos^2A).
+
+But left side 2 sinθ sinα = cos(2B) - cos(2A). So
+
+cos(2B) - cos(2A) = 1 - cos(2A+2B) - (cos^2B / cos^2A).   (27)
+
+Now, we can use identities: cos(2A+2B) = cos(2A)cos(2B) - sin(2A) sin(2B). Also cos(2B) - cos(2A) = -2 sin(A+B) sin(B-A) maybe not helpful.
+
+But maybe we can express everything in terms of tanA and tanB. However, this still looks messy.
+
+Let's try a numeric approach: perhaps we can guess that p = √2? But p must be < √2 (since p^2 < 2). Also p > 1. Could p be √(3/2)? That's about 1.225. Or p = √(4/3) ≈ 1.155. Or p = φ? Not.
+
+But maybe we can find p by solving the equation derived from (20) using substitution like u = cosA, v = cosB, with relation v = p u. Then (20) becomes:
+
+v^2 = 4 u^3 √(1 - v^2) ( √(1 - u^2) v + u √(1 - v^2) ).
+
+Replace v = p u. Then:
+
+p^2 u^2 = 4 u^3 √(1 - p^2 u^2) ( √(1 - u^2) p u + u √(1 - p^2 u^2) ) = 4 u^4 √(1 - p^2 u^2) ( p √(1 - u^2) + √(1 - p^2 u^2) ).
+
+Divide both sides by u^2 (u>0):
+
+p^2 = 4 u^2 √(1 - p^2 u^2) ( p √(1 - u^2) + √(1 - p^2 u^2) ).   (28)
+
+Now, let’s denote a = u^2. Then u = √a. Also √(1 - u^2) = √(1 - a). And √(1 - p^2 u^2) = √(1 - p^2 a).
+
+Then (28) becomes:
+
+p^2 = 4 a √(1 - p^2 a) ( p √(1 - a) + √(1 - p^2 a) ).   (29)
+
+This is an equation relating a and p.
+
+We can attempt to solve for a in terms of p, then impose that a must be between 0 and 1 (since u=cosA, A∈(0,π/2), so a∈(0,1)). Also p>1, p^2<2.
+
+We can treat (29) as an equation in a. Maybe we can square it to get a polynomial. But note the presence of √(1 - p^2 a) both inside the parentheses and multiplied outside. Let’s set X = √(1 - p^2 a). Then a = (1 - X^2)/p^2. Also √(1 - a) = √(1 - (1 - X^2)/p^2) = √( (p^2 - 1 + X^2)/p^2 ) = (1/p) √(p^2 - 1 + X^2). That introduces another sqrt.
+
+Maybe we can find p such that the equation simplifies, e.g., when √(1 - p^2 a) = something like p √(1 - a). Then the RHS would be 4 a * p √(1 - a) * (p √(1 - a) + p √(1 - a)) = 4 a * p √(1 - a) * 2p √(1 - a) = 8 a p^2 (1 - a). Then equation p^2 = 8 a p^2 (1 - a) => 1 = 8 a (1 - a) => 8a(1-a)=1 => a(1-a)=1/8 => a^2 - a + 1/8 = 0 => discriminant 1 - 1/2 = 1/2 => a = (1 ± √(1/2))/2 = (1 ± 1/√2)/2. That gives two possible a values between 0 and 1. This would require √(1 - p^2 a) = p √(1 - a). Square both sides: 1 - p^2 a = p^2 (1 - a) => 1 - p^2 a = p^2 - p^2 a => 1 = p^2. So p=1. But p>1, contradiction. So that simplification not valid.
+
+Maybe we can find p such that the expression simplifies because √(1 - p^2 a) and √(1 - a) have a rational relationship given a solves something.
+
+Alternatively, maybe we can find p by eliminating a using another relation from geometry: the angle condition ∠ABC < ∠BCD < 90°. Let's compute those angles.
+
+Given coordinates: A(cosα, sinα), B(c, s), C(c, -s), D(cosα, -sinα). Compute vectors:
+
+At B: BA = A - B = (cosα - c, sinα - s). BC = C - B = (c - c, -s - s) = (0, -2s). So BC is vertical downward.
+
+Angle ABC is angle between BA and BC. Since BC is vertical downward, we can compute the angle between BA and the downward direction.
+
+Similarly, at C: CB = B - C = (c - c, s - (-s)) = (0, 2s). CD = D - C = (cosα - c, -sinα - (-s)) = (cosα - c, -sinα + s) = (cosα - c, s - sinα). Note that this vector is symmetric to BA? Indeed, BA = (cosα - c, sinα - s). So CD = (cosα - c, -(sinα - s))? Actually, sinα - s is negative (since sinα < s). So BA has y negative? Wait sinα < s, so sinα - s is negative. So BA = (cosα - c, negative). CD = (cosα - c, s - sinα) = (cosα - c, positive). So CD is the reflection of BA across the x-axis? Actually, BA y-coordinate is sinα - s (negative), CD y-coordinate is s - sinα (positive). So CD is the reflection of BA across the x-axis (since x same, y sign flipped). That's consistent with symmetry.
+
+Now, angle BCD is angle between CB (which is upward vertical) and CD. CB is (0,2s) pointing upward. CD is (cosα - c, s - sinα). Since cosα - c is positive? cosα > c, so cosα - c > 0. So CD points rightwards and upward (since s - sinα >0). So angle BCD is the angle between upward vertical and CD.
+
+Similarly, angle ABC is angle between BA and BC (BC downward). BA points rightwards and downward (since cosα - c >0, sinα - s <0). BC points downward.
+
+We can compute these angles using dot product.
+
+Let’s compute ∠ABC:
+
+cos(∠ABC) = (BA·BC) / (|BA| |BC|). BA·BC = (cosα - c)*0 + (sinα - s)*(-2s) = -2s (sinα - s) = 2s (s - sinα). Since s - sinα >0, this is positive. So cos(angle) positive, angle acute. Indeed, ∠ABC is acute.
+
+Similarly, ∠BCD: vectors CB = (0,2s), CD = (cosα - c, s - sinα). Dot product: CB·CD = 0*(cosα - c) + 2s*(s - sinα) = 2s (s - sinα). Same as BA·BC? Actually BA·BC = 2s(s - sinα) as well (since we got 2s(s - sinα)). So dot products are equal.
+
+Lengths: |BC| = 2s. |CB| = 2s. |BA| = sqrt( (cosα - c)^2 + (s - sinα)^2 ). |CD| = sqrt( (cosα - c)^2 + (s - sinα)^2 ) = same as |BA|. So |BA| = |CD|.
+
+Thus, we have:
+
+cos(∠ABC) = (2s(s - sinα)) / (|BA| * 2s) = (s - sinα) / |BA|.
+
+cos(∠BCD) = (2s(s - sinα)) / (2s * |CD|) = (s - sinα) / |CD| = (s - sinα) / |BA|.
+
+So cos(∠ABC) = cos(∠BCD). Since both angles are acute (cos positive), this implies ∠ABC = ∠BCD.
+
+But the problem states ∠ABC < ∠BCD < 90°. So they are not equal. Did we make a mistake? Let's double-check.
+
+Angle at B is ∠ABC, formed by AB and CB? Actually, angle ABC is with vertex B, sides BA and BC. Yes, BA is vector from B to A, BC is vector from B to C. We used BA = A - B, BC = C - B. That's correct.
+
+Angle at C is ∠BCD, with vertex C, sides CB and CD. We used CB = B - C, CD = D - C. That's correct.
+
+Now compute BA·BC: A - B = (cosα - c, sinα - s). C - B = (c - c, -s - s) = (0, -2s). Dot = (cosα - c)*0 + (sinα - s)*(-2s) = -2s(sinα - s) = 2s(s - sinα). Good.
+
+CB·CD: B - C = (c - c, s - (-s)) = (0, 2s). D - C = (cosα - c, -sinα - (-s)) = (cosα - c, -sinα + s) = (cosα - c, s - sinα). Dot = 0*(cosα - c) + 2s*(s - sinα) = 2s(s - sinα). Same.
+
+Now lengths: |BA| = sqrt((cosα - c)^2 + (sinα - s)^2). |BC| = 2s. |CB| = 2s. |CD| = sqrt((cosα - c)^2 + (s - sinα)^2) = same as |BA| because (s - sinα)^2 = (sinα - s)^2. So indeed |BA| = |CD|.
+
+Thus cos(∠ABC) = (BA·BC) / (|BA||BC|) = [2s(s - sinα)] / (|BA| * 2s) = (s - sinα) / |BA|.
+
+cos(∠BCD) = (CB·CD) / (|CB||CD|) = [2s(s - sinα)] / (2s * |BA|) = (s - sinα) / |BA|.
+
+Thus ∠ABC = ∠BCD. This contradicts the given condition ∠ABC < ∠BCD. So our symmetric configuration (A and D symmetric about x-axis, B and C symmetric about x-axis) yields equal angles at B and C. That suggests that our assumption of symmetry leads to equality, which is not allowed. However, the problem states ∠ABC < ∠BCD < 90°, so they are not equal. Therefore, the symmetric configuration cannot satisfy the angle condition unless we consider orientation such that the angle at B is measured the other way? But angle is defined as the interior angle of convex quadrilateral. In a convex quadrilateral with vertices labeled A, B, C, D in order, interior angles are the angles between the sides when traversing the polygon. For vertex B, the sides are AB and BC. The interior angle is the smaller angle between the vectors BA and BC (or AB and BC). Our calculation of ∠ABC used vectors BA and BC. That's correct.
+
+For vertex C, interior angle is between BC and CD. But note that when traversing polygon, the direction at C is from BC to CD. However, we used vectors CB and CD. But is that correct? The angle BCD is angle with vertex C, sides CB and CD. Usually, ∠BCD is angle between BC and DC? Actually, notation ∠BCD means angle with vertex C, points B, C, D, so rays CB and CD. That's what we used: CB (from C to B) and CD (from C to D). That's correct.
+
+Thus, our calculation shows that in the symmetric configuration, ∠ABC = ∠BCD. Since the problem says ∠ABC < ∠BCD, this configuration is invalid. Therefore, the quadrilateral cannot be symmetric about the x-axis. So our earlier symmetric assumption contradicts the given angle inequality. Good catch! So we must consider a non-symmetric configuration.
+
+But maybe the quadrilateral is symmetric about a different axis, or maybe we need to place BC not vertical but horizontal, leading to different angle relations. Let's reconsider.
+
+We need to find a configuration that satisfies ∠ABC < ∠BCD. In our vertical BC case, we found that with A and D symmetric about x-axis (so A above, D below), the angles at B and C are equal. If A and D are not symmetric, perhaps the angles differ. But we also used symmetry to simplify the derivation of p = sin(θ-α)/(sinθ - sinα). That derivation used only that B and C are symmetric about x-axis and that P lies on x-axis? Wait, we derived p using the coordinates of A, B, C, D with B = (c,s), C = (c,-s), and A = (cosα, sinα), D = (cosδ, sinδ). We didn't assume D symmetric to A. The simplification that p = sin(θ-α)/(sinθ - sinα) came from solving for P as intersection of AB and CD, with general A and D. Did we use D's coordinates? Let's revisit.
+
+We derived p by solving for intersection of AB and CD, using coordinates of A, B, C, D. We solved for t from y-coordinate: y_A + t (s - y_A) = -s + u (y_D + s). That involved y_D. But we then used the fact that we were solving for P, but we didn't fully solve; we derived p by using the fact that P lies on x-axis? Actually, we assumed P lies on x-axis because we set y=0 to find t. That step assumed that the intersection point P has y-coordinate 0, i.e., lies on x-axis. That assumption came from the fact that we were solving for P as the intersection of AB and CD, but we didn't know its y-coordinate. However, we derived p by setting y=0? Let's re-express: In our derivation, we set up param equations for AB and CD, then we set the y-coordinate of AB equal to the y-coordinate of CD, but we didn't set y=0. We solved for t and u such that both coordinates match. Then we derived p = (s cosα - c sinα)/(s - sinα) after simplifications that involved D? Wait, we need to re-derive carefully.
+
+We had:
+
+Line AB: (x, y) = A + t (B - A) = (cosα + t (c - cosα), sinα + t (s - sinα)).
+Line CD: (x, y) = C + u (D - C) = (c + u (cosδ - c), -s + u (sinδ + s)).
+
+We set these equal:
+
+cosα + t (c - cosα) = c + u (cosδ - c)   (I)
+sinα + t (s - sinα) = -s + u (sinδ + s)   (II)
+
+We solved for t and u. The simplification to p = (s cosα - c sinα)/(s - sinα) came from solving for P without using D? Let's check.
+
+We derived p by solving for t from (II) maybe? Actually, we derived p as the x-coordinate of P after solving for t and u. But we didn't use D's coordinates in that simplification? Let's see.
+
+We can solve for t from (II) without knowing u? Not directly because (II) contains u. But we can solve the system.
+
+Let's attempt to solve generally. We have two equations linear in t and u. Write as:
+
+t (c - cosα) - u (cosδ - c) = c - cosα   (from (I) rearranged: cosα + tΔx_AB = c + uΔx_CD => tΔx_AB - uΔx_CD = c - cosα)
+t (s - sinα) - u (sinδ + s) = -s - sinα   (from (II): sinα + tΔy_AB = -s + uΔy_CD => tΔy_AB - uΔy_CD = -s - sinα)
+
+But this seems messy.
+
+Our earlier derivation that gave p = (s cosα - c sinα)/(s - sinα) assumed that P lies on x-axis? Let's check that earlier derivation: We set y=0 to find t and then computed p. That was based on the assumption that P is on x-axis, which is true only if D is symmetric to A (so that CD is reflection of AB). But we didn't prove that; we assumed symmetry to get P on x-axis. Indeed, we said: "Because of symmetry, P lies on x-axis." That was an assumption of symmetry, not a general fact. So our derivation of p = sin(θ-α)/(sinθ - sinα) relied on the symmetry that A and D are symmetric about x-axis, leading to P on x-axis, and then we computed p by intersecting AB with x-axis (since P is intersection of AB and CD, but if P is on x-axis, we can find it as the x-intercept of AB). That gave p = (s cosα - c sinα)/(s - sinα). That's valid only under the symmetry assumption.
+
+Thus, the symmetric case we analyzed is invalid because it contradicts the angle condition. So we must discard symmetry and consider general positions.
+
+We need to find OP possible values in the general case where A and D are not symmetric, and ∠ABC < ∠BCD.
+
+Given the complexity, maybe there is a more clever synthetic approach that yields OP directly without heavy algebra. Let's attempt to find a synthetic derivation.
+
+We have:
+
+- P is intersection of AB and CD. So PA·PB = PC·PD = OP^2 - 1.   (i)
+
+- Q is intersection of AC and BD. So QA·QC = QB·QD = 1 - OQ^2.   (ii)
+
+- K is on BC, P, A, K, D concyclic. So as we noted, the power of B w.r.t circle ω = BA·BP, and power of C w.r.t ω = CD·CP. Because line AB meets ω at A and P; line CD meets ω at D and P. This holds regardless of symmetry; it's true because A and P lie on ω, and B lies on line AB, so the power of B to ω equals BA·BP (with directed lengths). Similarly, C lies on line CD, and D and P are on ω, so power of C equals CD·CP.
+
+Now, also line BC meets ω at K and another point L. So we have:
+
+Power_ω(B) = BK * BL.   (iii)
+Power_ω(C) = CK * CL.   (iv)
+
+We don't know L, but we can perhaps relate BK and CK to the given product KB·KC = 1/2 OP^2.
+
+Also, we have that K is on segment BC, so BK and CK are positive lengths.
+
+Now, perhaps we can use the fact that B and C are on circle O, and the radical axis of ω and O is line AD (since A and D are common points). Therefore, for any point X, the power difference is constant along lines perpendicular to AD? Actually, the radical axis is the set of points where powers to ω and O are equal. So for point B, we have:
+
+Power_ω(B) - Power_O(B) = (BA·BP) - (OB^2 - 1). But OB=1, so Power_O(B) = 0. Thus,
+
+Power_ω(B) = BA·BP.   (v)
+
+Similarly, Power_ω(C) = CD·CP.   (vi)
+
+Now, since AD is the radical axis, the powers of any point on AD to ω and O are equal. But B and C are not on AD generally. However, we can relate the power differences to the distances from B and C to line AD. There is a formula: For two circles with centers O and ω_center, the power difference is proportional to the signed distance to the radical axis. But maybe we can use coordinates.
+
+Alternatively, we can use the fact that the power of B to ω equals BA·BP, and the power of C to ω equals CD·CP. Also, we have the product BK·CK given. Maybe we can find relationships between BA·BP, CD·CP, and BK·CK using similar triangles from complete quadrilateral properties.
+
+Consider the complete quadrilateral formed by lines AB, BC, CD, DA. Its three diagonal points are P = AB∩CD, Q = AC∩BD, and R = AD∩BC. The point R is the intersection of AD and BC. Since K is on BC and lies on ω (circle through P, A, D), we might have some relation with R. In particular, the circle through P, A, D is the circumcircle of triangle PAD. The line BC meets this circle at K. Also, AD meets BC at R. So R is on AD, not on the circle generally.
+
+But maybe there is a known theorem: In a cyclic quadrilateral, the intersection of the extensions of opposite sides (P) and the intersection of the extensions of the other pair of opposite sides (R) are such that the circle through P, A, D passes through the midpoint of BC? Not sure.
+
+Let's compute some lengths using coordinates but without symmetry. Maybe we can choose a coordinate system that simplifies the algebra. For instance, we can set B = (1,0) and C = (-1,0)? But those are antipodal points, which would make BC a diameter, but then ∠ABC and ∠BCD might be right angles? Actually, if BC is diameter, then angle BAC is right, etc. But given ∠BCD < 90°, maybe BC cannot be diameter? Not necessarily. But we can choose B = (1,0), C = (cos 2φ, sin 2φ) etc. However, maybe we can set B and C conveniently.
+
+We can use complex numbers with b = e^{iβ}, c = e^{iγ}. Without loss, we can rotate so that β = -γ? That gives symmetry about the real axis if we set β = θ, γ = -θ. That's what we did (vertical BC). That seems convenient because BC is vertical and symmetric about x-axis. That gave B and C symmetric about x-axis. That's okay; we can keep that symmetry for B and C because it's just a rotation choice. The quadrilateral need not be symmetric overall; A and D are not necessarily symmetric about x-axis. So we keep B = (c,s), C = (c,-s). That's fine.
+
+Now A = (cosα, sinα), D = (cosδ, sinδ), with α, δ arbitrary satisfying order. The order condition: α < θ < 2π - θ < δ (if we take α in (0,θ) and δ in (2π - θ, 2π)). But α could also be negative? We can adjust. But we can assume α ∈ (0,θ) and δ ∈ (2π - θ, 2π). That's consistent with B and C being at angles θ and 2π-θ, and A before B, D after C.
+
+Now, we need to compute P as intersection of AB and CD without assuming symmetry. Let's do that.
+
+Line AB: param t: (x, y) = A + t (B - A) = (cosα + t (c - cosα), sinα + t (s - sinα)).
+Line CD: param u: (x, y) = C + u (D - C) = (c + u (cosδ - c), -s + u (sinδ + s)).
+
+Set equal:
+
+cosα + t (c - cosα) = c + u (cosδ - c)   (1)
+sinα + t (s - sinα) = -s + u (sinδ + s)   (2)
+
+We need to solve for t, u, then P = (x_P, y_P). Then OP^2 = x_P^2 + y_P^2.
+
+This is messy but maybe we can find a simpler expression using complex numbers and cross ratios.
+
+Alternatively, we can use the formula for intersection of two chords in a circle: For points a,b,c,d on unit circle, the intersection p of lines AB and CD is given by
+
+p = \frac{ a b (c + d) - c d (a + b) }{ a b - c d }.
+
+I recall a formula: For points on unit circle, the intersection of chords AB and CD is
+
+p = \frac{ a b (c + d) - c d (a + b) }{ a b - c d }.
+
+Let's test with simple case: Suppose a = 1, b = -1, c = i, d = -i. Then AB is line through 1 and -1 (real axis), CD is line through i and -i (imaginary axis). Intersection is 0. Compute numerator: a b = -1, c+d = i - i = 0 => first term 0. c d = i*(-i)= -i^2 = 1, a+b = 1-1=0 => second term 0. So numerator 0, denominator a b - c d = -1 - 1 = -2, p=0. Works.
+
+Another test: a = e^{iθ}, b = e^{-iθ}, c = e^{iφ}, d = e^{-iφ}. Then lines AB and CD are vertical lines? Actually, a and b symmetric about real axis, so AB is vertical line x=cosθ. Similarly CD vertical line x=cosφ. If θ≠φ, these lines are parallel, so intersection at infinity. The formula should give denominator 0? Let's compute: a b = e^{iθ} e^{-iθ} = 1. c d = e^{iφ} e^{-iφ}=1. So denominator 1-1=0 => p infinite, consistent.
+
+So formula seems plausible.
+
+Let's derive: For points on unit circle, we have \overline{a}=1/a, etc. The equation of line through a and b can be written as (z - a)/(b - a) is real, equivalently (z - a)(\overline{b} - \overline{a}) = (\overline{z} - \overline{a})(b - a). If we substitute \overline{z} = 1/z (if z lies on unit circle?), but z is variable not necessarily on unit circle. However, there is a known formula: The intersection of lines AB and CD (with a,b,c,d on unit circle) is given by
+
+p = \frac{ a b (c + d) - c d (a + b) }{ a b - c d }.
+
+I think this is correct. We'll verify with our earlier symmetric case where D is symmetric to A (i.e., d = e^{-iα}) and b = e^{iθ}, c = e^{-iθ}. Then compute p using formula.
+
+Let a = e^{iα}, b = e^{iθ}, c = e^{-iθ}, d = e^{-iα}. Then:
+
+ab = e^{i(α+θ)}, cd = e^{-i(θ+α)}? Actually c d = e^{-iθ} e^{-iα} = e^{-i(θ+α)}. So ab - cd = e^{i(α+θ)} - e^{-i(α+θ)} = 2i sin(α+θ). Good.
+
+Numerator: a b (c + d) - c d (a + b) = e^{i(α+θ)} (e^{-iθ} + e^{-iα}) - e^{-i(α+θ)} (e^{iα} + e^{iθ}).
+
+We can factor e^{-i(α+θ)}? Not needed. Let's compute p. Might simplify to real number.
+
+But we can test numeric: α=10°, θ=30°. Compute using our derived p = sin(θ-α)/(sinθ - sinα) ≈ 0.342? Actually sin(20°)=0.342, sinθ - sinα = 0.5-0.1736=0.3264, p≈1.0479. Let's compute using formula.
+
+a=cos10+ i sin10 = 0.9848+0.1736i, b=0.8660+0.5i, c=0.8660-0.5i, d=0.9848-0.1736i.
+
+Compute ab = a*b = (0.9848+0.1736i)*(0.8660+0.5i). Multiply: real: 0.9848*0.8660 - 0.1736*0.5 = 0.8525 - 0.0868 = 0.7657; imag: 0.9848*0.5 + 0.1736*0.8660 = 0.4924 + 0.1504 = 0.6428. So ab ≈ 0.7657+0.6428i.
+
+cd = c*d = (0.8660-0.5i)*(0.9848-0.1736i) = real: 0.8660*0.9848 - (-0.5)*(-0.1736) = 0.8525 - 0.0868 = 0.7657; imag: 0.8660*(-0.1736) + (-0.5)*0.9848 = -0.1504 - 0.4924 = -0.6428. So cd = 0.7657 - 0.6428i.
+
+Thus ab - cd = (0.7657-0.7657) + (0.6428 - (-0.6428))i = 0 + 1.2856i.
+
+c+d = (0.8660-0.5i)+(0.9848-0.1736i) = 1.8508 -0.6736i.
+a+b = (0.9848+0.1736i)+(0.8660+0.5i) = 1.8508 +0.6736i.
+
+Now numerator = ab*(c+d) - cd*(a+b). Compute ab*(c+d): (0.7657+0.6428i)*(1.8508 -0.6736i). Multiply: real: 0.7657*1.8508 - 0.6428*(-0.6736) = 1.417 + 0.4329 = 1.8499; imag: 0.7657*(-0.6736) + 0.6428*1.8508 = -0.5157 + 1.189 = 0.6733. So ≈ 1.8499+0.6733i.
+
+cd*(a+b): (0.7657 -0.6428i)*(1.8508 +0.6736i). Real: 0.7657*1.8508 - (-0.6428)*0.6736 = 1.417 - (-0.4329) = 1.8499; Imag: 0.7657*0.6736 + (-0.6428)*1.8508 = 0.5157 - 1.189 = -0.6733. So cd*(a+b) ≈ 1.8499 -0.6733i.
+
+Thus numerator = (1.8499+0.6733i) - (1.8499 -0.6733i) = 0 + 1.3466i.
+
+So p = numerator / denominator = (1.3466i) / (1.2856i) = 1.3466/1.2856 ≈ 1.0475, close to 1.0479. So formula works! Good.
+
+Thus, we have a compact formula for p (complex number representing point P). Since we have coordinates as complex numbers on unit circle, we can compute p using that formula.
+
+Now, we can perhaps compute OP^2 = |p|^2 = p \overline{p}. Since a,b,c,d are on unit circle, we have \overline{a}=1/a, etc.
+
+Let's denote:
+
+p = \frac{ab(c+d) - cd(a+b)}{ab - cd}.
+
+We can compute |p|^2 = p \overline{p}. Since p may be expressed rationally, we can perhaps simplify using properties of a,b,c,d.
+
+But maybe we can find a relation using the fact that K lies on BC and on circle ω (through A, D, P). We already used that to get power relations. Perhaps we can derive an equation independent of A and D specifics using power of B and C.
+
+Let's denote:
+
+Let’s denote x = BP, y = BA (distance). Then BA·BP = x y? Actually, careful: BA is distance from B to A; BP is distance from B to P. So product = BA * BP.
+
+Similarly, CD * CP.
+
+Now, using power of point B w.r.t ω: Power_ω(B) = BA·BP. Using (iii), we also have = BK * BL. But we don't know BL.
+
+But we can also compute the power of B w.r.t ω using coordinates? Not directly.
+
+However, we might use the radical axis concept to relate BA·BP and CD·CP. Since AD is radical axis, the power of any point X to ω minus its power to O is proportional to the signed distance from X to AD. But perhaps we can compute the ratio of BA·BP to CD·CP using geometry of cyclic quadrilateral.
+
+Another idea: Use the law of sines in triangles to express BA, BP, CD, CP in terms of angles and the radius (1). Since all points lie on unit circle, we can express chord lengths: AB = 2 sin(∠AOB/2) etc. But maybe we can use directed angles and the sine law in triangles formed by P and the circle.
+
+Let’s denote angles: Let’s set up angles at center. Let’s define central angles: Let arc AB correspond to central angle 2γ? Actually, chord AB length = 2 sin(∠AOB/2). But maybe easier: Use the law of sines in triangle PAB: Since A and B are on circle O, we can relate PA, PB, AB to sines of angles at P and O. But not straightforward.
+
+Given the difficulty, maybe we should search for known results: For a cyclic quadrilateral, with intersection P of AB and CD, and K on BC such that P, A, K, D are concyclic, then K is the midpoint of the arc AD? Not sure.
+
+Let’s try to find relationship using directed angles.
+
+Since P, A, K, D concyclic, we have ∠PAK = ∠PDK. But ∠PAK is angle between PA and KA. ∠PDK is between PD and KD.
+
+Also, because A, B, C, D concyclic, we have ∠PAB = angle between PA and AB? Actually, P, A, B are collinear, so ∠PAB = 0 or 180°, not helpful.
+
+But maybe we can relate KA and KD to BC. Since K is on BC, KA and KD are lines to A and D. There may be some angle chasing leading to some similarity: e.g., triangles KAB and KDC might be similar? Let's examine.
+
+Consider quadrilateral P, A, K, D cyclic. Then ∠AKP = ∠ADP. But ADP is angle at D between AD and DP. Since D, C, P are collinear? Wait, P lies on CD, so D, C, P are collinear. So DP is along line DC. So ∠ADP is angle between AD and DC, i.e., angle ADC. That's an angle of the original quadrilateral at D. So ∠AKP = ∠ADC.
+
+Similarly, ∠APK = ∠ADK. AP is along AB, and ADK is angle at D between AD and DK.
+
+Also, ∠PAK = ∠PDK. PA is along AB, PD is along CD, and AK, DK are lines to K.
+
+Maybe we can get triangle similarities: For instance, consider triangle AKP and triangle ADC? ∠AKP = ∠ADC. Also, ∠APK = ∠ADK. Not directly.
+
+Alternatively, consider triangle AKB and triangle DKC? Not sure.
+
+Let's systematically list:
+
+Points: A, B, C, D on circle O. P = AB ∩ CD. K = BC ∩ circle through A, D, P.
+
+Let’s denote ω = circle (APD). Then K ∈ ω ∩ BC.
+
+We have:
+
+- In ω, ∠AKP equals angle subtended by arc AP? Actually, ∠AKP is angle formed by KA and KP. Since A, P, D, K are on ω, we can relate to arcs.
+
+But perhaps more useful: The power of B w.r.t ω is BA·BP. Similarly, power of C is CD·CP.
+
+Now, note that B and C are on circle O, and we have the product KB·KC = 1/2 OP^2. Also, from the circle O, for point K (inside), we have KB·KC = 1 - OK^2.
+
+Thus, 1 - OK^2 = 1/2 OP^2 => OK^2 = 1 - OP^2/2.   (A)
+
+Now, we also can relate OK^2 to OB^2=1 and the distances along BC. But maybe we can express OK^2 in terms of OP^2 and other known lengths using Stewart's theorem in triangle OBC with point K? Since O, B, C are known (B and C on unit circle). Actually, we can compute OK^2 in terms of OB^2, OC^2, BC, and BK, CK using Stewart or the formula for the distance from a point on a chord to the center. Indeed, for chord BC, with midpoint M, we have OM^2 = 1 - (BC/2)^2. And K divides BC, so OK^2 = OM^2 + MK^2 (since OM is perpendicular to BC? Wait, is OM perpendicular to BC? Yes, for a circle, the line from the center to the midpoint of a chord is perpendicular to the chord. So OM ⟂ BC. Therefore, we can set up coordinate along BC with M as origin in a coordinate system where BC is horizontal (or vertical). But we already have B and C symmetric about x-axis, so BC is vertical. In that case, O is at (0,0), BC is vertical line x = c, so OM is horizontal segment from O to M (c,0). M is (c,0). Indeed, OM is horizontal, BC is vertical, so OM ⟂ BC. Good.
+
+Thus, we can use coordinates: B = (c, s), C = (c, -s). M = (c, 0). Then OM = |c| = c (since c>0). OK^2 = c^2 + y_K^2 (since K = (c, y_K)). That's consistent: OK^2 = c^2 + y_K^2.
+
+Now, KB = |s - y_K|, KC = |y_K + s|. So KB·KC = (s - y_K)(s + y_K) = s^2 - y_K^2.
+
+Thus, (A) becomes s^2 - y_K^2 = OP^2/2 => y_K^2 = s^2 - OP^2/2.   (B)
+
+Also, OK^2 = c^2 + y_K^2 = c^2 + s^2 - OP^2/2 = 1 - OP^2/2, consistent.
+
+Now, we need to use the fact that K lies on circle ω through A, D, P. This gives a condition linking y_K^2 to other parameters.
+
+We can derive the equation of circle ω in general (without symmetry). Since ω passes through A, D, P, we can write its equation in coordinate form (x^2 + y^2 + ux + vy + w = 0). Because any circle can be written as x^2 + y^2 + ux + vy + w = 0. For points on unit circle O, we have x^2 + y^2 = 1.
+
+Given that A and D are on ω, we have:
+
+1 + u x_A + v y_A + w = 0   (A on ω)
+1 + u x_D + v y_D + w = 0   (D on ω)
+
+Subtract these: u (x_A - x_D) + v (y_A - y_D) = 0.   (C)
+
+Also, P = (x_P, y_P) satisfies:
+
+x_P^2 + y_P^2 + u x_P + v y_P + w = 0.   (P on ω)
+
+We can use these to eliminate u, v, w.
+
+But maybe we can compute the power of K w.r.t ω using the general circle equation: Power_ω(K) = x_K^2 + y_K^2 + u x_K + v y_K + w.
+
+Since K lies on ω, this is 0.
+
+But we can also express the power of B and C to ω using the same parameters:
+
+Power_ω(B) = 1 + u x_B + v y_B + w = BA·BP. (since B is not on ω generally)
+Similarly, Power_ω(C) = 1 + u x_C + v y_C + w = CD·CP.
+
+Now, maybe we can relate BA·BP and CD·CP to known lengths. Since B, A, P are collinear, we can express BA and BP in terms of coordinates. But perhaps we can find a relation between BA·BP and CD·CP using the fact that A, B, C, D are concyclic.
+
+Let's attempt to compute BA·BP and CD·CP in terms of distances and angles.
+
+We can use coordinates: B = (c, s), C = (c, -s). A = (x_A, y_A) = (cosα, sinα), D = (x_D, y_D) = (cosδ, sinδ).
+
+We can compute the distances along line AB. Since A and B are known, we can find param t where P lies. But P is intersection of AB and CD, so its coordinates satisfy both lines. So we could solve for P as before, but maybe we can find BA·BP and CD·CP without explicitly solving P, using cross ratios or power of point formulas.
+
+Observe that for point P, we have PA·PB = OP^2 - 1. But BA·BP is different.
+
+However, note that BA = |A - B|, BP = |P - B|. Since A, B, P are collinear, we have directed lengths: BA = AB (distance). There is relation between PA, PB, and AB via segment addition depending on order. But we don't know order.
+
+Nevertheless, we might be able to express BA·BP in terms of PA·PB and AB^2? Let's examine.
+
+Let’s assign directed distances along line AB with origin at B. Let’s set coordinate such that B at 0, A at a (positive if A is in direction from B to A), and P at p (positive if P is in direction from B to P). Then:
+
+BA = |a| (distance), but directed BA is from B to A = a. However, BA as length is |a|. BP = |p|.
+
+The product PA·PB = |P - A| * |P - B|. In directed terms, P - A = p - a, P - B = p. So PA·PB = |p - a| * |p|.
+
+We have BA·BP = |a| * |p|.
+
+Thus, BA·BP = |a p|. PA·PB = |p(p - a)|.
+
+There is relation: PA·PB = |p| * |p - a| = |p| * |p - a|.
+
+If we know a and p, we can compute.
+
+But maybe we can use the fact that P is the intersection of AB and CD, and we have the complete quadrilateral, leading to harmonic bundles etc. There is a known relation: (A,B; P, Q) is harmonic? Not sure.
+
+Let's try a different approach: Use coordinates but with B and C symmetric about x-axis, as before. That's fine because we can rotate the whole figure so that BC is vertical and symmetric about x-axis. That's always possible because we can choose coordinate system such that the perpendicular bisector of BC is the x-axis (i.e., BC is symmetric about x-axis). Since BC is a chord of the circle, its perpendicular bisector passes through O. So we can set that perpendicular bisector as the x-axis. Then B and C are symmetric about the x-axis. So we can set B = (c, s), C = (c, -s). This is a valid choice without loss of generality.
+
+Now, A and D are not symmetric in general. So we have parameters α and δ.
+
+We need to compute P = intersection of AB and CD. We'll need to solve for P coordinates in terms of α, δ, θ.
+
+Let's do that systematically.
+
+Define:
+
+A = (x_A, y_A) = (cosα, sinα)
+D = (x_D, y_D) = (cosδ, sinδ)
+B = (c, s) = (cosθ, sinθ)
+C = (c, -s) = (cosθ, -sinθ)
+
+We'll solve for P.
+
+Let’s denote:
+
+Vector AB = B - A = (c - x_A, s - y_A)
+Vector CD = D - C = (x_D - c, y_D + s)
+
+We can solve using param t for AB and u for CD.
+
+AB: P = A + t (B - A), t ∈ ℝ.
+CD: P = C + u (D - C), u ∈ ℝ.
+
+Thus:
+
+x_P = x_A + t (c - x_A) = c + u (x_D - c)   (1)
+y_P = y_A + t (s - y_A) = -s + u (y_D + s)   (2)
+
+We can solve for t and u. This is a linear system.
+
+Let’s solve for t from (1): t = (c + u (x_D - c) - x_A) / (c - x_A), provided c ≠ x_A. Since x_A = cosα, and α ≠ θ (as A and B distinct), and α likely not equal to θ, also α may be less than θ, so cosα > cosθ = c, so c - x_A is negative but nonzero. That's fine.
+
+Similarly, from (2): t = (-s + u (y_D + s) - y_A) / (s - y_A). Note s - y_A = sinθ - sinα > 0 because α<θ.
+
+Set these equal:
+
+(c + u (x_D - c) - x_A) / (c - x_A) = (-s + u (y_D + s) - y_A) / (s - y_A).   (3)
+
+This is a linear equation in u (since both numerators are linear in u). Solve for u.
+
+Let’s denote:
+
+Δx1 = c - x_A (negative), Δx2 = x_D - c (could be positive or negative depending on δ). Δy1 = s - y_A (positive), Δy2 = y_D + s (could be positive or negative depending on δ). But we can keep symbolic.
+
+Rewrite (3) as:
+
+(c - x_A + u (x_D - c)) / (c - x_A) = (-s - y_A + u (y_D + s)) / (s - y_A).
+
+But careful: c + u(x_D - c) - x_A = (c - x_A) + u (x_D - c). Similarly, -s + u(y_D + s) - y_A = -(s + y_A) + u(y_D + s). Actually, -s - y_A + u(y_D + s). Yes.
+
+Thus:
+
+[(c - x_A) + u (x_D - c)] / (c - x_A) = [-(s + y_A) + u (y_D + s)] / (s - y_A).
+
+Simplify left side: 1 + u (x_D - c)/(c - x_A).
+
+So:
+
+1 + u * (x_D - c)/(c - x_A) = [-(s + y_A) + u (y_D + s)] / (s - y_A).
+
+Multiply both sides by (s - y_A):
+
+(s - y_A) + u (x_D - c)(s - y_A)/(c - x_A) = -(s + y_A) + u (y_D + s).
+
+Bring terms with u together:
+
+u (x_D - c)(s - y_A)/(c - x_A) - u (y_D + s) = -(s + y_A) - (s - y_A).
+
+Compute RHS: -(s + y_A) - (s - y_A) = -s - y_A - s + y_A = -2s.
+
+Thus:
+
+u [ (x_D - c)(s - y_A)/(c - x_A) - (y_D + s) ] = -2s.
+
+Thus,
+
+u = -2s / [ (x_D - c)(s - y_A)/(c - x_A) - (y_D + s) ].
+
+We can simplify denominator.
+
+Let’s denote Δ = (x_D - c)(s - y_A)/(c - x_A) - (y_D + s).
+
+Note c - x_A is negative (since x_A > c). So (s - y_A)/(c - x_A) is negative (since numerator positive, denominator negative). Multiply by (x_D - c). The sign of (x_D - c) depends on δ.
+
+This is messy, but maybe we can find a nicer expression using trigonometric identities.
+
+Instead, perhaps we can use complex numbers formula for p, which is already simple: p = (ab(c+d) - cd(a+b))/(ab - cd). That's a complex number; we can compute its modulus squared in terms of a,b,c,d.
+
+Given that a,b,c,d lie on unit circle, we can set a = e^{iα}, b = e^{iβ}, c = e^{iγ}, d = e^{iδ}. But we have chosen b = e^{iθ}, c = e^{-iθ} (so β = θ, γ = -θ). Then a = e^{iα}, d = e^{iδ}. Then we can compute p.
+
+Let's do that. Let’s use complex numbers with b = e^{iθ}, c = e^{-iθ}. Then:
+
+ab = e^{i(α+θ)}
+cd = e^{i(δ - θ)}? Wait c d = e^{-iθ} e^{iδ} = e^{i(δ - θ)}.
+
+Denominator D = ab - cd = e^{i(α+θ)} - e^{i(δ - θ)}.
+
+Numerator N = ab(c+d) - cd(a+b) = e^{i(α+θ)} (e^{-iθ} + e^{iδ}) - e^{i(δ - θ)} (e^{iα} + e^{iθ}).
+
+We can factor e^{i(α+θ)} maybe.
+
+Let’s compute p = N/D.
+
+We need |p|^2 = p * conjugate(p). Since a,b,c,d have magnitude 1, their conjugates are reciprocals.
+
+But perhaps there is a known formula for |p|^2 in terms of the cross ratio. Actually, for two intersecting chords, the distance OP can be expressed via the formula: OP^2 = (PA·PB + 1)?? Wait PA·PB = OP^2 - 1, so OP^2 = PA·PB + 1. But PA·PB can be expressed in terms of the sides and something.
+
+Maybe we can find PA and PB using law of sines in triangles PAB and PCD. Since A,B,P are collinear, not a triangle. Not helpful.
+
+Given the time constraints (as ChatGPT, we need to produce an answer), perhaps we can look for a simpler solution path. Let's try to re-express the condition P, A, K, D concyclic in terms of power of K.
+
+We have K on BC, and K lies on ω. So power of K w.r.t ω is 0. But power of K can also be expressed via the power of K w.r.t O and some relation because ω and O intersect at A and D. For two intersecting circles, for any point X, the power difference is related to the line through the centers? Not directly.
+
+But we can use the radical axis: AD is radical axis. Therefore, for any point X, Power_ω(X) - Power_O(X) = λ * d(X, AD) maybe? Actually, if two circles have equations (x^2+y^2 + u_i x + v_i y + w_i = 0), then the power difference is linear in x,y. Specifically, if we subtract the equations, we get (u1-u2)x + (v1-v2)y + (w1-w2) = 0 is the radical axis. So for any point X, Power_ω(X) - Power_O(X) = (u_ω - u_O) x + (v_ω - v_O) y + (w_ω - w_O). Since for points on AD, this difference is zero. So the difference is an affine linear function that vanishes on AD. That means it is proportional to the signed distance from AD (times some constant). But maybe we can compute it explicitly using known points.
+
+Given that O is the circle x^2+y^2-1=0, so u_O=v_O=0, w_O=-1. For ω, we can determine its equation from points A, D, P. But perhaps we can compute Power_ω(B) - Power_O(B) = BA·BP - 0 = BA·BP. Similarly, Power_ω(C) - Power_O(C) = CD·CP.
+
+Now, the line AD is known. The values BA·BP and CD·CP are the values of this linear function at B and C. Since B and C are symmetric about x-axis, and AD is some line, maybe we can relate BA·BP and CD·CP.
+
+But perhaps we can find a relation between BA·BP and CD·CP using the fact that P is the intersection of AB and CD, and that A, B, C, D are concyclic. There might be a known relation: (BA·BP) / (CD·CP) = (AB/ CD) something.
+
+Let's attempt to compute using coordinates, but maybe we can find a more clever substitution.
+
+Let’s denote the directed lengths along AB: Let AB = d1, and let AP = x, PB = y. Then we have A--P--B or P--A--B etc. But we can assign coordinates along AB with origin at P? Not.
+
+Maybe we can use coordinates with complex numbers and compute p explicitly, then compute y_K^2 using circle condition expressed in complex form. Then equate to s^2 - p^2/2. That might lead to an equation that simplifies.
+
+Let's attempt that.
+
+Set b = e^{iθ}, c = e^{-iθ}. Let a = e^{iα}, d = e^{iδ}. We'll keep α and δ as variables.
+
+Compute p = (ab(c+d) - cd(a+b))/(ab - cd). We'll compute |p|^2.
+
+We can write p = \frac{ab(c+d) - cd(a+b)}{ab - cd}.
+
+Let’s denote X = ab, Y = cd. Then p = (X(c+d) - Y(a+b))/(X - Y).
+
+We have X = e^{i(α+θ)}, Y = e^{i(δ - θ)}. Note that X and Y are points on unit circle.
+
+We can perhaps simplify by factoring e^{i((α+θ)+(δ-θ))/2} = e^{i(α+δ)/2}. But not sure.
+
+Another approach: Use the fact that for points on unit circle, the intersection p can also be expressed as:
+
+p = \frac{ac(b+d) - bd(a+c)}{ac - bd} for intersection of AD and BC? Not.
+
+But maybe we can find a relation using the concept of "Miquel point" of the complete quadrilateral formed by lines AB, BC, CD, DA. The Miquel point is the point common to the circumcircles of triangles formed by three of the four lines. In a complete quadrilateral, there are four triangles, each having a circumcircle; these four circles concur at the Miquel point. In our configuration, we have quadrilateral with vertices A, B, C, D. The four lines are AB, BC, CD, DA. The triangles are ABC, BCD, CDA, DAB. Since all four points are concyclic (on O), all these triangles share the same circumcircle O. So the Miquel point is not defined distinct.
+
+But there is also the "Miquel point" of the complete quadrilateral formed by lines AB, BC, CD, and the line through A and C? Not.
+
+Maybe we should consider the circumcircle of triangle PAD. Since P is on AB and CD, we might have some angle equalities linking to the original circle.
+
+For instance, ∠APD equals angle between AB and CD. Since AB and CD intersect at P, ∠APD is the angle between PA and PD, which is the same as angle between AB and CD. That angle is related to arcs AD and BC? Possibly.
+
+In a cyclic quadrilateral, the angle between AB and CD equals half the sum of arcs AD and BC? Not sure.
+
+Actually, for a cyclic quadrilateral, the external angle at the intersection of extensions of AB and CD equals half the difference of arcs AD and BC. There is a known theorem: The measure of the angle formed by two intersecting chords (inside the circle) is half the sum of the measures of the arcs intercepted by the angle and its vertical angle. For external intersection (outside the circle), the angle formed by two secants is half the difference of the intercepted arcs. P is outside the circle, so ∠APD (or angle between PA and PD) equals half the difference of the arcs AD and BC? Let's recall: For two secants from an external point P to a circle, intersecting at A,B and C,D respectively, the angle between the secants is half the difference of the measures of the intercepted arcs (the far arcs minus the near arcs). Specifically, if the secants intersect the circle at A,B (with A nearer to P) and C,D (with C nearer to P), then angle AP C? Actually, need to be careful.
+
+Consider point P outside circle, draw two secants PAB and PCD, with points in order P-A-B and P-C-D along the lines. Then the angle between lines PA and PC (i.e., angle APC) equals half the difference of the measures of arcs AC and BD (the arcs between the far points). But our lines are AB and CD, with P being intersection of extensions, so the secants are PAB and PCD, with points A,B and C,D. The angle between PA and PC is angle APC, not APD. However, we are interested in angle APD, which is between PA and PD. That's also an angle formed by the two secants, but with different pairing: PA and PD. That angle equals half the difference of arcs AD and BC? Let's derive.
+
+Standard formula: For external point P, with secants PAB and PCD (A and C are the nearer points to P), then the measure of angle between the lines PA and PC is half the difference of the measures of arcs AC and BD. Similarly, angle between PA and PD equals half the difference of arcs AD and BC. I think that's correct.
+
+Thus, ∠APD = 1/2 (arc AD - arc BC). Since arcs are measured as the minor arcs? We need to be careful with orientation but absolute measure.
+
+Now, note that A, D, P, K are concyclic. In circle ω, the angle subtended by arc AD at point P is ∠APD. The angle subtended by the same arc AD at point K is ∠AKD. Since they subtend the same chord AD, we have ∠APD = ∠AKD (or supplementary if K on opposite arc). But in a circle, angles subtended by the same chord are equal if they are on the same segment. Since P and K are on the same circle, and both are on the same side of AD? Not sure, but generally ∠APD equals ∠AKD if points A,P,D,K are concyclic and P and K lie on the same arc (i.e., both on the same side of AD). We can assume that.
+
+Thus, ∠AKD = ∠APD = 1/2 (arc AD - arc BC).   (E)
+
+Now, K lies on BC, so ∠AKD is angle formed by lines KA and KD. That's an angle with vertex K, lines to A and D.
+
+Also, we can consider the cyclic quadrilateral ABCD. The measure of angle AKD might be expressed in terms of arcs AD and something.
+
+Since K is on BC, we might consider quadrilateral A B K D? Not cyclic.
+
+But perhaps we can relate ∠AKD to angles at B and C.
+
+Consider triangle AKD. Points A and D are on the circle, K on chord BC. There might be known relation: ∠AKD = 180° - ∠ABC - ∠BCD? Let's test with some configuration.
+
+Take a cyclic quadrilateral, and let K be a point on BC. Then angle AKD might be expressed as sum of angles ABK and KCD? Not sure.
+
+Let's try to compute ∠AKD using known angles. Since K lies on BC, we can consider triangles ABK and CDK.
+
+Angle AKB is angle between KA and KB. Angle DKC is angle between KD and KC.
+
+But we might use the fact that quadrilateral A B K D is not necessarily cyclic.
+
+Alternatively, we can use directed angles modulo 180°.
+
+Let's denote ∠AKD = angle between KA and KD.
+
+We can express KA direction relative to AB and BC? Not directly.
+
+Maybe we can use law of sines in triangles AKB and DKC to relate lengths.
+
+Another idea: Use coordinates with B and C symmetric about x-axis, as before. That gave us expressions for p and y_K^2 in terms of α, δ, θ. We could attempt to compute p and y_K^2 using the complex formula and then impose the condition that K is on ω. That yields an equation linking a, d, and p.
+
+But perhaps we can find a simpler relationship: Since K is on ω, the power of B and C to ω are related to BK and CK and the distances to A and D. Specifically, we have:
+
+BA·BP = BK·BL
+CD·CP = CK·CL
+
+But we don't know L. However, we can also consider the radical axis of ω and O is AD. So the power of any point X to ω minus its power to O is equal to (power of X to ω) - (OX^2 - 1). For points B and C, we have:
+
+BA·BP - (OB^2 - 1) = BA·BP - 0 = BA·BP.
+CD·CP - (OC^2 - 1) = CD·CP - 0 = CD·CP.
+
+Now, the function f(X) = Power_ω(X) - Power_O(X) is linear (since both are quadratic minus constant). The set where f(X)=0 is line AD. So f(X) is an affine linear function that vanishes on AD. Therefore, f(X) is proportional to the signed distance from X to AD.
+
+Thus, for points B and C, f(B) and f(C) have opposite signs if B and C are on opposite sides of AD. But are they? In convex quadrilateral, AD is a side, BC is opposite side. Typically, AD and BC are opposite sides; they may intersect at point R outside the circle. So line AD and line BC intersect at R, which is outside the circle. Points B and C lie on BC. The line AD is somewhere else. B and C are likely on the same side of AD? Not sure.
+
+But perhaps we can use the fact that f(B) = BA·BP, f(C) = CD·CP. Since B and C are symmetric about the x-axis, maybe AD is not symmetric, but we can compute f(B) and f(C) in terms of coordinates.
+
+Let's attempt coordinate approach with general a,d. We'll compute p, then compute y_K^2 from circle condition, equate to s^2 - p^2/2, and derive equation. This is algebraically heavy but maybe manageable with symbolic manipulation using trigonometric identities.
+
+We have:
+
+A = (cosα, sinα)
+D = (cosδ, sinδ)
+B = (c, s)
+C = (c, -s)
+
+We need to find P = intersection of AB and CD. We can solve using param. Let's solve for t and u explicitly.
+
+Let's denote:
+
+Δx_AB = c - cosα
+Δy_AB = s - sinα
+
+Δx_CD = cosδ - c
+Δy_CD = sinδ + s
+
+We solve:
+
+x_A + t Δx_AB = c + u Δx_CD   (I)
+y_A + t Δy_AB = -s + u Δy_CD   (II)
+
+We can solve the linear system for t and u. Write in matrix form:
+
+[ Δx_AB  -Δx_CD ] [t; u] = [c - x_A; -s - y_A]? Wait, from (I): t Δx_AB - u Δx_CD = c - x_A.
+From (II): t Δy_AB - u Δy_CD = -s - y_A.
+
+Yes.
+
+So we have:
+
+Δx_AB * t - Δx_CD * u = c - x_A   (1)
+Δy_AB * t - Δy_CD * u = -s - y_A   (2)
+
+Let’s denote RHS1 = c - x_A = c - cosα, RHS2 = -s - y_A = -s - sinα.
+
+We can solve using determinants.
+
+Let det = Δx_AB * (-Δy_CD) - (-Δx_CD) * Δy_AB = -Δx_AB Δy_CD + Δx_CD Δy_AB.
+
+But better: Write system as:
+
+[ Δx_AB  -Δx_CD ] [t] = [RHS1]
+[ Δy_AB  -Δy_CD ] [u]   [RHS2]
+
+The determinant D = Δx_AB * (-Δy_CD) - (-Δx_CD) * Δy_AB = -Δx_AB Δy_CD + Δx_CD Δy_AB.
+
+So D = Δx_CD Δy_AB - Δx_AB Δy_CD.
+
+Then t = (RHS1 * (-Δy_CD) - (-Δx_CD) * RHS2) / D = ( -RHS1 Δy_CD + Δx_CD RHS2 ) / D.
+
+Similarly, u = (Δx_AB * RHS2 - RHS1 * Δy_AB) / D.
+
+But perhaps we don't need t and u; we need P coordinates. However, we can compute P directly using formula for intersection of two lines given by two points each. There is a formula using cross products.
+
+In Cartesian coordinates, line through points (x1,y1) and (x2,y2) can be expressed as (y - y1)(x2 - x1) = (x - x1)(y2 - y1). Intersection of two such lines can be solved.
+
+But maybe we can find a more elegant way: Use barycentric coordinates with respect to triangle? Not.
+
+Given the complexity, perhaps the problem expects answer like OP = √(2) and TB+TC = 2? But we need to verify.
+
+Let's test with a numeric example that might satisfy conditions. We could attempt to find numeric values for α, θ, δ that satisfy the conditions, then compute OP and TB+TC. Since we can't compute infinitely many possibilities, we can attempt to solve numerically using a computer, but as ChatGPT we can't run code. However, we can attempt to reason.
+
+Given the difficulty, maybe we should look for known results: In a cyclic quadrilateral, if P is intersection of AB and CD, and K on BC such that P, A, K, D concyclic, then K is the foot of the symmedian from B? Or something like that. There is a known configuration: The circle through A, D, and P is called the "Miquel circle" of triangle BCD? Not.
+
+Let's explore the angle condition ∠ABC < ∠BCD. In our symmetric case (A and D symmetric), we got equality. So to have inequality, A and D must not be symmetric. That suggests that the quadrilateral is not symmetric about the perpendicular bisector of BC. So A and D are at different distances from the x-axis (i.e., have different y-coordinates magnitude). That will break the equality of the angles.
+
+Now, perhaps the condition that P, A, K, D are concyclic, together with the product condition, forces a specific relationship that yields a unique value for OP independent of the shape. Let's attempt to derive that using power of a point and maybe Stewart's theorem.
+
+We have:
+
+1) From power of P: PA·PB = PC·PD = OP^2 - 1.
+
+2) From power of B and C to ω: BA·BP = Power_ω(B), CD·CP = Power_ω(C).
+
+3) Since K lies on ω and BC, we have BK·CK = (1/2) OP^2.
+
+But also, from the intersecting chords theorem in circle O, for point K on BC, we have BK·CK = 1 - OK^2.
+
+Thus, OK^2 = 1 - OP^2/2.
+
+Now, we can relate BA, BP, CD, CP, and the geometry of triangle PBC perhaps.
+
+Consider triangle PBC. Points B and C are on circle O, P is external. K is a point on BC. We know BK·CK = 1/2 OP^2. Also, we might be able to express BA·BP and CD·CP in terms of sides of triangle PBC and angles at B and C.
+
+Observe that BA is a segment from B to A, where A lies on circle O and also on line through P and B. So A is the second intersection of line PB with circle O (the first being B). So A is the other point where line PB meets the circle O. Similarly, D is the other intersection of line PC with circle O (besides C). Thus, A and D are defined as the second intersections of lines PB and PC with the circle O.
+
+Thus, we can treat P as an external point, with secants PBA and PCD. So A is on PB beyond B? Actually, the order along PB is P - B - A or P - A - B? Since P is outside the circle, and B is on the circle, the ray from P through B enters the circle at B and then exits at A. So along line PB, going from P to B, we first hit B (the nearer intersection), then continue inside the circle to A (the far intersection). So the order is P - B - A. Similarly, along PC, order is P - C - D.
+
+Thus, directed segments: PB is the distance from P to B, PA = PB + BA? Actually, if P - B - A collinear, then PA = PB + BA. So BA = PA - PB. Similarly, CD = PD - PC? Wait, D is beyond C from P, so order P - C - D, so PD = PC + CD, thus CD = PD - PC.
+
+Now, we can express BA·BP = BA * BP = (PA - PB) * PB.
+Similarly, CD·CP = CD * CP = (PD - PC) * PC.
+
+Now, we also have PA·PB = PA * PB, and PC·PD = PC * PD.
+
+We know PA·PB = OP^2 - 1, PC·PD = OP^2 - 1.
+
+Now, we might be able to express BA·BP and CD·CP in terms of PA, PB, etc.
+
+BA·BP = (PA - PB) PB = PA·PB - PB^2.
+Similarly, CD·CP = (PD - PC) PC = PD·PC - PC^2 = PA·PB - PC^2 (since PD·PC = PA·PB).
+
+Thus,
+
+BA·BP = (OP^2 - 1) - PB^2.   (7)
+CD·CP = (OP^2 - 1) - PC^2.   (8)
+
+Great! This is a key simplification using the order P-B-A and P-C-D.
+
+Now, we have expressions for BA·BP and CD·CP in terms of OP, PB, PC.
+
+Now, recall that K is on BC, and we have the circle ω through A, D, P. The power of B to ω is BA·BP, which we just expressed. Similarly, power of C to ω is CD·CP.
+
+Now, perhaps we can relate PB and PC to OP and the geometry of triangle PBC. Since B and C are points on the circle radius 1, and P is external, we can compute PB and PC in terms of OP and the angle BPC or something.
+
+Let’s set up coordinate: O is origin, radius 1. Let’s denote vector positions: b, c as before. We know PB = |p - b|, PC = |p - c|.
+
+But maybe we can find PB^2 and PC^2 using law of cosines in triangle OPB: OP^2 + OB^2 - 2 OP·OB cos(∠POB) = PB^2. Since OB=1, PB^2 = OP^2 + 1 - 2 OP cos θ_PB, where θ_PB is angle between OP and OB. But we don't know that angle directly.
+
+However, we might find PB^2 + PC^2 in terms of OP^2 and BC^2? Since B and C are symmetric about the line OP? Not necessarily.
+
+But we have B and C symmetric about the x-axis, and P is somewhere. However, perhaps we can use the fact that P lies on the x-axis? No, that was only under symmetry. In general, P is not on x-axis. So we cannot assume that.
+
+But maybe we can choose coordinate such that OP is along the x-axis. Since we can rotate the whole configuration arbitrarily, we can set OP to be the x-axis. That is, we can place O at origin, and let P be on the positive x-axis at coordinate (p,0) with p = OP > 1. This is a convenient choice. Then we can express coordinates of B and C as points on unit circle x^2+y^2=1, with unknown positions. Then we can derive equations.
+
+Yes! That's a great idea: Choose coordinate system with O at origin, and let OP be the x-axis, so P = (p,0) with p > 1. This is always possible by rotation. Then we don't need to assume anything about BC's orientation; B and C are just two points on the unit circle. This may simplify the algebra.
+
+Let's adopt that: O = (0,0), P = (p,0), p > 1.
+
+Now, A is the second intersection of line PB with circle O. Since P is on x-axis, the line PB goes from P to B. B is a point on the circle. A is the other intersection of line PB with the circle. So A is determined by B and P. Similarly, D is the other intersection of line PC with the circle.
+
+Thus, given B and C on the unit circle, A and D are determined. This reduces degrees of freedom: we only have two parameters for B and C (their angles) plus perhaps an additional parameter for the location of K on BC? But K is defined as a point on BC such that P, A, K, D concyclic and KB·KC = p^2/2.
+
+But we can perhaps express everything in terms of B and C coordinates.
+
+Let's denote B = (x_B, y_B), C = (x_C, y_C), both satisfy x^2+y^2=1.
+
+Line PB: param t: P + t (B - P). At t=1 we get B. The line intersects the circle at two points: one is B (t=1), the other is A corresponding to some t = t_A ≠ 1. Since P is outside, the quadratic for t gives two solutions t=1 and t=t_A. The product of the roots = (OP^2 - 1)/|B-P|^2? Actually, we can find A using the property that for a point P outside the circle, the power is PA·PB = p^2 - 1. Since PB is known, we can compute PA = (p^2 - 1)/PB. Then A lies on ray PB beyond B? Wait, order P - B - A, so A is further from P than B. So directed: PB is distance from P to B; PA = PB + BA. But using power, PA * PB = p^2 - 1. So PA = (p^2 - 1)/PB.
+
+Thus, given PB length, we can compute PA. Then the coordinate of A can be expressed as P + (PA/PB) * (B - P) (since along same direction). Indeed, vector from P to B is v = B - P. Then the unit direction is v/|v|. Then A = P + (PA) * (v/|v|) = P + (PA/PB) * v.
+
+Similarly, for C: PC = |C - P|, PD = (p^2 - 1)/PC, and D = P + (PD/PC) * (C - P). Note that PD > PC because PA·PB = p^2 - 1 implies PD = (p^2 - 1)/PC > PC? Since p^2 - 1 > 0, and PC > 0, we need to check if (p^2 - 1)/PC > PC. That is equivalent to p^2 - 1 > PC^2. Is that always true? Not necessarily. But we can examine. Since P is outside the circle, the distance from P to any point on the circle is at least p-1? Not exactly. But we can rely on geometry: For a point outside a circle, the two intersection points along a secant are such that the nearer point is B (or C), the farther point is A (or D). So indeed, PA > PB and PD > PC. That requires (p^2 - 1)/PB > PB => p^2 - 1 > PB^2. Similarly, p^2 - 1 > PC^2. So we must have PB^2 < p^2 - 1 and PC^2 < p^2 - 1. This is plausible because PB^2 = |B-P|^2 = p^2 + 1 - 2 p x_B (since B lies on unit circle). So PB^2 = p^2 + 1 - 2p x_B. For this to be less than p^2 - 1, we need p^2 + 1 - 2p x_B < p^2 - 1 => 1 - 2p x_B < -1 => 2 - 2p x_B < 0 => 1 - p x_B < 0 => p x_B > 1. Since p>1, this requires x_B > 1/p. That is, B must be to the right of x = 1/p. Similarly, C must satisfy x_C > 1/p. So B and C must lie in the right half-plane with x-coordinate > 1/p. That's a constraint.
+
+Now, K is on BC. BC is the segment connecting B and C. Since B and C are on the circle and both have x > 1/p, the chord BC lies in the right part of the circle. We can define K as a point on BC such that P, A, K, D concyclic. That's a condition that will determine K's position along BC. And we also have KB·KC = p^2/2.
+
+But maybe we can find a direct relation between p and the geometry of triangle PBC using power of B and C to ω expressed in terms of PB, PC, and p.
+
+Recall:
+
+BA·BP = (PA - PB) PB = (PA·PB - PB^2) = (p^2 - 1) - PB^2.   (9)
+CD·CP = (PD - PC) PC = (p^2 - 1) - PC^2.   (10)
+
+Now, consider the circle ω through P, A, D. Its equation can be expressed in terms of P and the chord AD. But perhaps we can compute the power of a general point X to ω using the fact that ω is the circle through P and the two points A and D which are defined via B and C.
+
+Alternatively, we can use the fact that for any point X, Power_ω(X) = (Power through P and the inversion with radius sqrt(p^2-1)). Not.
+
+But maybe we can compute the power of B and C to ω directly using coordinates with P on x-axis. Then we can set up the condition that K, lying on BC, has power zero to ω, and that the power of B and C to ω are known. For points on line BC, the power to ω as a function of the position is a quadratic function that at B gives value (p^2 - 1) - PB^2, at C gives (p^2 - 1) - PC^2, and at K gives 0. Moreover, for points on line BC, the power function is a quadratic in the parameter along BC. But perhaps we can use the fact that for points on a line, if we know the power at two points and also know the product of distances to B and C for the point where power is zero, we might derive a relation.
+
+Specifically, let’s param BC by a parameter λ such that point X(λ) = B + λ (C - B). Then the power f(λ) = Power_ω(X(λ)) is a quadratic function in λ (since it's distance squared plus linear terms). However, because ω is a circle, f(λ) is a quadratic that can be expressed as α λ^2 + β λ + γ. We know f(0) = Power_ω(B) = (p^2 - 1) - PB^2, f(1) = Power_ω(C) = (p^2 - 1) - PC^2, and f(λ_K) = 0 where λ_K corresponds to K.
+
+Also, the distances BK = λ_K * |BC|, CK = (1-λ_K) |BC|. So BK·CK = λ_K (1-λ_K) |BC|^2 = p^2/2.
+
+Thus, we have λ_K (1-λ_K) = p^2/(2 |BC|^2).   (11)
+
+Now, maybe we can find f(λ) explicitly using the fact that f(λ) = (distance from X to P) * (distance from X to the other intersection?) Not.
+
+But maybe we can find that f(λ) is proportional to (λ - λ1)(λ - λ2) for some λ1, λ2 corresponding to the two intersections of line BC with ω. Since ω intersects BC at K (λ_K) and at another point L (λ_L). Then f(λ) = Power_ω(X(λ)) is proportional to (λ - λ_K)(λ - λ_L) times |BC|^2? Actually, if we consider the power of a point X on line BC to circle ω, then if we param by λ, the power is equal to (signed) product of distances to the two intersection points. Specifically, if we use directed distances along the line, then Power_ω(X) = (X K) * (X L) (with sign). For undirected lengths, we have |X K| * |X L| if X is outside the segment between the intersection points, but if X is between them, sign may be negative. However, magnitude wise, the power is the product of distances to the two intersection points.
+
+Thus, we can write:
+
+|Power_ω(B)| = BK * BL
+|Power_ω(C)| = CK * CL
+
+But we may not need L.
+
+However, we can also express f(λ) as k (λ - λ_K)(λ - λ_L) for some constant k, because as a quadratic in λ, its roots are λ_K and λ_L (the parameters where the line meets ω). Moreover, the leading coefficient k is related to the coefficient of λ^2, which can be determined from the geometry.
+
+But we can determine k by evaluating f at some λ, e.g., λ = 0 or 1. So we can write:
+
+f(λ) = k (λ - λ_K)(λ - λ_L).   (12)
+
+Then f(0) = k λ_K λ_L (with sign depending). f(1) = k (1 - λ_K)(1 - λ_L). Actually, careful: f(0) = k (0 - λ_K)(0 - λ_L) = k λ_K λ_L. f(1) = k (1 - λ_K)(1 - λ_L).
+
+Now, we know f(0) = (p^2 - 1) - PB^2, f(1) = (p^2 - 1) - PC^2.
+
+Also, we know λ_K is the parameter for K, and we have λ_K (1-λ_K) = p^2/(2 |BC|^2). But we don't know λ_L.
+
+We have two equations: f(0) = k λ_K λ_L, f(1) = k (1-λ_K)(1-λ_L). We can divide them:
+
+f(0)/f(1) = (λ_K λ_L) / ((1-λ_K)(1-λ_L)).   (13)
+
+This still involves λ_L.
+
+But perhaps we can find another relation using the fact that the power of P to ω is zero (since P lies on ω). However, P is not on line BC generally, so that doesn't directly give λ.
+
+Maybe we can find k by considering the second intersection of line through P perpendicular to BC? Not.
+
+Another approach: Since A and D are defined via B and C, maybe we can compute the power of B and C to ω directly in terms of PB and PC, and perhaps also in terms of the angle BPC. Then we could use the fact that K is on BC and satisfies KB·KC = p^2/2 to get an equation for p.
+
+Let's attempt to compute Power_ω(B) = BA·BP = (p^2 - 1) - PB^2.
+
+Similarly, Power_ω(C) = (p^2 - 1) - PC^2.
+
+Now, consider the circle ω. Since ω passes through P, A, D, we might find its center or radius in terms of P, B, C. But perhaps we can find the distance from the midpoint of BC to the center of ω, etc.
+
+But maybe we can use the following: For any point X, the power to ω can be expressed as |X - O_ω|^2 - R_ω^2. If we could find O_ω and R_ω in terms of P, B, C, we could compute f(λ) along BC.
+
+But maybe there's a known result: The circle through P and the two points where lines through P intersect the circle again (i.e., A and D) is called the "circle of Apollonius" for segment BC? Not exactly.
+
+Let's try to derive equation of ω using coordinates with P = (p,0). Let B = (x_B, y_B), C = (x_C, y_C). Then A = P + (PA/PB)*(B - P). Since PA = (p^2 - 1)/PB, we have A = P + ((p^2 - 1)/PB^2) (B - P). Similarly, D = P + ((p^2 - 1)/PC^2) (C - P).
+
+Thus, coordinates:
+
+A = (p,0) + α_B (x_B - p, y_B), where α_B = (p^2 - 1)/PB^2.
+D = (p,0) + α_C (x_C - p, y_C), where α_C = (p^2 - 1)/PC^2.
+
+Now, we can write the circle ω through P, A, D. Its equation can be expressed as (x - h)^2 + (y - k)^2 = R^2. But perhaps we can find an expression for the power of a point X to ω using the fact that ω is the circle with diameter? Not.
+
+Alternatively, we can use the concept of inversion with center P and radius sqrt(p^2 - 1). Under this inversion, the circle O (unit circle) maps to itself because P's power is p^2 - 1, and the inversion radius squared equals that power. Actually, inversion with radius √(p^2 - 1) will map the circle O to itself if O is orthogonal to the inversion circle. The condition for a circle to be invariant under inversion is that the circle is orthogonal to the inversion circle. The circle O has center O and radius 1. The distance from P to O is p. The inversion circle has radius r = √(p^2 - 1). Orthogonality condition: OP^2 = r^2 + 1^2 => p^2 = (p^2 - 1) + 1 = p^2, which holds! Yes! Because for two circles with centers P and O, radii r and 1, they are orthogonal if the distance between centers squared equals sum of squares of radii: OP^2 = r^2 + 1^2. Here OP = p, r^2 = p^2 - 1, so p^2 = (p^2 - 1) + 1, which is true. So indeed, the inversion centered at P with radius √(p^2 - 1) is orthogonal to the unit circle O. Therefore, under this inversion, the unit circle O maps to itself (since orthogonal circles are invariant under inversion). That's a crucial insight!
+
+Thus, we can use inversion with center P and radius √(p^2 - 1). Under this inversion, point B (on O) maps to point A (the other intersection of line PB with O). Because for a point X on O, its inverse X' lies on the same ray from P and satisfies PX·PX' = r^2 = p^2 - 1. But we also have PA·PB = p^2 - 1. Since B is on O, its inverse A satisfies PA·PB = r^2. Since there are two points on ray PB satisfying that product: B itself (if PB = r? Not unless PB = r, unlikely) and the other point A. Actually, the inverse of B is the unique point on ray PB such that PB * PA = r^2. Since PA·PB = p^2 - 1 = r^2, indeed A is the inverse of B under this inversion. Similarly, C's inverse is D.
+
+Thus, under this inversion, B ↔ A, C ↔ D, and O (the circle) is invariant as a set (but points on O are swapped pairwise). Great!
+
+Now, what about circle ω through P, A, D? Under inversion, since A and D are images of B and C, and P is the center (fixed as a point but not mapping to a finite point; the center maps to infinity). The circle ω passes through P (the center), so under inversion, ω maps to a line (since circles through the inversion center map to lines not passing through the center). Specifically, the image of ω is the line through the images of A and D (since P maps to infinity). The images of A and D are B and C respectively. Therefore, the image of ω is the line BC. Because the image of a circle through the inversion center is a line not passing through the center, and that line is the image of the circle minus the point P; it passes through the images of the other two points A and

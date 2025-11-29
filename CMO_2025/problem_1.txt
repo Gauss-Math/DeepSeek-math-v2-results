@@ -1,0 +1,227 @@
+题目 1
+============================================================
+
+问题:
+定义复数集 $\mathbb{C}$ 的子集
+$$
+\begin{aligned}
+A &= \left\{ z \in \mathbb{C} \;\middle|\; z = r\mathrm{e}^{\mathrm{i}\theta}, \, r \ge 0, \, \theta \in \left[ 0, \frac{\pi}{41} \right] \right\}, \\
+B &= \left\{ z \in \mathbb{C} \;\middle|\; z = x + \mathrm{i}y, \, x, y \in \mathbb{R}, \, |x - y| < 2025 \right\},
+\end{aligned}
+$$
+其中 $\mathrm{i}$ 是虚数单位，$r\mathrm{e}^{\mathrm{i}\theta} = r(\cos\theta + \mathrm{i}\sin\theta)$.
+求所有的一元复系数多项式 $P(z)$，使得对任意 $z \in A$，都有 $P(z) \in B$.
+(说明：单项式也是多项式.)
+
+============================================================
+
+解答:
+We need to find all complex coefficient polynomials P(z) such that for any z in A, we have P(z) in B. A is the set of complex numbers with argument θ in [0, π/41] and any nonnegative magnitude r >= 0 (including 0). So A is a closed sector (including the boundary rays) of angle π/41, starting from the positive real axis (θ=0) and going up to θ=π/41. B is the set { x+iy | |x-y| < 2025 }. So B is an infinite strip (open) symmetric about line y=x? Actually condition |x-y| < 2025 means that the difference between real and imaginary parts is less than 2025 in absolute value. So it's an open strip of width 2*2025? Let's see: x - y ∈ (-2025, 2025). Equivalent to y ∈ (x-2025, x+2025). So it's an infinite open strip around the line y=x, with thickness 2025 above and below? Actually the distance from the line y=x measured perpendicularly is |x-y|/√2, so condition is that this distance < 2025/√2. So it's a strip of width 2*2025/√2 = 2025√2? Wait careful: The set of points (x,y) such that |x-y| < d is a strip of width 2d? Because the lines x-y = d and x-y = -d are parallel, distance between them is (2d)/√2 = d√2. So the strip thickness (perpendicular distance) is d√2. But anyway.
+
+We need polynomials P(z) with complex coefficients such that for any z in A, P(z) lies in that strip. Since A includes arbitrarily large r, for large |z| the behavior of P(z) is dominated by its leading term. So we need to ensure that as r→∞ with θ in [0, π/41], P(z) stays within the strip. This imposes strong restrictions on the polynomial. Likely only constant polynomials can satisfy this because a non-constant polynomial tends to infinity in magnitude and its argument can vary, making it impossible to stay within a strip of finite width unless the leading term is constant? But maybe there are polynomials that map the sector into the strip. Let's think.
+
+First, note that B is an unbounded set: as x,y go to infinity along line y=x, difference stays zero, so it's within B. So B is unbounded in many directions. So it's not that P(z) must be bounded; it can go to infinity as long as the difference between its real and imaginary parts remains bounded by 2025. That is a strong condition: the difference must stay bounded even as magnitude grows. For a polynomial of degree d≥1, as |z|→∞, P(z) ~ a z^d (with a ≠ 0). Write a = |a| e^{iφ}. Then for large r, P(z) ≈ a r^d e^{i dθ}. Its real and imaginary parts will be huge; the difference Re(P) - Im(P) is something like? We can compute: For w = Re^{iψ}, Re(w) - Im(w) = R(cos ψ - sin ψ) = R√2 cos(ψ + π/4)? Actually cos ψ - sin ψ = √2 cos(ψ + π/4) = √2 sin(π/4 - ψ)? But anyway magnitude is at most √2 R. So as R→∞, |Re(w) - Im(w)| can be as large as √2 R, which goes to infinity unless the direction ψ is such that cos ψ - sin ψ = 0 (i.e., ψ = π/4 + kπ? Actually cos ψ - sin ψ = 0 => tan ψ = 1 => ψ = π/4 + kπ). In those directions, the difference is zero. But for generic ψ, the difference scales like R.
+
+Thus to keep |Re(P)-Im(P)| < 2025 for all large z in the sector, we need that as r→∞, the leading term a r^d e^{i dθ} must produce a difference that remains bounded. Since r^d→∞, the only way the difference stays bounded is if the leading term's contribution to Re-Im is zero for all θ in the sector [0, π/41]. That would require that for all such θ, the complex number a e^{i dθ} lies on the line where Re = Im (i.e., its real and imaginary parts are equal). Because then Re(P) - Im(P) for the leading term would be 0? Actually if w = a r^d e^{i dθ}, then Re(w) - Im(w) = r^d (Re(a e^{i dθ}) - Im(a e^{i dθ})). For this to be bounded as r^d→∞, we need Re(a e^{i dθ}) - Im(a e^{i dθ}) = 0 for all θ in that interval. Because otherwise, if nonzero, the difference would scale like r^d and become arbitrarily large, violating the bound. However, note that there might be cancellation with lower-degree terms? But lower-degree terms are of lower order in r, so they cannot cancel the leading term's contribution to Re-Im to keep it bounded because the leading term dominates. For large r, r^d term is much larger than lower-degree terms, so the difference will be dominated by that term. So we need the leading term to have zero difference, i.e., Re(a e^{i dθ}) = Im(a e^{i dθ}) for all θ in the sector. Since a is a constant complex number, a e^{i dθ} rotates as θ varies. For this to hold for a continuous interval of θ, it's impossible unless a=0 (i.e., leading coefficient zero) because the condition Re(w) = Im(w) defines a line in the complex plane; requiring that the rotated vector a e^{i dθ} lies on that line for all θ in a nontrivial interval forces a=0. But maybe the interval is only [0, π/41] which is a small interval, but still contains infinitely many θ unless a e^{i dθ} stays on that line for all those θ. If a ≠ 0, then the function f(θ) = Re(a e^{i dθ}) - Im(a e^{i dθ}) is a continuous function of θ. For it to be zero for all θ in an interval, it must be identically zero as a function of θ. Is that possible? Let's analyze: Write a = |a| e^{iφ}. Then a e^{i dθ} = |a| e^{i(φ + dθ)}. Then Re - Im = |a| (cos(φ + dθ) - sin(φ + dθ)). This is |a| √2 cos(φ + dθ + π/4). For this to be zero for all θ in an interval, we need cos(φ + dθ + π/4) = 0 for all θ in that interval. That would require that the argument φ + dθ + π/4 be constant modulo π? But as θ varies, the argument changes linearly; cos of a non-constant linear function cannot be identically zero on an interval (unless it's constant at odd multiples of π/2? But the function cos(α + dθ) is not constant zero; it has zeros at isolated points). So the only way is |a|=0, i.e., a=0. So the leading coefficient must be zero. Thus the polynomial must be constant? Actually if leading coefficient zero, then the polynomial is of lower degree. By induction, we can argue that any non-constant polynomial must have some highest-degree term with nonzero coefficient, leading to contradiction. Therefore the only polynomials that can satisfy the condition are constant polynomials. But we must also check constant polynomials: If P(z) = c (constant complex number). Then for any z, P(z) = c. The condition requires c ∈ B, i.e., if c = x+iy, then |x - y| < 2025. So any constant polynomial whose value lies in B (i.e., whose real and imaginary parts differ by less than 2025) is allowed. Are there any non-constant polynomials of degree 0? That's constant. So answer: all constant polynomials with constant term c such that |Re(c) - Im(c)| < 2025. But wait, we must consider polynomials that are identically zero? Zero is constant, with x=y=0, |0-0|=0<2025, so allowed.
+
+But is there any possibility of a non-constant polynomial that is bounded on A? No, because A includes arbitrarily large r, so any non-constant polynomial is unbounded as |z|→∞ along any ray except maybe if leading coefficient is zero? Actually a polynomial of degree ≥1 is unbounded as |z|→∞, but unboundedness alone does not automatically violate B, because B is also unbounded. However we argued that the leading term's contribution to Re-Im must be zero for all θ in the sector to keep the difference bounded. But maybe it's possible that the leading term's Re-Im is zero for all θ in that sector if d=0? That's constant. For d≥1, as argued, it's impossible. But we should examine more carefully: The condition is |Re(P(z)) - Im(P(z))| < 2025. For large r, P(z) = a r^d e^{i dθ} + lower terms. Let's denote L(z) = a r^d e^{i dθ}. Then write P(z) = L(z) + Q(z), where Q is polynomial of degree < d. Then Re(P)-Im(P) = Re(L)-Im(L) + (Re(Q)-Im(Q)). As r→∞, Re(L)-Im(L) ~ r^d * (Re(a e^{i dθ}) - Im(a e^{i dθ})). This term grows like r^d unless the coefficient is zero. If the coefficient is zero for a particular θ, then the leading term may not dominate the difference because the leading term's contribution to difference is zero, and the next term may dominate. However, for the polynomial to satisfy the condition for all θ in the interval, we need that for each θ, the leading term's contribution to Re-Im is either zero or else it would cause violation for large r because it grows without bound. But is it possible that Re(a e^{i dθ}) - Im(a e^{i dθ}) = 0 for all θ in [0, π/41]? As argued, that would require a=0 or the function is identically zero, which is impossible if a ≠ 0. However, perhaps we could have a situation where the leading term's contribution to Re-Im is non-zero but the lower-degree terms somehow cancel it exactly for all large r? That's impossible because lower-degree terms are of lower order; they cannot cancel a term that grows like r^d for arbitrarily large r, because the cancellation would need to hold for all r, but polynomials are fixed; we can't adjust r. For a fixed polynomial, consider the expression f(r,θ) = Re(P(re^{iθ})) - Im(P(re^{iθ})). As r→∞, f(r,θ) ~ r^d g(θ) where g(θ) = Re(a e^{i dθ}) - Im(a e^{i dθ}). If g(θ) ≠ 0, then |f(r,θ)| → ∞ as r→∞, so eventually it will exceed 2025, violating the condition. Therefore for each θ, we need g(θ)=0. Because if g(θ)=0, then the leading term's contribution to difference is zero, and the next term might dominate, possibly also needing to be zero, etc. So for all θ in the sector, we need g(θ)=0. Since the sector is an interval of positive length, we need g(θ) ≡ 0 on that interval. As argued, g(θ) is a continuous function; if it is zero on an interval, its Fourier expansion? But g(θ) = |a| (cos(φ + dθ) - sin(φ + dθ)) = √2 |a| cos(φ + dθ + π/4). This is a sinusoidal function with period 2π/d. It can be zero at isolated points, but not identically zero on an interval unless |a|=0. Because if |a| ≠ 0, then g(θ) is a nonzero multiple of cos(φ + dθ + π/4). This cosine function is zero only at points where its argument is π/2 + kπ. That's a discrete set; it cannot be zero on an interval because it's analytic and non-constant. So indeed a must be zero. That forces leading coefficient zero, i.e., the polynomial is actually of degree less than d. Then we repeat the argument: if after removing leading term we have a polynomial of degree d-1 (≥1), its leading coefficient must also be zero for the same reason, because now the new leading term will dominate as r→∞. But careful: The sector A includes r≥0, so as r→∞, the highest-degree term with nonzero coefficient will dominate. So by induction, all coefficients except constant term must be zero. So P is constant. So indeed the only polynomials satisfying the condition are constant polynomials whose constant term lies in B. However, we must also consider the possibility that the polynomial is identically zero? That's constant zero, included. So answer: P(z) = c where c ∈ ℂ with |Re(c) - Im(c)| < 2025.
+
+But wait: Could there be a non-constant polynomial such that for all z in A, P(z) is real and equal to its imaginary part? Actually if P(z) is real, then Im(P(z))=0, so Re-Im = Re(P). Then condition is |Re(P(z))| < 2025. That's a boundedness condition on the real part. But as r→∞, a non-constant polynomial cannot have bounded real part unless its leading term is purely imaginary and its real part is zero? But if leading term is purely imaginary, then Re(P) might be lower order? Let's examine: Suppose P(z) is a polynomial such that for large |z|, the leading term is purely imaginary (i.e., its real part is zero). Then the real part might be dominated by lower-degree terms? But the magnitude of the polynomial still goes to infinity; its real part could be bounded? Possibly if the leading term is purely imaginary, then Re(P) might be of lower degree, maybe bounded? But as r→∞, even if the leading term is purely imaginary, the real part could come from the next term, which grows like r^{d-1}. That still goes to infinity unless d-1=0 (i.e., d=1). If d=1 and leading term is purely imaginary, then P(z) = a z + c, with a ≠ 0. If a is purely imaginary, say a = i α with α real nonzero. Then for large r, P(z) ≈ i α r e^{iθ} = i α r (cosθ + i sinθ) = i α r cosθ - α r sinθ. So real part = -α r sinθ, imaginary part = α r cosθ. Then Re - Im = -α r sinθ - α r cosθ = -α r (sinθ + cosθ). As r→∞, this grows like r, unless α=0. So fails.
+
+But maybe there is a polynomial where the leading term is such that both its real and imaginary parts are equal, so Re-Im = 0 for that term. That is exactly the condition g(θ)=0 for all θ. As we argued, impossible unless a=0. So indeed no non-constant polynomial can satisfy.
+
+But we need to be rigorous: The argument that g(θ) must be zero for all θ in the sector is necessary because if there exists some θ0 in [0,π/41] such that g(θ0) ≠ 0, then for large r, f(r,θ0) ~ r^d g(θ0) which will exceed 2025 for sufficiently large r, violating condition. So to avoid this, we must have g(θ)=0 for all θ in the sector. Since g is continuous, if it is zero for all θ in the sector, then it's zero on an interval. That forces a=0 as argued. So indeed the leading coefficient must be zero, contradiction if degree≥1. So constant only.
+
+Thus answer: All constant polynomials P(z) = c, where c ∈ ℂ satisfies |Re(c) - Im(c)| < 2025. That's it.
+
+But wait: Could there be polynomials that are not constant but whose degree is zero? That's constant. So indeed.
+
+We should also consider the possibility that the polynomial has complex coefficients, but maybe some coefficient could be such that the polynomial maps the sector into a line where Re = Im exactly, i.e., P(z) always lies on the line Re=Im (or within the strip). But we already argued leading term can't satisfy that for all θ. However, perhaps the polynomial could be such that for large r, P(z) is always exactly on the line Re=Im, i.e., its value always satisfies Re = Im. That would imply that the polynomial P(z) - i P(z) is something? Actually condition Re(P(z)) = Im(P(z)) is equivalent to P(z) e^{-iπ/4} being real? Let's see: w = x+iy, x=y => w = x(1+i) => w = t(1+i) where t∈ℝ. So w is a real multiple of (1+i). So the set {w: x=y} is a line through origin with direction (1+i). If P(z) is a polynomial that always lies on that line, then P(z) = (1+i) Q(z) where Q(z) is a real-valued polynomial? Actually if P(z) = (1+i) f(z) where f(z) is a real-valued function (i.e., takes real values). But if f is a polynomial with complex coefficients, for P to be on that line for all z, we need P(z)/(1+i) to be real for all z. That's a strong condition. Could there exist non-constant polynomials that are always real multiples of (1+i)? That would mean P(z) = (1+i) R(z) where R(z) is a polynomial with real coefficients? But then R(z) is a polynomial with complex coefficients that takes real values for all z in A? Actually we need for all z in A, P(z) must satisfy |Re(P)-Im(P)|<2025, not exactly equal. But for large r, to keep difference bounded, we might need the leading term to be such that Re-Im is bounded, which as argued forces leading coefficient zero. So no.
+
+Thus answer seems straightforward. However, we need to be careful: The set A includes r≥0 and θ∈[0,π/41]. It includes the origin r=0. That doesn't affect the argument. Also, the condition is strict inequality |x-y|<2025, so even if the leading term's contribution is zero, the lower terms might still cause difference to exceed 2025 for some finite r, but we only need existence of polynomial satisfying condition for all z in A. If we could find a non-constant polynomial such that the leading term's contribution to difference is zero for all θ (impossible unless a=0) or such that the leading term's contribution is non-zero but somehow the polynomial's values for all z in A stay within the strip. But as argued, for any θ where g(θ) ≠ 0, as r→∞, difference will exceed any bound. So must have g(θ)=0 for all θ. That's impossible for non-constant polynomial. So indeed only constants.
+
+But we should also consider the possibility that the polynomial is identically constant? Already covered.
+
+Thus answer: P(z) = c for any complex constant c with |Re(c) - Im(c)| < 2025. That's all.
+
+Now we need to produce a solution with explanation. Provide reasoning step by step, showing that any non-constant polynomial fails, and then classify constant ones.
+
+We must be careful about the definition of A: A = { z = r e^{iθ} | r≥0, θ∈[0,π/41] }. That's a closed sector including the entire ray from origin. Since r can be any nonnegative real, the sector is unbounded. So we can consider large r.
+
+Now the solution approach: Let P(z) be a polynomial with complex coefficients. Write P(z) = a_n z^n + a_{n-1} z^{n-1} + ... + a_0, with a_n ≠ 0, n ≥ 1 if non-constant. For any θ ∈ [0,π/41], consider z = r e^{iθ}, r > 0. Then P(z) = a_n r^n e^{i nθ} + lower terms. Let’s define f(r,θ) = Re(P(z)) - Im(P(z)). We need |f(r,θ)| < 2025 for all r ≥ 0, θ∈[0,π/41].
+
+Now as r→∞, we can write f(r,θ) = r^n (Re(a_n e^{i nθ}) - Im(a_n e^{i nθ})) + O(r^{n-1}). Because Re and Im are linear and the lower-degree terms contribute at most O(r^{n-1}).
+
+Define g(θ) = Re(a_n e^{i nθ}) - Im(a_n e^{i nθ}). Then for each fixed θ, as r→∞, f(r,θ) ∼ r^n g(θ). If g(θ) ≠ 0, then |f(r,θ)| → ∞, so there exists R such that for all r > R, |f(r,θ)| > 2025, contradicting the condition that |f(r,θ)| < 2025 for all r (since r can be arbitrarily large). Therefore, we must have g(θ) = 0 for all θ ∈ [0,π/41] (since if there existed some θ with g(θ) ≠ 0, condition would be violated). So g(θ) ≡ 0 on that interval.
+
+Now compute g(θ). Write a_n = |a_n| e^{iφ}. Then a_n e^{i nθ} = |a_n| e^{i(φ + nθ)}. Then
+
+g(θ) = |a_n| (cos(φ + nθ) - sin(φ + nθ)) = √2 |a_n| cos(φ + nθ + π/4).
+
+Thus g(θ) ≡ 0 on [0,π/41] implies √2 |a_n| cos(φ + nθ + π/4) = 0 for all θ in that interval. Since |a_n| ≠ 0 (as a_n is the leading coefficient, non-zero), we need cos(φ + nθ + π/4) = 0 for all θ ∈ [0,π/41]. But cos is a non-constant function of θ unless its argument is constant and equal to π/2 mod π? Actually if we require cos(α + nθ) = 0 for all θ in an interval, that would mean the function is identically zero. However, cos is not identically zero on any interval; it has isolated zeros. More formally, cos is analytic and if it vanishes on an interval, it must be identically zero as a function of its argument, which is impossible because cos is not the zero function. But here the argument is φ + nθ + π/4, which varies linearly with θ; thus cos of a non-constant linear function cannot be zero on an interval (since it would have to be zero at infinitely many points, but being analytic, if it vanishes on a set with accumulation point, it must be identically zero as a function of its variable; but the function is cos(u), which is not identically zero. However, we need cos(φ + nθ + π/4) as a function of θ. If it's zero on an interval, then by identity theorem for analytic functions (as a function of θ), it must be the zero function. But cos(φ + nθ + π/4) is an entire function of θ (as composition of linear and cosine). If it is zero on an interval, then it must be zero for all θ (since it's analytic and zero on a set with accumulation point). That would imply cos(u) = 0 for all u, impossible. Therefore the only possibility is |a_n| = 0, i.e., a_n = 0, contradicting the assumption that a_n is the leading coefficient (non-zero). Therefore our assumption that n ≥ 1 leads to contradiction. Hence n cannot be ≥1; i.e., the polynomial must be constant.
+
+Thus P(z) = c for some constant c ∈ ℂ.
+
+Now we must also satisfy the condition for this constant polynomial: for all z∈A (any z), P(z) = c must be in B, i.e., |Re(c) - Im(c)| < 2025. That's the only restriction.
+
+Thus the set of all such polynomials is { P(z) = c | c ∈ ℂ, |Re(c) - Im(c)| < 2025 }.
+
+We should also consider if there is any subtlety: The argument that g(θ) must be zero for all θ in the interval uses the fact that if there exists θ0 with g(θ0) ≠ 0, then for sufficiently large r, |f(r,θ0)| > 2025. That is valid because f(r,θ0) = r^n g(θ0) + o(r^n). Since g(θ0) ≠ 0, the dominant term r^n g(θ0) grows without bound, and its sign may be positive or negative, but magnitude eventually exceeds any fixed bound. More rigorously: For any M>0, there exists R such that for r>R, |f(r,θ0)| > M. Choose M = 2025, then condition fails. But careful: The condition must hold for all r≥0, not just for all r beyond some threshold. If for some θ0, g(θ0) ≠ 0, then for sufficiently large r, condition fails, thus polynomial cannot satisfy condition for all z in A. So indeed g(θ) must be zero for all θ.
+
+Now need to ensure that the O(r^{n-1}) term does not cancel the leading term in such a way that f(r,θ) stays bounded even though g(θ) ≠ 0. But cancellation cannot happen for all large r because the lower-degree terms are of lower order; for large r, the leading term dominates. More precisely, we can write f(r,θ) = r^n g(θ) + h(r,θ), where h(r,θ) is a polynomial in r of degree at most n-1 (with coefficients depending on θ). Then for any ε>0, there exists R such that for r > R, |h(r,θ)| < ε r^n. If g(θ) ≠ 0, then choose ε = |g(θ)|/2. Then |f(r,θ)| ≥ r^n |g(θ)| - |h(r,θ)| > r^n (|g(θ)| - ε) = r^n |g(θ)|/2, which → ∞. So indeed eventually exceeds 2025. So argument stands.
+
+Thus the classification is complete.
+
+Now we need to produce the final answer as "All polynomials P(z) = c, where c ∈ ℂ satisfies |Re(c) - Im(c)| < 2025." Possibly also note that constant polynomials are included.
+
+We might also discuss the special case of zero polynomial: P(z) ≡ 0, which is constant with c=0, and 0 satisfies |0-0|=0<2025, so included.
+
+Thus answer.
+
+But the problem statement: "求所有的一元复系数多项式 P(z)，使得对任意 z ∈ A，都有 P(z) ∈ B." So we need to find all such polynomials. So answer is as above.
+
+Now we must produce a solution with reasoning in Chinese? The problem is in Chinese (the description). The user asked "请解决以下问题，直接输出解答过程。" which means "Please solve the following problem, directly output the solution process." So we need to output in Chinese? The problem statement is in Chinese, but the user didn't explicitly ask for Chinese answer, but likely expects Chinese. However, the instructions for this session: we are ChatGPT, we can answer in the language of the user. The user wrote in Chinese, so we should answer in Chinese. But we need to be careful: The final answer should be in Chinese, but we can also include English? The user says "直接输出解答过程." So we should output the solution process directly. Probably they expect Chinese. I'll produce the solution in Chinese, with mathematical notation and reasoning.
+
+Thus I'll write:
+
+设 P(z) 是复系数多项式。若 P 不是常数，设其次数 n ≥ 1，首项系数 a_n ≠ 0。对于任意 θ ∈ [0, π/41]，令 z = r e^{iθ} (r ≥ 0)。定义
+f(r,θ) = Re(P(z)) - Im(P(z))。需要 |f(r,θ)| < 2025 对所有 r ≥ 0, θ ∈ [0,π/41] 成立。
+
+将 P(z) 按 r 展开：
+P(r e^{iθ}) = a_n r^n e^{i nθ} + a_{n-1} r^{n-1} e^{i (n-1)θ} + ... + a_0。
+于是
+f(r,θ) = r^n (Re(a_n e^{i nθ}) - Im(a_n e^{i nθ})) + O(r^{n-1})，其中 O(r^{n-1}) 表示次数不超过 n-1 的多项式（关于 r）。
+
+记 g(θ) = Re(a_n e^{i nθ}) - Im(a_n e^{i nθ})。
+
+若存在某个 θ0 ∈ [0,π/41] 使得 g(θ0) ≠ 0，则当 r → ∞ 时，f(r,θ0) ∼ r^n g(θ0)，从而 |f(r,θ0)| 无界，特别地存在充分大的 r 使得 |f(r,θ0)| > 2025，与条件矛盾。因此必须对一切 θ ∈ [0,π/41] 有 g(θ) = 0。
+
+现在计算 g(θ)。设 a_n = |a_n| e^{iφ}，则
+a_n e^{i nθ} = |a_n| e^{i(φ + nθ)}，
+故
+g(θ) = |a_n| (cos(φ + nθ) - sin(φ + nθ)) = √2 |a_n| cos(φ + nθ + π/4)。
+
+因为 g(θ) ≡ 0 在区间 [0,π/41] 上成立，且 a_n ≠ 0 蕴含 |a_n| > 0，我们得到 cos(φ + nθ + π/4) = 0 对该区间内所有 θ 成立。
+
+但函数 θ ↦ cos(φ + nθ + π/4) 是一个非零的（除非振幅为零）余弦函数，它是 θ 的解析函数。如果它在一个区间上恒为零，则根据解析函数的唯一性定理，它必须恒为零函数，这是不可能的，因为余弦函数不是零函数。因此矛盾。所以假设 n ≥ 1 不成立，即 P 只能是常数多项式。
+
+因此 P(z) ≡ c，其中 c ∈ ℂ 为常数。
+
+现在只需检查常数多项式满足条件的要求：对任意 z ∈ A，P(z) = c 必须属于 B，即
+|Re(c) - Im(c)| < 2025。
+
+综上所述，所求的多项式全体为
+{ P(z) = c ∣ c ∈ ℂ,  |Re(c) - Im(c)| < 2025 }。
+
+特别地，零多项式（c = 0）也满足。
+
+That's the answer.
+
+But we should also note that we used the fact that the interval [0,π/41] has accumulation point; indeed any interval contains infinitely many points, and analytic function vanishing on an interval implies it's identically zero. That's fine.
+
+Alternatively, we could argue directly: cos(φ + nθ + π/4) = 0 for all θ in an interval implies that φ + nθ + π/4 = π/2 + kπ for each θ, which is impossible because left side varies with θ while right side is constant. More simply: If cos(α + nθ) = 0 for all θ in an interval, then differentiating yields -n sin(α + nθ) = 0 for all θ, which would imply sin(α + nθ) = 0 as well, leading to contradiction unless n = 0 (since sin^2+cos^2=1). Actually if cos = 0 on interval, then sin^2 = 1 - cos^2 = 1, so sin = ±1 on that interval, but sin is continuous, so it must be constant sign. Then derivative of cos is -n sin; if cos is constant zero, its derivative is zero, so -n sin = 0 => n sin = 0. Since sin ≠ 0 (as |sin|=1), we must have n = 0. That's another way to see that n must be zero, i.e., polynomial constant. But careful: If cos(α + nθ) = 0 for all θ in interval, then cos is identically zero on that interval. Since cos is analytic, it can't be identically zero on an interval unless it's the zero function, which it's not. But we can use the identity: if cos(u) = 0 then u = π/2 + kπ. So for each θ, φ + nθ + π/4 = π/2 + k(θ)π, where k(θ) is an integer possibly depending on θ. Since the left side is continuous in θ, the right side must be continuous as well, forcing k(θ) to be constant (since integers varying continuously must be constant). Then we have φ + nθ + π/4 = constant, which would imply n = 0, contradiction unless n=0. That's a clean argument: For each θ in the interval, there exists integer k(θ) such that φ + nθ + π/4 = π/2 + k(θ)π. Since the left-hand side is a linear function of θ, the right-hand side must be linear as well, but it's piecewise constant (since k(θ) integer). For it to be linear and non-constant, k(θ) would have to vary with θ, but then the right-hand side would be discontinuous at points where k jumps (since integer jumps by 1 cause a jump of π). However, the left side is continuous, so k(θ) must be constant. Then φ + nθ + π/4 = constant, implying n = 0. This is a more elementary argument that avoids analytic function theory. That's nice.
+
+Thus we can present that: Since g(θ)=0 implies √2 |a_n| cos(φ + nθ + π/4) = 0, and |a_n|>0, so cos(φ + nθ + π/4) = 0 for all θ∈[0,π/41]. Then for each such θ, there exists integer k such that φ + nθ + π/4 = π/2 + kπ. Because cos x = 0 iff x = π/2 + kπ, k∈ℤ. Now define function k(θ) that picks such integer. Since the left-hand side is continuous in θ, the right-hand side must be continuous as well; but the only way a function taking integer values can be continuous is if it is constant. Therefore k(θ) is constant, say k0. Then φ + nθ + π/4 = π/2 + k0π for all θ in the interval, which is a linear function in θ. But the right-hand side is constant (independent of θ). Thus we must have n = 0. But n is the degree, n≥1 leads to contradiction. Therefore no such non-constant polynomial exists. This is rigorous and simpler.
+
+Thus final answer as above.
+
+Now we should produce the solution with clear steps, including the handling of the case when a_n = 0? But we assume a_n ≠ 0 as leading coefficient. Good.
+
+Now also consider the possibility that the polynomial is identically zero? That's constant, already covered.
+
+Thus final answer.
+
+Now output the solution in Chinese. Also include the final classification.
+
+Now produce final message.</think>设 $P(z)$ 是复系数多项式。我们需要找出所有满足“对任意 $z\in A$ 都有 $P(z)\in B$”的多项式。
+
+---
+### 1. 若非常数则导出矛盾
+
+假设 $P$ 不是常数，记其次数为 $n\ge 1$，首项系数为 $a_n\neq0$。  
+对任意 $\theta\in[0,\frac{\pi}{41}]$，令 $z=r\mathrm e^{\mathrm i\theta}\,(r\ge0)$，并考虑
+$$
+f(r,\theta)=\operatorname{Re}\!\big(P(z)\big)-\operatorname{Im}\!\big(P(z)\big).
+$$
+条件要求 $|f(r,\theta)|<2025$ 对一切 $r\ge0,\theta\in[0,\frac{\pi}{41}]$ 成立。
+
+将 $P$ 按 $r$ 展开：
+$$
+P(r\mathrm e^{\mathrm i\theta})=a_n r^n\mathrm e^{\mathrm i n\theta}+a_{n-1}r^{n-1}\mathrm e^{\mathrm i (n-1)\theta}+\cdots+a_0.
+$$
+于是
+$$
+f(r,\theta)=r^n\bigl(\operatorname{Re}(a_n\mathrm e^{\mathrm i n\theta})-\operatorname{Im}(a_n\mathrm e^{\mathrm i n\theta})\bigr)+O(r^{n-1}),
+$$
+其中 $O(r^{n-1})$ 表示次数不超过 $n-1$ 的多项式（系数与 $\theta$ 有关）。
+
+记
+$$
+g(\theta)=\operatorname{Re}(a_n\mathrm e^{\mathrm i n\theta})-\operatorname{Im}(a_n\mathrm e^{\mathrm i n\theta}).
+$$
+
+---
+#### 1.1 $g(\theta)$ 必须恒为零
+
+若存在某个 $\theta_0\in[0,\frac{\pi}{41}]$ 使 $g(\theta_0)\neq0$，则当 $r\to\infty$ 时
+$$
+f(r,\theta_0)=r^n g(\theta_0)+o(r^n),
+$$
+从而 $|f(r,\theta_0)|\to\infty$。特别地，存在充分大的 $r$ 使得 $|f(r,\theta_0)|>2025$，与条件矛盾。  
+因此对**所有** $\theta\in[0,\frac{\pi}{41}]$ 必须有 $g(\theta)=0$。
+
+---
+#### 1.2 分析 $g(\theta)$ 的形式
+
+写 $a_n=|a_n|\mathrm e^{\mathrm i\varphi}$，则 $a_n\mathrm e^{\mathrm i n\theta}=|a_n|\mathrm e^{\mathrm i(\varphi+n\theta)}$，故
+$$
+g(\theta)=|a_n|\bigl(\cos(\varphi+n\theta)-\sin(\varphi+n\theta)\bigr)
+        =\sqrt2\,|a_n|\cos\!\bigl(\varphi+n\theta+\tfrac{\pi}{4}\bigr).
+$$
+
+因为 $g(\theta)\equiv0$ 于区间 $[0,\frac{\pi}{41}]$ 且 $a_n\neq0\Rightarrow|a_n|>0$，我们得到
+$$
+\cos\!\bigl(\varphi+n\theta+\tfrac{\pi}{4}\bigr)=0\qquad(\forall\theta\in[0,\tfrac{\pi}{41}]).
+$$
+
+---
+#### 1.3 导出 $n=0$ 的矛盾
+
+对于使 $\cos x=0$ 的 $x$，必有 $x=\frac{\pi}{2}+k\pi\;(k\in\mathbb Z)$。  
+于是对每个 $\theta\in[0,\frac{\pi}{41}]$，存在整数 $k(\theta)$ 使得
+$$
+\varphi+n\theta+\frac{\pi}{4}= \frac{\pi}{2}+k(\theta)\pi. \tag{1}
+$$
+
+等式左边是 $\theta$ 的连续（实际上是线性）函数，右边是整数倍的 $\pi$ 加上常数 $\frac{\pi}{2}$。因为右边只能取离散的值，要使其作为 $\theta$ 的函数连续，$k(\theta)$ 必须为常数（否则在跳变点处不连续）。因此存在整数 $k_0$ 使得 $k(\theta)\equiv k_0$ 在整个区间上成立。代入 (1) 得
+$$
+\varphi+n\theta+\frac{\pi}{4}= \frac{\pi}{2}+k_0\pi\qquad(\forall\theta\in[0,\tfrac{\pi}{41}]).
+$$
+
+左边依赖于 $\theta$（除非 $n=0$），右边却是与 $\theta$ 无关的常数。这只有在 $n=0$ 时才可能。但我们已经假设 $n\ge1$，矛盾。
+
+---
+### 2. 结论：$P$ 只能是常数
+
+上述矛盾说明 $P$ 不能有正次数，故 $P$ 必为常数多项式。设
+$$
+P(z)\equiv c,\qquad c\in\mathbb C.
+$$
+
+---
+### 3. 常数多项式应满足的条件
+
+对任意 $z\in A$，$P(z)=c$，因此条件 $P(z)\in B$ 化为
+$$
+|\operatorname{Re}(c)-\operatorname{Im}(c)|<2025.
+$$
+
+---
+### 4. 答案
+
+所有满足要求的复系数多项式为
+$$
+\boxed{\;P(z)=c\quad\bigl(c\in\mathbb C,\;|\operatorname{Re}(c)-\operatorname{Im}(c)|<2025\;\bigr)\;}.
+$$
+
+特别地，零多项式 $P(z)\equiv0$（即 $c=0$）也在其中。
